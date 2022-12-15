@@ -1,0 +1,120 @@
+{% extends "layout-v2-patient.html" %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/js/search.js"></script>
+<script type="text/javascript" src="/js/auto.js"></script>
+<style type="text/css" media="screen">
+  .nhsuk-header__navigation-item:nth-child(4) {
+    border-bottom: 4px solid #d8dde0;
+  }
+</style>
+{% endblock %}
+
+{% block pageTitle %}
+  NHS Cervical screening management system
+{% endblock %}
+
+{% block header %}
+{% include '../components/header.html' %}
+{% endblock %}
+
+
+
+
+{% block content %}
+
+
+
+
+<div class="nhsuk-grid-row nhsuk-u-margin-top-4">
+    <div class="nhsuk-grid-column-two-thirds">
+
+
+
+          {{ backLink({
+            "href": "/v12/reports/reports",
+            "text": "Go back to reports"
+          }) }}
+
+
+    <h1 class="nhsuk-heading-l">Non-GP sender report</h1>
+
+    <p class="nhsuk-body">Download CSV report to view all non-GP sender details.</p>
+
+    <p class="nhsuk-body">To deactivate, reactivate or add new non-GP sender codes use the <a href="../admin/manage-sender-codes-v3/manage-sender-codes">manage sender codes tool.</a></p>
+
+        <h2 class="nhsuk-heading-m">Refine report</h2>
+
+        <div class="nhsuk-form-group">
+
+          <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+
+            <h2 class="nhsuk-heading-s">Do you want to see when the code was last used?</h2>
+
+
+
+            <div class="nhsuk-radios">
+
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
+        <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+          No, just show non-GP sender report
+        </label>
+      </div>
+
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+        <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+          Yes, show non-GP sender report including when the code was last used (data last refreshed midnight 15 February 2022)
+        </label>
+      </div>
+
+      <div class="nhsuk-u-padding-bottom-3"></div>
+
+
+    </div>
+          </fieldset>
+
+
+  <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+
+    <h2 class="nhsuk-heading-s">Do you want to include active or inactive senders?</h2>
+
+    <div class="nhsuk-hint" id="contact-hint">
+      Select all options that are relevant to you.
+    </div>
+
+    <div class="nhsuk-checkboxes">
+
+      <div class="nhsuk-checkboxes__item">
+        <input class="nhsuk-checkboxes__input" id="contact" name="contact" type="checkbox" value="email">
+        <label class="nhsuk-label nhsuk-checkboxes__label" for="contact">
+          Active
+        </label>
+      </div>
+
+      <div class="nhsuk-checkboxes__item">
+        <input class="nhsuk-checkboxes__input" id="contact-2" name="contact" type="checkbox" value="phone">
+        <label class="nhsuk-label nhsuk-checkboxes__label" for="contact-2">
+          Inactive
+        </label>
+      </div>
+
+    </div>
+    </div>
+  </fieldset>
+
+
+
+  <a class="nhsuk-button" href="/images/download.pdf" download>
+    Download CSV
+  </a>
+
+
+</div>
+
+
+
+
+
+    {% endblock %}

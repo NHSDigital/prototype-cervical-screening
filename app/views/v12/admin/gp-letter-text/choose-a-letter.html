@@ -1,0 +1,80 @@
+{% extends "layout-v2.html" %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/js/search.js"></script>
+<script type="text/javascript" src="/js/auto.js"></script>
+<style type="text/css" media="screen">
+  .nhsuk-header__navigation-item:nth-child(5) {
+    border-bottom: 4px solid #d8dde0;
+  }
+</style>
+{% endblock %}
+{% block pageTitle %}
+NHS Cervical screening management system
+{% endblock %}
+
+{% block header %}
+{% include '../../components/header.html' %}
+{% endblock %}
+
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-three-quarters">
+    {{ backLink({
+      "href": "enter-gp-code",
+      "text": "Back to entering GP or Disctrict Code"
+    }) }}
+
+    <form action="amend-letter-text-1" method="POST">
+
+    <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading">Choose a letter to amend</h1>
+      </legend>
+
+      <div class=" nhsuk-u-margin-bottom-2">
+        <dl class="nhsuk-summary-list">
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">GP / District</dt>
+            <dd class="nhsuk-summary-list__value">{{ data["gp-code"] or "A123456" }}</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="nhsuk-form-group">
+        <div class="nhsuk-radios">
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="example-hints-1" name="gp-letter" type="radio" value="Patient invitation to screening">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-hints-1">
+              Patient invitation to screening
+            </label>
+          </div>
+
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="example-hints-2" name="gp-letter" type="radio" value="Patient invitation for a patient who has not responded">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-hints-2">
+              Patient invitation for a patient who has not responded
+            </label>
+          </div>
+
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="example-hints-3" name="gp-letter" type="radio" value="Patient invitation for a patient who has not responded twice">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-hints-3">
+              Patient invitation for a patient who has not responded twice
+            </label>
+          </div>
+
+        </div>
+      </div>  
+    </fieldset>
+
+    {{ button({
+        "text": "Continue",
+        "classes": "nhsuk-button--ers"
+    }) }}
+    <p><a href="">Exit without saving</a></p>
+    </form>
+  </div>
+</div>
+{% endblock %}

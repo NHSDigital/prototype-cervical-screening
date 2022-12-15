@@ -1,0 +1,8 @@
+File 1 for Manchester (61234) area BAA received on 15/09/2021 at 11.30.10,,,,,,,,,
+,,,,,,,,,
+Rejections outstanding,,,,,,,,,
+Slide no,Surname,Forename(s),Date of birth,NHS Number,Test Date,Result,HPV,Address,Rejection error message
+12345,Jones,Fliss,12-Dec-94,123451,18-Oct-21,XA,0,123 Green Road Liverpool L21 2FF,This test result has a missing NHS number
+12346,Jones,Fliss,13-Dec-94,123452,19-Oct-21,XA,0,123 Green Road Liverpool L21 2FF,This result has a test date in the future 
+12347,Jones,Fliss,14-Dec-94,123453,20-Oct-21,XA,0,123 Green Road Liverpool L21 2FF,This result is the 2nd inadequate test result for this patient. Colcoscopy is required. 
+12348,Jones,Fliss,15-Dec-94,123454,21-Oct-21,XA,0,123 Green Road Liverpool L21 2FF,The result has an invalid return to routine recall.

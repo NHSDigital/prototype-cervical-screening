@@ -1,0 +1,110 @@
+{% extends "layout-v2.html" %}
+
+{% block pageScripts %}
+  <script type="text/javascript" src="/js/search.js"></script>
+  <script type="text/javascript" src="/js/auto.js"></script>
+  <style type="text/css" media="screen">
+    .nhsuk-header__navigation-item:nth-child(2){
+      border-bottom:4px solid #d8dde0;
+    }
+  </style>
+{% endblock %}
+{% block pageTitle %}
+  NHS Cervical screening management system
+{% endblock %}
+
+{% block header %}
+
+  {% include 'v12/components/header.html' %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <form id="searchform" action="/v12/patient/search/search?patversion=7&hpvAdded=dateGiven-day=&dateGiven-month=&dateGiven-year=&vaccineName=&other=&batchNumber=&dose=" method="post" name="search-form">
+      <div class="nhsuk-form">
+        <div class="nhsuk-form-group">
+          <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-one-third">
+          </div>
+          <div class="nhsuk-grid-column-one-third">
+            <legend class="nhsuk-fieldset__legend--s nhsuk-u-margin-bottom-2">
+              <h1 class="nhsuk-heading-l">Search by</h1>
+            </legend>
+            <nav class="nhsuk-sub-navigation">
+  <ul class="nhsuk-sub-navigation__list">
+    <li class="nhsuk-sub-navigation__item"><a href="#" class="nhsuk-sub-navigation__link" aria-current="page">NHS number</a></li>
+    <li class="nhsuk-sub-navigation__item"><a href="search-demographic" class="nhsuk-sub-navigation__link">Demographics</a></li>
+
+  </ul>
+</nav>
+        </div>
+      </div>
+    </div>
+    <div class="nhsuk-form-group">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-one-quarter">
+        </div>
+        <div class="nhsuk-grid-column-one-quarter">
+          <div class="nhsuk-date-input__item">
+            <label class="nhsuk-label nhsuk-label__strong nhsuk-body-xs">
+              NHS number
+            </label>
+            <input id="searchfield" class="nhsuk-input" type="number" inputmode="numeric" name="searchnhs" value="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="nhsuk-form-group nhsuk-u-margin-bottom-0">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+          <button class="nhsuk-button nhsuk-button--ers" type="submit">Find patient</button>
+        </div>
+      </div>
+    </div>
+  </form>
+  <div class="nhsuk-u-reading-width">
+    <p>If you need to add a test result for an inactive patient, <a href="/v12/patient/create-dummy/start4"> create a dummy registration</a>.</p>
+      </div>
+  </div>
+</div>
+
+
+{% endblock %}
+
+{% block footer %}
+<footer role="contentinfo">
+  <div class="nhsuk-footer" id="nhsuk-footer">
+    <div class="nhsuk-width-container nhsuk-width-container-fluid">
+      <p class="nhsuk-footer__copyright">&copy; Crown copyright</p>
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-one-half">
+          <div class="nhsuk-grid-column-one-third">
+            <ul style="font-size: 10px">
+              <li>9991023867</li>
+              <li>9100001694</li>
+              <li>9100001384</li>
+            </ul>
+          </div>
+          <div class="nhsuk-grid-column-one-third">
+            <ul style="font-size: 10px">
+              <li>9100002801</li>
+              <li>9100001899</li>
+              <li>9100001287</li>
+            </ul>
+          </div>
+          <div class="nhsuk-grid-column-one-third">
+            <ul style="font-size: 10px">
+              <li>9100002798</li>
+              <li>9100001929</li>
+              <li>9100001740</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+{% endblock %}

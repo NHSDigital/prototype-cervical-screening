@@ -1,0 +1,157 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+  NHS.UK prototype kit
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}
+  {{ hero({
+    "heading": "Screening service",
+    "text": "Cervical / Breast / ..."
+  }) }}
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row nhsuk-u-margin-top-4">
+    <div class="nhsuk-grid-column-full nhsuk-u-margin-top-4">
+
+      <h1>Errors</h1>
+      <h2>Login</h2>
+        <ul>
+          <li><a href="errors/login/service-not-available">Page not found</a></li>
+        </ul>
+      <hr>
+      <h2>Search</h2>
+      <h3>Date of birth errors</h3>
+      <ul>
+        <li><a href="errors/patient/search/1-no-dob">Missing field</a></li>
+        <li><a href="errors/patient/search/4-dob-fields-in-wrong-format">Incorrect format</a></li>
+        <li><a href="errors/patient/search/9-chars-and-illegal-chars-in-dob-field">Invalid field</a></li>
+        <li><a href="errors/patient/search/10-dob-in-future">DOB in future</a></li>
+        <li><a href="errors/patient/search/11-dob-does-not-exist">Invalid calendar date</a></li>
+        <li><a href="errors/patient/search/12-dob-before-1900">DOB predates 1900</a></li>
+      </ul>
+      
+      <hr>
+
+      <h3>Name errors</h3>
+      <ul>
+        <li><a href="errors/patient/search/2-no-last-name">Missing field</a></li>
+        <li><a href="errors/patient/search/7-illegal-chars-in-first-name">Invalid field first name</a></li>
+        <li><a href="errors/patient/search/7-illegal-chars-in-last-name">Invalid field last name</a></li>
+        <li><a href="errors/patient/search/14-too-many-chars">Too many characters</a></li>
+      </ul>
+
+      <hr>
+
+      <h3>Postcode errors</h3>
+      <ul>
+        <li><a href="errors/patient/search/5-postcode-wrong-format">Incorrect format</a></li>
+        <li><a href="errors/patient/search/6-postcode-does-not-exist">Invalid field (no api)</a></li>
+        <li><a href="errors/patient/search/8-illegal-chars-in-postcode">Invalid field (illegal characters)</a></li>
+      </ul>
+      
+      <hr>
+
+      <h3>Multiple errors on a page</h3>
+      <ul>
+        <li><a href="errors/patient/search/3-no-dob-and-last-name">Missing mandatory fields</a></li>
+      </ul>
+
+      <hr>
+
+      <h2>Prior Notification and Non Responder</h2>
+      <h3>Sample pages - <a href="https://nhsd-confluence.digital.nhs.uk/display/CSP/Errors">Confluence errors page</a></h3>
+      <div class="nhsuk-table-responsive">
+        <table class="nhsuk-table">
+          <caption class="nhsuk-table__caption">Skin symptoms and possible causes</caption>
+          <thead class="nhsuk-table__head">
+            <tr class="nhsuk-table__row">
+              <th class="nhsuk-table__header" scope="col">page</th>
+              <th class="nhsuk-table__header" scope="col">field</th>
+              <th class="nhsuk-table__header" scope="col">error</th>
+              <th class="nhsuk-table__header" scope="col">error message and summary link</th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Prior notification list</td>
+              <td class="nhsuk-table__cell">Failed to load</td>
+              <td class="nhsuk-table__cell "><a href="errors/defer/prior-notification-failed-to-load">Failed to load</a></td>
+              <td class="nhsuk-table__cell ">Sorry, there is a problem getting the patients due to be invited list.<br>Try reloading the page<br>If this problem persists then contact the help desk</td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Patients to Review list</td>
+              <td class="nhsuk-table__cell">Failed to load</td>
+              <td class="nhsuk-table__cell "><a href="errors/defer/patients-to-review-failed-to-load">Failed to load</a></td>
+              <td class="nhsuk-table__cell ">Sorry, there is a problem getting the patients to review list.<br>Try reloading the page<br>If this problem persists then contact the help desk</td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">All transactional pages</td>
+              <td class="nhsuk-table__cell">Last result failed to load</td>
+              <td class="nhsuk-table__cell "><a href="errors/defer/last-result-failed-to-load">No reason selected</a></td>
+              <td class="nhsuk-table__cell ">Sorry, there is a problem getting information about the patient.<br>Try reloading the information<br>You will need to check patient information on your own system if you choose to continue.<br>If this problem persists then contact the help desk</td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Defer reason</td>
+              <td class="nhsuk-table__cell">Choose a reason to defer the patient</td>
+              <td class="nhsuk-table__cell "><a href="errors/defer/no-reason-selected">No reason selected</a></td>
+              <td class="nhsuk-table__cell ">You need to select a reason to defer the patient</td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__header" scope="col">Defer Length</td>
+              <td class="nhsuk-table__cell">Enter defer length</td>
+              <td class="nhsuk-table__cell "><a href="errors/defer/user-enters-over-max-defer-length">User entered over max amount for deferal Length</a></td>
+              <td class="nhsuk-table__cell ">The maximum amount you can defer for [reason] is [x] months</td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__header" scope="col">Defer Length</td>
+              <td class="nhsuk-table__cell">Enter estimated date of delivery</td>
+              <td class="nhsuk-table__cell "><a href="errors/defer/user-enters-only-month">User entered only month for EDD</a></td>
+              <td class="nhsuk-table__cell ">Estimated date of delivery must include a month and a year</td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__header" scope="col">Defer Length</td>
+              <td class="nhsuk-table__header" scope="col">EDD / defer length</td>
+              <td class="nhsuk-table__cell "><a href="errors/defer/user-enters-edd-and-length-that-exceeds">User enters EDD and defer length that exceeds guidance</a></td>
+              <td class="nhsuk-table__cell ">The calculated next test due date exceeds the maximum [12] months after estimated date of delivery<ul><li>Check the estimated date of delivery is correct</li><li>Check the defer length is correct</li></ul></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Defer Submit</td>
+              <td class="nhsuk-table__cell">-</td>
+              <td class="nhsuk-table__cell "><a href="errors/defer/unable-to-defer">Patient already actioned</a></td>
+              <td class="nhsuk-table__cell ">h1 - Sorry, there is a problem deferring this patient<br>p - The patient has already been [action] for [reason]</td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Manage Email</td>
+              <td class="nhsuk-table__cell">-</td>
+              <td class="nhsuk-table__cell "><a href="errors/manage-email/user-adds-an-address-that-already-exists">User adds an address that already exists</a></td>
+              <td class="nhsuk-table__cell ">The email address you entered already receives notifications</td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Manage Email</td>
+              <td class="nhsuk-table__cell">-</td>
+              <td class="nhsuk-table__cell "><a href="errors/manage-email/manage-emails-failed-to-load">Failed to load emails</a></td>
+              <td class="nhsuk-table__cell ">There was a problem loading the notification emails</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+    </div>
+  </div>
+{% endblock %}

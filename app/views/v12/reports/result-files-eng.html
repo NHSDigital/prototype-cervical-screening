@@ -1,0 +1,165 @@
+{% extends "layout-v2.html" %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/js/search.js"></script>
+<script type="text/javascript" src="/js/auto.js"></script>
+<style type="text/css" media="screen">
+  .nhsuk-header__navigation-item:nth-child(4) {
+    border-bottom: 4px solid #d8dde0;
+  }
+</style>
+{% endblock %}
+{% block pageTitle %}
+NHS Cervical screening management system
+{% endblock %}
+
+{% block header %}
+{% include '../components/header.html' %}
+{% endblock %}
+
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-three-quarters">
+    {{ backLink({
+      "href": "/v12/reports/reports",
+      "text": "Go back to reports"
+    }) }}
+
+    <h1 class="nhsuk-heading-l">Confirmation reports</h1>
+
+
+                 <span class="nhsuk-u-visually-hidden">Information: </span>
+                 <p>View daily reports here.
+                 <p>For PDF reports, contact the <a href="">service administration team</a>.</p>
+
+
+        <div class="nhsuk-form-group">
+         <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+
+          <div class="nhsuk-fieldset__heading nhsuk-label nhsuk-label__strong nhsuk-u-margin-top-4">
+            Enter the date you want to view:</div>
+          <div class="nhsuk-hint" id="example-hint">
+            For example, 15 3 1984
+          </div>
+           <form action="/v12/reports/result-files-eng-complete-day" method="post">
+                  <div class="nhsuk-date-input" id="example">
+                    <div class="nhsuk-date-input__item">
+                      <div class="nhsuk-form-group">
+                        <label class="nhsuk-label nhsuk-date-input__label" for="example-day">
+                          Day
+                        </label>
+                        <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-day" name="example-day" value="15" type="text" pattern="[0-9]*" inputmode="numeric">
+                      </div>
+                    </div>
+                    <div class="nhsuk-date-input__item">
+                      <div class="nhsuk-form-group">
+                        <label class="nhsuk-label nhsuk-date-input__label" for="example-month">
+                          Month
+                        </label>
+                        <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-month" name="example-month" value="07" type="text" pattern="[0-9]*" inputmode="numeric">
+                      </div>
+                    </div>
+                    <div class="nhsuk-date-input__item">
+                      <div class="nhsuk-form-group">
+                        <label class="nhsuk-label nhsuk-date-input__label" for="example-year">
+                          Year
+                        </label>
+                        <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="example-year" name="example-year" value="2021" type="text" pattern="[0-9]*" inputmode="numeric">
+                      </div>
+                    </div>
+                  </div>
+
+                <br>
+
+                      {{ button({
+                        "text": "Search",
+                        "classes": "nhsuk-button nhsuk-button--ers"
+                      }) }}
+
+      </fieldset>
+
+
+
+
+         <div class="nhsuk-inset-text">
+                 <span class="nhsuk-u-visually-hidden">Information: </span>
+                 <p>The full set of reports for today’s date will only be available after 7.00pm.</p>
+                </div>
+
+
+
+
+    {{ table({
+      panel: false,
+      caption: "",
+      firstCellIsHeader: false,
+      head: [
+        {
+          text: "Date and time"
+        },
+        {
+          text: "Report name"
+        },
+        {
+          text: "Download"
+        }
+
+      ],
+      rows: [
+        [
+          {
+            text: "15-07-2021 11:00:00"
+          },
+          {
+            text: "CSAS_ScreeningLetters_DataProcessingReport_13072021_11.txt "
+          },
+
+          {
+            html: '<a href="">Download txt</a>'
+          }
+        ],
+        [
+          {
+            text: "15-07-2021 11:00:00"
+          },
+          {
+            text: "CSAS_EU-WEST-2_CP_Nor_13072021_11.txt"
+          },
+
+          {
+            html: '<a href="">Download txt</a>'
+          }
+        ],
+        [
+          {
+            text: "15-07-2021 11:00:00"
+          },
+          {
+            text: "CSAS_EU-WEST-2_RP_13072021_11.txt"
+          },
+
+          {
+            html: '<a href="">Download txt</a>'
+          }
+        ],
+        [
+          {
+            text: "15-07-2021 11:00:00"
+          },
+          {
+            text: "CSAS_ScreeningLetters_ErrorReport_13072021_11.txt"
+          },
+
+          {
+            html: '<a href="">Download txt</a>'
+          }
+        ]
+
+
+      ]
+}) }}
+
+  </div>
+</div>
+{% endblock %}

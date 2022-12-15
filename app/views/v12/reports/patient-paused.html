@@ -1,0 +1,190 @@
+{% extends "layout-v2.html" %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/js/search.js"></script>
+<script type="text/javascript" src="/js/auto.js"></script>
+<style type="text/css" media="screen">
+  .nhsuk-header__navigation-item:nth-child(4) {
+    border-bottom: 4px solid #d8dde0;
+  }
+</style>
+{% endblock %}
+{% block pageTitle %}
+NHS Cervical screening management system
+{% endblock %}
+
+{% block header %}
+{% include '../components/header.html' %}
+{% endblock %}
+
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  {{ backLink({
+    "href": "/v12/reports/reports",
+    "text": "Go back to reports"
+  }) }}
+
+
+    <h1 class="nhsuk-heading-l">Paused patients report</h1>
+
+<p>Download CSV reports showing test results which have failed validation and are pausing patient communications.</p>
+
+<p>
+  You can download reports showing:
+  </p>
+
+  <ul>
+    <li>
+      test results from all labs which are pausing patient communications
+      </li>
+      <li>
+      test results from individual labs which are pausing patient communications
+        </li>
+        <li>
+          test result details for which patient communications were manually paused
+          </li>
+    </ul>
+
+    <div class="nhsuk-inset-text">
+      <span class="nhsuk-u-visually-hidden">Information: </span>
+      <p>The data used to identify paused patients is updated daily and was last refreshed midnight 09 March 2022.</p>
+    </div>
+
+    <form action="/images/paused-patients-summary.csv" method="get">
+    <button class="nhsuk-button nhsuk-button--secondary nhsuk-button--ers" type="submit">
+      Download summary report CSV
+    </button>
+  </form>
+
+
+
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-three-quarters">
+    <table class="nhsuk-table">
+      <caption class="nhsuk-table__caption">
+      </caption>
+      <thead role="rowgroup" class="nhsuk-table__head">
+        <tr role="row">
+         <th role="columnheader" scope="col">
+            Source of pausing
+          </th>
+          <th role="columnheader" scope="col">
+            Number of test results which are<br />pausing patient communications
+          </th>
+          <th role="columnheader" scope="col">
+          Download CSV
+          </th>
+
+        </tr>
+      </thead>
+
+      <tbody class="nhsuk-table__body">
+        <tr role="row" class="nhsuk-table__row">
+        <td class="nhsuk-table__cell">Test results from all labs
+          <span class="nhsuk-table__cell--hint">All labs</span>
+        </td>
+          <td class="nhsuk-table__cell">2366</td>
+          <td class="nhsuk-table__cell "><a href="/images/paused-patients-all.csv" download>Download CSV</a>
+           </td>
+
+        </tr>
+        <tr role="row" class="nhsuk-table__row">
+         <td class="nhsuk-table__cell">Test results from Bristol
+          <span class="nhsuk-table__cell--hint">61590</span>
+         </td>
+          <td class="nhsuk-table__cell">375</td>
+          <td class="nhsuk-table__cell "><a href="">Download CSV</a>
+           </td>
+
+
+        </tr>
+        <tr role="row" class="nhsuk-table__row">
+         <td class="nhsuk-table__cell">Test results from Berkshire
+          <span class="nhsuk-table__cell--hint">61270	</span>
+         </td>
+          <td class="nhsuk-table__cell">88</td>
+
+            <td class="nhsuk-table__cell "><a href="">Download CSV</a>
+             </td>
+
+        <tr role="row" class="nhsuk-table__row">
+         <td class="nhsuk-table__cell">Test results from Derby
+          <span class="nhsuk-table__cell--hint">60370</span>
+         </td>
+          <td class="nhsuk-table__cell">489</td>
+          <td class="nhsuk-table__cell "><a href="">Download CSV</a>
+           </td>
+
+
+
+        <tr role="row" class="nhsuk-table__row">
+         <td class="nhsuk-table__cell">Test results from Gateshead
+          <span class="nhsuk-table__cell--hint">60080</span>
+         </td>
+          <td class="nhsuk-table__cell">222</td>
+          <td class="nhsuk-table__cell "><a href="">Download CSV</a>
+           </td>
+
+
+
+        <tr role="row" class="nhsuk-table__row">
+         <td class="nhsuk-table__cell">Test results from London
+          <span class="nhsuk-table__cell--hint">61025</span>
+         </td>
+          <td class="nhsuk-table__cell">877</td>
+          <td class="nhsuk-table__cell "><a href="">Download CSV</a>
+           </td>
+
+         </tr>
+        <tr role="row" class="nhsuk-table__row">
+         <td class="nhsuk-table__cell">Test results from Manchester
+          <span class="nhsuk-table__cell--hint">62010</span>
+         </td>
+          <td class="nhsuk-table__cell">216</td>
+          <td class="nhsuk-table__cell "><a href="/images/patients_all.csv" download>Download CSV</a>
+           </td>
+
+     </tr>
+        <tr role="row" class="nhsuk-table__row">
+         <td class="nhsuk-table__cell">Test results from Norwich
+          <span class="nhsuk-table__cell--hint">60540</span>
+         </td>
+          <td class="nhsuk-table__cell">50</td>
+          <td class="nhsuk-table__cell "><a href="">Download CSV</a>
+           </td>
+
+
+         </tr>
+        <tr role="row" class="nhsuk-table__row">
+         <td class="nhsuk-table__cell">Test results from Wolverhampton
+          <span class="nhsuk-table__cell--hint">61740</span>
+         </td>
+          <td class="nhsuk-table__cell">26</td>
+          <td class="nhsuk-table__cell "><a href="">Download CSV</a>
+           </td>
+
+   </tr>
+        <tr role="row" class="nhsuk-table__row">
+         <td class="nhsuk-table__cell">Paused results outside of national labs
+          <span class="nhsuk-table__cell--hint"></span>
+         </td>
+          <td class="nhsuk-table__cell">23</td>
+          <td class="nhsuk-table__cell "><a href="/images/manchester_paused.csv" download>Download CSV</a>
+           </td>
+
+ </tr>
+
+
+
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+
+{% endblock %}

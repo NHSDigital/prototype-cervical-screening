@@ -1,0 +1,62 @@
+{% extends "layout-v2.html" %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/js/search.js"></script>
+<script type="text/javascript" src="/js/auto.js"></script>
+<style type="text/css" media="screen">
+  .nhsuk-header__navigation-item:nth-child(5) {
+    border-bottom: 4px solid #d8dde0;
+  }
+</style>
+{% endblock %}
+{% block pageTitle %}
+NHS Cervical screening management system
+{% endblock %}
+
+{% block header %}
+{% include '../components/header.html' %}
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="nhsuk-width-container-fluid">
+      <main class="nhsuk-main-wrapper" id="maincontent" role="main">
+        <div class="nhsuk-grid-row">
+          <h1 class="nhsuk-heading-l">Admin and print</h1>
+
+          <div class="nhsuk-grid-column-one-half" style="padding-left: 0;">
+            <ul class="panel-link">
+
+
+              <li class="panel-link__item">
+                <a class="panel-link__link" href="/v12/admin/manage-sender-codes-v3/manage-sender-codes">
+                  <h2 class="panel-link__heading nhsuk-heading-s">Manage sender codes</h2>
+                </a>
+              </li>
+
+                <li class="panel-link__item">
+                  <a class="panel-link__link" href="/v12/admin/print-notifications-v3/select-gp-practice">
+                    <h2 class="panel-link__heading nhsuk-heading-s">Print notifications</h2>
+                  </a>
+                </li>
+
+                <li class="panel-link__item">
+                  <a class="panel-link__link" href="/v12/admin/smartcard/enter-smartcard-number">
+                    <h2 class="panel-link__heading nhsuk-heading-s">Smartcard user activity</h2>
+                  </a>
+                </li>
+
+          </div>
+        </div>
+      </main>
+    </div>
+
+
+
+
+    <!--<p>not mvp<a href="/v12/admin/incidents/incidents">Incidents</a></p>-->
+    <!--<p>not mvp<a href="/v12/admin/gp-letter-text/enter-gp-code">GP practice</a> / <a href="/v12/admin/gp-letter-text/enter-district-code">District Letter Text</a></p>-->
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,314 @@
+{% extends "layout-v2.html" %}
+
+{% block pageTitle %}
+NHS Cervical screening management system
+{% endblock %}
+
+{% block header %}
+{% include '../../components/header-3.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-three-quarters">
+    <div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
+      <a class="nhsuk-back-link__link" href="../../patient/patient-summary-7">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+        </svg>
+        Back to patient summary</a>
+    </div>
+
+
+
+
+
+
+
+    <div class="nhsuk-card nhsuk-card--feature">
+    <div class="nhsuk-card__content nhsuk-card__content--feature">
+
+      {% if data.role == 'csas' %}
+      <span class="nhsuk-hint nhsuk-u-margin-top-4">Step 1 of 3</span>
+      {% else %}
+      <span class="nhsuk-hint nhsuk-u-margin-top-4">Step 2 of 3</span>
+      {% endif %}
+
+          <form action="prior-notification-reinstate-crm" method="post">
+                  <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-three-quarters">
+
+                      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                        <h1 class="nhsuk-fieldset__heading">
+                          Choose details to reinstate the patient
+
+                        </h1>
+                      </legend>
+
+
+                      <fieldset class="nhsuk-fieldset">
+                        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+                          <h2 class="nhsuk-fieldset__heading">
+                            Cease details if needed
+                          </h2>
+                        </legend>
+
+                      <!-- <ul>
+                        <li>
+                          Cease date: DD Month YYYY
+                          </li>
+                          <li>
+                            Cease reason: Ceased for age
+                            </li>
+                            <li>
+                              Next test due date when ceased: DD Month YYYY
+                              </li>
+                              <li>
+                                Recall status when ceased: Invited
+                                </li>
+                        </ul> -->
+
+                        <dl class="nhsuk-summary-list">
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Cease date
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      9 October 2021
+    </dd>
+
+
+
+  </div>
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Cease reason
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      No cervix
+    </dd>
+
+
+
+  </div>
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Next test due date before ceasing
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      8 May 2023
+    </dd>
+
+
+  </div>
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Recall status before ceasing
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      GP informed via prior notification list
+    </dd>
+
+
+  </div>
+
+</dl>
+
+                        </fieldset>
+
+                         <div class="nhsuk-u-padding-bottom-5"></div>
+
+
+                         <div class="nhsuk-form-group">
+
+                           <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+                             <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+                               <h2 class="nhsuk-fieldset__heading">
+                                 Is this an incident?
+                               </h2>
+                             </legend>
+
+                             <div class="nhsuk-hint" id="example-hint">
+                             For incidents, if the next test due date is within the next 7 days the letter date will be pushed back by 1 week to allow for quality assurance check.
+                             </div>
+
+                             <div class="nhsuk-radios" name="incident-status">
+
+                               <div class="nhsuk-radios__item">
+                                 <input class="nhsuk-radios__input" id="example-1" name="incidentStatus" type="radio" value="Yes">
+                                 <label class="nhsuk-label nhsuk-radios__label"for="example-1">
+                                   Yes, this is an incident and needs 7 days for a quality assurance check
+                                 </label>
+                               </div>
+
+                               <div class="nhsuk-radios__item">
+                                 <input class="nhsuk-radios__input" id="example-2" name="incidentStatus" type="radio" value="No">
+                                 <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                                   No, this is not an incident and does not need 7 days for a quality assurance check
+                                 </label>
+                               </div>
+
+
+
+                             </div>
+                           </fieldset>
+
+                         </div>
+
+                         <div class="nhsuk-u-padding-bottom-5"></div>
+
+                        <fieldset class="nhsuk-fieldset">
+
+                          <div class="nhsuk-form-group">
+      <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+        <legend class="nhsuk-fieldset__legend nhsuk-label--m">
+          <h2 class="nhsuk-fieldset__heading">
+            Enter next test due date
+
+          </h2>
+        </legend>
+        <!-- <div class="nhsuk-hint" id="example-hint">
+          If the next test due date is on or before 22 January 2022 (in 7 days), the letter date will be pushed back by 1 week to allow for quality assurance check.
+        </div> -->
+
+        <div class="nhsuk-date-input" id="example">
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="example-day">
+                Day
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="day" name="ntdd-day" value="day" type="number" pattern="[0-9]*" inputmode="numeric">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="example-month">
+                Month
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="month" name="ntdd-month" value="month" type="number" pattern="[0-9]*" inputmode="numeric">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="example-year">
+                Year
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="year" name="ntdd-year" value="year" type="number" pattern="[0-9]*" inputmode="numeric">
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+    </div>
+                      </fieldset>
+
+                         <div class="nhsuk-u-padding-bottom-5"></div>
+
+                      <form>
+
+
+
+
+
+                       <div class="nhsuk-u-padding-bottom-5"></div>
+
+                      <div class="nhsuk-form-group">
+
+  <fieldset class="nhsuk-fieldset">
+    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+      <h2 class="nhsuk-fieldset__heading">
+        Select a recall status
+
+      </h2>
+    </legend>
+
+    <div class="nhsuk-radios">
+
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="example-1" name="recallStatus" type="radio" value="not-yet-due">
+        <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+          Not yet due
+        </label>
+      </div>
+
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="example-1b" name="recallStatus" type="radio" value="non-repsonder-overdue">
+        <label class="nhsuk-label nhsuk-radios__label" for="example-1b">
+          Non-responder overdue
+        </label>
+      </div>
+
+    <div class="nhsuk-radios__item">
+      <input class="nhsuk-radios__input" id="example-2" name="recallStatus2" type="radio" value="Prior notification list (PNL)">
+      <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+        Prior notification list (PNL)
+      </label>
+    </div>
+
+    <div class="nhsuk-radios__item">
+      <input class="nhsuk-radios__input" id="example-2" name="recallStatus2" type="radio" value="Invited">
+      <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+        Invited
+      </label>
+    </div>
+
+    <div class="nhsuk-radios__item">
+      <input class="nhsuk-radios__input" id="example-2" name="recallStatus2" type="radio" value="Reminded">
+      <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+        Reminded
+      </label>
+    </div>
+
+    <div class="nhsuk-radios__item">
+      <input class="nhsuk-radios__input" id="example-2" name="recallStatus2" type="radio" value="Non responder list (NRL)">
+      <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+        Non responder list (NRL)
+      </label>
+    </div>
+
+    <!-- <div class="nhsuk-radios__item">
+      <input class="nhsuk-radios__input" id="example-2" name="recallStatus2" type="radio" value="Ceased">
+      <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+        Ceased
+      </label>
+    </div> -->
+
+    </div>
+    </fieldset>
+
+</div>
+
+                    </div>
+                  </div>
+
+                </br>
+                  <button class="nhsuk-button nhsuk-button--ers">Continue</button>
+
+                  <p><a href="../../patient/patient-summary-7">Exit without saving</a></p>
+
+                </form>
+
+    </div>
+
+
+
+
+
+  </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+<footer role="contentinfo">
+  <div class="nhsuk-footer" id="nhsuk-footer">
+    <div class="nhsuk-width-container nhsuk-width-container-fluid">
+      <p class="nhsuk-footer__copyright">&copy; Crown copyright</p>
+      <p><a href="/v12/reset-patient-data-12">Reset patient data</a></p>
+    </div>
+  </div>
+</footer>
+{% endblock %}

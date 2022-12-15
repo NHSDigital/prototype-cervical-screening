@@ -1,0 +1,293 @@
+{% extends "layout-v2.html" %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/js/search.js"></script>
+<script type="text/javascript" src="/js/auto.js"></script>
+<style type="text/css" media="screen">
+  .nhsuk-header__navigation-item:nth-child(4) {
+    border-bottom: 4px solid #d8dde0;
+  }
+</style>
+{% endblock %}
+{% block pageTitle %}
+NHS Cervical screening management system
+{% endblock %}
+
+{% block header %}
+{% include '../components/header.html' %}
+{% endblock %}
+
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-three-quarters">
+
+    {{ backLink({
+      "href": "/v12/reports/reports",
+      "text": "Go back to reports"
+    }) }}
+
+
+      <h1 class="nhsuk-heading-l">
+        <span class="nhsuk-caption-m">
+          Demographic changes report
+                 <span class="nhsuk-u-visually-hidden"> - </span>
+               </span>View reports</h1>
+
+      <!--<div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-one-third">
+          {{ dateInput({
+            "id": "example",
+            "namePrefix": "example",
+            "fieldset": {
+              "legend": {
+                "text": "Enter a date",
+                "classes": "nhsuk-label--s",
+                "isPageHeading": false
+              }
+            },
+            "hint": {
+              "text": "For example, 15 3 1984"
+            },
+            "items": [
+              {
+                "name": "day",
+                "classes": "nhsuk-input--width-2"
+              },
+              {
+                "name": "month",
+                "classes": "nhsuk-input--width-2"
+              },
+              {
+                "name": "year",
+                "classes": "nhsuk-input--width-4"
+              }
+            ]
+          }) }}
+        </div>
+      </div>-->
+
+ <div class="nhsuk-form-group">
+
+
+    <details class="nhsuk-details" open>
+      <summary class="nhsuk-details__summary">
+        <span class="nhsuk-details__summary-text">
+          Refine by demographic and date
+        </span>
+      </summary>
+
+<form action="/v12/reports/report-demographic" method="post">
+
+      <div class="nhsuk-details__text">
+
+     <label class="nhsuk-label nhsuk-label__strong">
+                 Which demographic changes would you like to see?
+               </label>
+         <div class="nhsuk-hint" id="example-hint">
+      Select all options that are relevant to you:
+    </div>
+
+    <div class="nhsuk-checkboxes">
+
+      <div class="nhsuk-checkboxes__item">
+        <input class="nhsuk-checkboxes__input" id="changeSee" name="changeSee" type="checkbox" value="genderChange" checked>
+        <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+          Gender changes
+        </label>
+      </div>
+
+      <div class="nhsuk-checkboxes__item">
+        <input class="nhsuk-checkboxes__input" id="changeSee" name="changeSee" type="checkbox" value="dobChange">
+        <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
+          Date of birth changes
+        </label>
+      </div>
+
+      <div class="nhsuk-checkboxes__item">
+        <input class="nhsuk-checkboxes__input" id="changeSee" name="changeSee" type="checkbox" value="ceasedAgeChange">
+        <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
+        Incorrectly ceased due to age (due to age change)
+        </label>
+      </div>
+
+      <div class="nhsuk-checkboxes__item">
+        <input class="nhsuk-checkboxes__input" id="changeSee" name="changeSee" type="checkbox" value="nhsNumberChange">
+        <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
+          NHS number changes
+        </label>
+      </div>
+      <br>
+
+          <label class="nhsuk-label nhsuk-label__strong">
+                      Which date range would you like to see?
+                    </label>
+        <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-one-third">
+
+
+          {{ dateInput({
+            "id": "example",
+            "namePrefix": "example",
+            "fieldset": {
+              "legend": {
+                "text": "Enter a date from:",
+                "classes": "nhsuk-label--s nhsuk-u-margin-bottom-1",
+                "isPageHeading": false
+              }
+            },
+            "hint": {
+              "text": "For example, 31 3 1980"
+            },
+            "items": [
+              {
+                "name": "month",
+                "classes": "nhsuk-input--width-2",
+                "value": "09"
+              },
+              {
+                "name": "year",
+                "classes": "nhsuk-input--width-4",
+                "value": "2021"
+              }
+            ]
+          }) }}
+        </div>
+        <div class="nhsuk-grid-column-one-third">
+          {{ dateInput({
+            "id": "example",
+            "namePrefix": "example",
+            "fieldset": {
+              "legend": {
+                "text": "Enter a date to:",
+                "classes": "nhsuk-label--s nhsuk-u-margin-bottom-1",
+                "isPageHeading": false
+              }
+            },
+            "hint": {
+              "text": "Leave blank if 1 month"
+            },
+            "items": [
+              {
+                "name": "month",
+                "classes": "nhsuk-input--width-2",
+                "value": "12"
+              },
+              {
+                "name": "year",
+                "classes": "nhsuk-input--width-4",
+                "value": "2021"
+              }
+            ]
+          }) }}
+        </div>
+      </div>
+      <br>
+
+      <!--<label class="nhsuk-label nhsuk-label__strong">
+                 Which download status type would you like to see?
+               </label>
+    </legend>
+
+    <div class="nhsuk-hint" id="example-hint">
+      Select all options that are relevant to you:
+    </div>
+
+  <div class="nhsuk-radios">
+
+      <div class="nhsuk-checkboxes__item">
+        <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="radio" value="email">
+        <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+          Downloaded
+        </label>
+      </div>
+
+      <div class="nhsuk-checkboxes__item">
+        <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox" value="phone">
+        <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
+          Not downloaded
+        </label>
+      </div>-->
+
+
+    </div>
+    <br>
+
+
+
+      {{ button({
+            "text": "Search",
+            "classes": "nhsuk-button nhsuk-button--ers"
+          }) }}
+        </form>
+      </div>
+    </details>
+
+
+
+   <h2 class="nhsuk-heading-m">Showing reports from Sept-2021 and Dec-2021</h2>
+
+    <table class="nhsuk-table">
+      <caption class="nhsuk-table__caption">10 Sep 2021 - Files sent to CIC</caption>
+      <thead role="rowgroup" class="nhsuk-table__head">
+        <tr role="row">
+          <th role="columnheader" class="" scope="col">
+           Date
+          </th>
+          <th role="columnheader" class="" scope="col">
+            Demographic change type
+          </th>
+          <th role="columnheader" class="" scope="col">
+            Downloaded by and date
+          </th>
+          <th role="columnheader" class="" scope="col">
+            View and download
+          </th>
+        </tr>
+      </thead>
+      <tbody class="nhsuk-table__body">
+        <tr role="row" class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">Dec-2021</td>
+          <td class="nhsuk-table__cell ">Gender change</a></td>
+          <td class="nhsuk-table__cell">Not yet downloaded</td>
+          <td class="nhsuk-table__cell"><a href="preview-gender-change-report">View report</a><br>
+          <a href="preview-gender-change-report">Download CSV</a></td>
+
+
+
+        </tr>
+
+             <tr role="row" class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">Dec-2021</td>
+          <td class="nhsuk-table__cell ">Gender change</a></td>
+          <td class="nhsuk-table__cell">J Smith<span class="nhsuk-table__cell--hint">10-Dec-2021</span></td>
+           <td class="nhsuk-table__cell"><a href="preview-dob-change-report">View report</a><br>
+          <a href="preview-gender-change-report">Download CSV</a></td>
+
+        </tr>
+
+             <tr role="row" class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">Dec-2021</td>
+          <td class="nhsuk-table__cell ">Gender change</a></td>
+          <td class="nhsuk-table__cell">J Smith<span class="nhsuk-table__cell--hint">10-Dec-2021</span></td>
+            <td class="nhsuk-table__cell"><a href="preview-age-change-report">View report</a><br>
+          <a href="preview-gender-change-report">Download CSV</a></td>
+
+        </tr>
+
+
+                <tr role="row" class="nhsuk-table__row">
+             <td class="nhsuk-table__cell">Dec-2021</td>
+             <td class="nhsuk-table__cell ">Gender change</a></td>
+             <td class="nhsuk-table__cell">J Smith<span class="nhsuk-table__cell--hint">10-Dec-2021</span></td>
+              <td class="nhsuk-table__cell"><a href="preview-nhsno-change-report">View report</a><br>
+             <a href="preview-gender-change-report">Download CSV</a></td>
+
+
+           </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

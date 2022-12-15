@@ -1,0 +1,170 @@
+{% extends "layout-v2.html" %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/js/search.js"></script>
+<script type="text/javascript" src="/js/auto.js"></script>
+<style type="text/css" media="screen">
+  .nhsuk-header__navigation-item:nth-child(4) {
+    border-bottom: 4px solid #d8dde0;
+  }
+</style>
+{% endblock %}
+{% block pageTitle %}
+NHS Cervical screening management system
+{% endblock %}
+
+{% block header %}
+{% include '../../components/header.html' %}
+{% endblock %}
+
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  {{ backLink({
+    "href": "/v12/reports/reports",
+    "text": "Go back to reports"
+  }) }}
+
+    <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading">
+          <span class="nhsuk-caption-m">
+            Lab files received report
+               <span class="nhsuk-u-visually-hidden"> - </span>
+             </span>
+       Report for Manchester (62010) on 13-Jan-2022
+        </h1>
+      </legend>
+
+
+
+
+ <br>
+
+
+<div class="nhsuk-grid-row ">
+
+
+
+  <div class="nhsuk-grid-column-full">
+    <table class="nhsuk-table">
+      <caption class="nhsuk-table__caption">
+      </caption>
+      <thead role="rowgroup" class="nhsuk-table__head">
+        <tr role="row">
+         <th role="columnheader" scope="col" width="200">
+            Area and code
+          </th>
+          <th role="columnheader" scope="col" width="200">
+            Lab and national code
+          </th>
+          <th role="columnheader" scope="col" width="180">
+            File name
+          </th>
+          <th role="columnheader" scope="col" width="200">
+            Date and time received
+          </th>
+          <th role="columnheader" scope="col" width="200">
+          Number of results received
+          </th>
+          <th role="columnheader" scope="col" width="200">
+            Date range of results
+            </th>
+           <th role="columnheader" scope="col" width="280">
+           Action
+          </th>
+        </tr>
+      </thead>
+
+      <tbody class="nhsuk-table__body">
+        <tr role="row" class="nhsuk-table__row">
+        <td class="nhsuk-table__cell">Salford
+          <span class="nhsuk-table__cell--hint">SAL</span>
+        </td>
+        <td class="nhsuk-table__cell">Manchester
+          <span class="nhsuk-table__cell--hint">62010</span>
+        </td>
+          <td class="nhsuk-table__cell">File 1</td>
+          <td class="nhsuk-table__cell ">13-Jan-2022
+           <span class="nhsuk-table__cell--hint">11:30:10</span></td>
+          <td class="nhsuk-table__cell ">8000</td>
+          <td class="nhsuk-table__cell ">13-Jan-2022 to 14-Jan-2022</td>
+
+        <td class="nhsuk-table__cell"><a class= "nhsuk-button nhsuk-button--ers" href="preview-summary-csv">View file summary</a></td>
+        </tr>
+        <tr role="row" class="nhsuk-table__row">
+         <td class="nhsuk-table__cell">Liverpool
+          <span class="nhsuk-table__cell--hint">LIV</span>
+         </td>
+         <td class="nhsuk-table__cell">Manchester
+          <span class="nhsuk-table__cell--hint">62010</span>
+        </td>
+          <td class="nhsuk-table__cell">File 1</td>
+          <td class="nhsuk-table__cell ">13-Jan-2022
+          <span class="nhsuk-table__cell--hint">11:30:10</span></td>
+          <td class="nhsuk-table__cell ">1200</td>
+          <td class="nhsuk-table__cell ">12-Jan-2022 to 14-Jan-2022</td>
+
+        <td class="nhsuk-table__cell"><a class= "nhsuk-button nhsuk-button--ers" href="preview-summary-csv">View file summary</a></td>
+
+        </tr>
+        <tr role="row" class="nhsuk-table__row">
+         <td class="nhsuk-table__cell">Bradford
+          <span class="nhsuk-table__cell--hint">BFD</span>
+         </td>
+         <td class="nhsuk-table__cell">Manchester
+          <span class="nhsuk-table__cell--hint">62010</span>
+        </td>
+          <td class="nhsuk-table__cell">File 1</td>
+          <td class="nhsuk-table__cell ">13-Jan-2022
+           <span class="nhsuk-table__cell--hint">11:30:10</span></td>
+          <td class="nhsuk-table__cell ">890</td>
+          <td class="nhsuk-table__cell ">13-Jan-2022 to 14-Jan-2022</td>
+
+                  <td class="nhsuk-table__cell"><a class= "nhsuk-button nhsuk-button--ers" href="preview-summary-csv">View file summary</a></td>
+
+
+        <tr role="row" class="nhsuk-table__row">
+         <td class="nhsuk-table__cell">Leeds
+          <span class="nhsuk-table__cell--hint">LDS</span>
+         </td>
+         <td class="nhsuk-table__cell">Manchester
+          <span class="nhsuk-table__cell--hint">62010</span>
+        </td>
+          <td class="nhsuk-table__cell">File 2</td>
+          <td class="nhsuk-table__cell ">13-Jan-2022
+           <span class="nhsuk-table__cell--hint">11:30:10</span></td>
+          <td class="nhsuk-table__cell ">70</td>
+          <td class="nhsuk-table__cell ">13-Jan-2022 to 14-Jan-2022</td>
+
+                <td class="nhsuk-table__cell"><a class= "nhsuk-button nhsuk-button--ers" href="preview-summary-csv">View file summary</a></td>
+
+
+        <tr role="row" class="nhsuk-table__row">
+         <td class="nhsuk-table__cell">Greater Manchester
+          <span class="nhsuk-table__cell--hint">GRT</span>
+         </td>
+         <td class="nhsuk-table__cell">Manchester
+          <span class="nhsuk-table__cell--hint">62010</span>
+        </td>
+          <td class="nhsuk-table__cell">File 3</td>
+          <td class="nhsuk-table__cell ">13-Jan-2022
+           <span class="nhsuk-table__cell--hint">11:30:10</span></td>
+          <td class="nhsuk-table__cell ">543</td>
+          <td class="nhsuk-table__cell ">13-Jan-2022 to 14-Jan-2022</td>
+
+                 <td class="nhsuk-table__cell"><a class= "nhsuk-button nhsuk-button--ers" href="preview-summary-csv">View file summary</a></td>
+
+
+
+
+
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+
+{% endblock %}

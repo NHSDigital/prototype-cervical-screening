@@ -254,11 +254,11 @@ invited
         </dt>
         <dd class="nhsuk-summary-list__value">
           {% if data.patientSummary.pnl_action == 'Ceased' %}
-          <strong>Ceased</strong>
+          <strong>Ceased -</strong>
           {% else %}
         {{  data['recallStatus2'] or '' }}
           {% endif %}
-           - 12 April 2020
+           12 April 2020
         </dd>
         <dd class="nhsuk-summary-list__actions no-print">
           {% if data.role == 'csas' %}

@@ -1,15 +1,16 @@
-  <h1 class="nhsuk-heading-l">Do you wish to defer this patient?</h1>
-  <div class="nhsuk-inset-text">
+  <h1 class="nhsuk-heading-l">Multiple deferrals identified, do you wish to continue?</h1>
+  <!-- <div class="nhsuk-inset-text">
   <span class="nhsuk-u-visually-hidden">Information: </span>
   <p>The patient has been deferred 2 times in a row.</p>
-</div>
+</div> -->
+  <p>The patient has been deferred 2 times in a row.</p>
 
 <p>We need to make sure that the patient is being correctly invited for screening and all attempts to screen the patient have been made.</p>
 
   {{ details({
   "text": "Why am I seeing this?",
   "HTML": "
- 
+
   <p>It is acceptable for subsequent deferrals to be created, but any multiple deferrals must be identified and reported to the SIT to be audited, and for them to take action by contacting GP practices directly.</p>
   "
 }) }}
@@ -20,10 +21,10 @@
       event.preventDefault();
       const value = document.querySelector('input[name="patientDefer"]:checked')?.value;
       if (value==="No") {
-        document.location= '/v12/prior-notification/prior-notification-12-defer-reason';
+        document.location= '/v12/patient/patient-summary-7';
         return;
       }
-      document.location='/v12/prior-notification/prior-notification-12-defer-length';
+      document.location='/v12/prior-notification/prior-notification-12-defer-reason';
 
   }
 </script>
@@ -49,7 +50,7 @@
         <div class="nhsuk-radios__item">
         <input class="nhsuk-radios__input" id="example-2" name="patientDefer" type="radio" value="No">
         <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-          No, go back to the previous page
+          No, go back to notifications page
         </label>
         </div>
 
@@ -63,6 +64,6 @@
           <button class="nhsuk-button nhsuk-button--ers" type="submit">
             Continue
           </button>
-        
-   
+
+
   </form>

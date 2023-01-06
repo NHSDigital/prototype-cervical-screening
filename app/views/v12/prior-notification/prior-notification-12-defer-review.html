@@ -20,7 +20,7 @@
         {% if data.role == 'csas' %}
           Back to step 2 - Enter a CRM case number</a>
         {% else %}
-          Back to step 1 - How long do you want to {{ "delay" if (data.role == 'csas' and data.patversion == '2') else "defer" }} the patient for?</a>
+          Back to step 2 - How long do you want to {{ "delay" if (data.role == 'csas' and data.patversion == '2') else "defer" }} the patient for?</a>
         {% endif %}
     </div>
 

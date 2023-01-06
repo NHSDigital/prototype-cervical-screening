@@ -1,7 +1,7 @@
 {% if data.pnl_patient.nhs_number == "9100001287" %}
   <form action="/v12/prior-notification/bypass-pnl/prior-notification-amend" method="get">
 {% else %}
-  <form action="prior-notification-12-defer-confirm" method="get">
+  <form action="prior-notification-12-defer-length" method="get">
 {% endif %}
 {% if data.role != 'csas' %}
 <details class="nhsuk-details">
@@ -37,34 +37,34 @@
         </label>
       </div>
       <div class="nhsuk-radios__item">
-        <input class="nhsuk-radios__input" id="example-2" name="pnl-defer-reason" type="radio" value="Under care of colposcopy">
-        <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+        <input class="nhsuk-radios__input" id="example-3" name="pnl-defer-reason" type="radio" value="Under care of colposcopy">
+        <label class="nhsuk-label nhsuk-radios__label" for="example-3">
         Under care of colposcopy
         </label>
       </div>
       <div class="nhsuk-radios__item">
-        <input class="nhsuk-radios__input" id="example-2" name="pnl-defer-reason" type="radio" value="Undergoing treatment relevant to screening">
-        <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+        <input class="nhsuk-radios__input" id="example-4" name="pnl-defer-reason" type="radio" value="Undergoing treatment relevant to screening">
+        <label class="nhsuk-label nhsuk-radios__label" for="example-4">
         Undergoing treatment relevant to screening
         </label>
       </div>
       <div class="nhsuk-radios__item">
-        <input class="nhsuk-radios__input" id="example-2" name="pnl-defer-reason" type="radio" value="Discharge from colposcopy">
-        <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+        <input class="nhsuk-radios__input" id="example-5" name="pnl-defer-reason" type="radio" value="Discharge from colposcopy">
+        <label class="nhsuk-label nhsuk-radios__label" for="example-5">
         Discharge from colposcopy
         </label>
       </div>
       {% if data.role == 'csas' %}
         <div class="nhsuk-radios__item">
-          <input class="nhsuk-radios__input" id="example-2" name="pnl-defer-reason" type="radio" value="Patient wishes to defer">
-          <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+          <input class="nhsuk-radios__input" id="example-6" name="pnl-defer-reason" type="radio" value="Patient wishes to defer">
+          <label class="nhsuk-label nhsuk-radios__label" for="example-6">
           Patient wishes to defer
           </label>
         </div>
 
         <div class="nhsuk-radios__item">
-          <input class="nhsuk-radios__input" id="example-2" name="pnl-defer-reason" type="radio" value="Administrative">
-          <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+          <input class="nhsuk-radios__input" id="example-7" name="pnl-defer-reason" type="radio" value="Administrative">
+          <label class="nhsuk-label nhsuk-radios__label" for="example-7">
             Administrative
           </label>
         </div>

@@ -15,7 +15,7 @@
 
   {% if (data['pnl-defer-reason'] == "Pregnancy") and data['edd-year'] != '' %}
     {% set estimatedDateOfDelivery = data['edd-year'] + "-" + data['edd-month'] + "-" + data['edd-day'] %}
-    
+
     <div class="nhsuk-summary-list__row">
       <dt class="nhsuk-summary-list__key">
         Estimated date of delivery
@@ -40,8 +40,5 @@
   {% endif %}
 </dl>
 
-<a href="/v12/prior-notification/prior-notification-deferred-{{ data.pnlversion }}" class="nhsuk-button nhsuk-button--ers">Submit</a>
+<a href="/v12/prior-notification/prior-notification-12" class="nhsuk-button nhsuk-button--ers">Submit</a>
 <p><a href="">Exit without saving</a></p>
- 
-
-

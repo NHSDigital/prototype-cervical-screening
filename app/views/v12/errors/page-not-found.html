@@ -1,0 +1,42 @@
+{% extends "layout-v2.html" %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/js/search.js"></script>
+<script type="text/javascript" src="/js/auto.js"></script>
+<style type="text/css" media="screen">
+  .nhsuk-header__navigation-item:nth-child(4) {
+    border-bottom: 4px solid #d8dde0;
+  }
+</style>
+{% endblock %}
+{% block pageTitle %}
+NHS Cervical screening management system
+{% endblock %}
+
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+
+    <h1 class="nhsuk-heading-l">We cannot find that page</h1>
+
+    <p>This can happen if:</p>
+    <ul>
+      <li>You type a web address and it has a mistake in it</li>
+      <li>You copy and paste only part of a full web address</li>
+      <li>There is a tchnical problem</li>
+    </ul>
+
+    <p>Check and make sure the web address you typed or copied is correct.</p>
+    <p>If the web address is correct or you clicked on a link then there might be a technical problem. Please try again later.</p>
+
+    <a class="nhsuk-button" data-module="nhsuk-button" data-prevent-double-click="true" type="submit" href="/v12/reports/reports">
+      Back to reports
+    </a>
+
+
+</div>
+
+
+{% endblock %}

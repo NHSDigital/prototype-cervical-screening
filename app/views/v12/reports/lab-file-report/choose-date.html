@@ -23,8 +23,8 @@ NHS Cervical screening management system
   <div class="nhsuk-grid-column-two-thirds">
 
     {{ backLink({
-      "href": "/v12/reports/reports",
-      "text": "Go back to reports"
+      "href": "/v12/reports/lab-file-report/filter-reports",
+      "text": "Go back to choose which area or lab to filter by"
     }) }}
 
     <form action="/v12/reports/lab-file-report/report-lab-files-matched" method="post">
@@ -45,8 +45,8 @@ NHS Cervical screening management system
        <div class="nhsuk-radios">
 
          <div class="nhsuk-radios__item">
-           <input class="nhsuk-radios__input" id="chooseCCG" name="chooseCCG" type="radio" value="allCCGs">
-           <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+           <input class="nhsuk-radios__input" id="rep2" name="reportType" type="radio" value="allCCGs">
+           <label class="nhsuk-label nhsuk-radios__label" for="rep2">
              View reports for today (13 January 2022)
            </label>
          </div>
@@ -54,8 +54,8 @@ NHS Cervical screening management system
          <div class="nhsuk-radios nhsuk-radios--conditional">
 
           <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="reportType" name="reportType" type="radio" value="range" aria-controls="conditional-contact-1" aria-expanded="false">
-            <label class="nhsuk-label nhsuk-radios__label" for="contact-1">
+            <input class="nhsuk-radios__input" id="rep1" name="reportType" type="radio" value="range" aria-controls="conditional-contact-1" aria-expanded="false">
+            <label class="nhsuk-label nhsuk-radios__label" for="rep1">
             View reports for another date or date range
             </label>
           </div>

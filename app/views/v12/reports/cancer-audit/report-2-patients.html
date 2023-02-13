@@ -44,15 +44,18 @@ NHS Cervical screening management system
         <th role="columnheader" class="" scope="col" style="width: 20%;">
           NHS number
         </th>
-        <th role="columnheader" class="" scope="col" style="width: 15%;">
+        <th role="columnheader" class="" scope="col" style="width: 20%;">
           Name
         </th>
-        <th role="columnheader" class="" scope="col"style="width: 22%;">
+        <th role="columnheader" class="" scope="col"style="width: 23%;">
           Date of Diagnosis
         </th>
         <th role="columnheader" class="" scope="col" style="width: 20%;">
           Case Number
         </th>
+        <th role="columnheader" class="" scope="col" style="width: 17%;">
+        </th>
+
       </tr>
     </thead>
     <tbody class="nhsuk-table__body">
@@ -61,14 +64,14 @@ NHS Cervical screening management system
         <td class="nhsuk-table__cell ">Kristin Shulze</td>
         <td class="nhsuk-table__cell">{{ data['date-day'] }}-{{ data['date-month'] }}-{{ data['date-year'] }}</td>
         <td class="nhsuk-table__cell">123456/2021/1</td>
-
+        <td class="nhsuk-table__cell"><a href="report">Remove</a></td>
       </tr>
       <tr role="row" class="nhsuk-table__row">
         <td class="nhsuk-table__cell">{{ data['nhs-num2'] }}</td>
         <td class="nhsuk-table__cell ">Alma Akbar</td>
         <td class="nhsuk-table__cell">{{ data['date-day2'] }}-{{ data['date-month2'] }}-{{ data['date-year2'] }}</td>
         <td class="nhsuk-table__cell">454789/2021/1</td>
-
+        <td class="nhsuk-table__cell"><a href="report">Remove</a></td>
       </tr>
 
     </tbody>

@@ -28,6 +28,13 @@
     Go back to Lab files received</a>
 </div>
 
+{% from 'error-summary/macro.njk' import errorSummary %}
+
+    {{ errorSummary({
+      "titleText": "There is a problem",
+      "descriptionText": "We were unable to download the outstanding validation failures Excel. Please try again later."
+    }) }}
+
 
   <h1 id="" class="nhsuk-heading-l">Summary for File1_Salf received on 13-Jan-2022</h1>
 

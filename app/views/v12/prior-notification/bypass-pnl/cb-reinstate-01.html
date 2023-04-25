@@ -1,0 +1,123 @@
+{% extends "layout-v2.html" %}
+
+{% block pageTitle %}
+NHS Cervical screening management system
+{% endblock %}
+
+{% block header %}
+{% include '../../components/header-3.html' %}
+{% endblock %}
+
+{% block content %}
+
+
+
+
+
+    
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-three-quarters">
+    <div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
+      <a class="nhsuk-back-link__link" href="../../patient/patient-summary-7">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+        </svg>
+        Back to patient summary</a>
+    </div>
+
+
+
+
+
+
+
+    <div class="nhsuk-card nhsuk-card--feature">
+    <div class="nhsuk-card__content nhsuk-card__content--feature">
+        
+
+  
+  
+
+
+
+  <h3 class="nhsuk-card__heading nhsuk-card__heading--feature nhsuk-heading-m">Judith Cunningham
+  <span style= color:white; class="nhsuk-table__cell--hint">NHS No: 9100001694</span></h3>
+        
+
+  <!-- <h3 class="nhsuk-card__heading nhsuk-card__heading--feature nhsuk-heading-m">Ella Depetris
+  <span style= color:white; class="nhsuk-table__cell--hint">NHS No: 999 102 3867</span></h3> -->
+
+
+<!--
+  <tr id="detailsRow4" class="detailsRow">
+           <td colspan="3">-->
+            <div class="nhsuk-grid-row">
+              <div class="nhsuk-grid-column-full">
+
+ <!--<dl class="nhsuk-summary-list nhsuk-u-margin-bottom-2">
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">Next test due date</dt>
+    <dd class="nhsuk-summary-list__value">18-Jun-2023 (in 7 weeks)</dd>
+  </div>
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">Last test date</dt>
+    <dd class="nhsuk-summary-list__value">23-Apr-2023 (0 days ago)</dd>
+  </div>
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">Last test</dt>
+    <dd class="nhsuk-summary-list__value">
+          
+            (X0R) Negative, HPV negative, Routine, Repeat in 36 months
+          
+
+    </dd>
+  </div>
+</dl>-->
+
+
+
+      
+      <span class="nhsuk-hint nhsuk-u-margin-top-4">Step 1</span>
+      
+
+          <form action="prior-notification-reinstate-crm" method="post">
+                  <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-three-quarters">
+
+                      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                        <h1 class="nhsuk-fieldset__heading">
+                          Reinstate the patient
+
+                        </h1>
+                      </legend>
+
+
+                      <p>The next test due date has been calculated to <b>1-Sep-2022 (in 10 weeks)</b></p>
+                      <p>The recall status will be set to <b>Repeat Advised</b>.</p>
+                      <p>The patient will be added to the <b>Patient due to be invited</b> list tomorrow</p>
+
+                    </div>
+                  </div>
+
+                </br>
+                  <a href="cb-reinstate-02" class="nhsuk-button nhsuk-button--ers">Continue</a>
+
+                  <p><a href="../../patient/patient-summary-7">Exit without saving</a></p>
+
+                </form>
+
+    </div>
+
+
+
+
+
+  </div>
+</div>
+
+  </main>
+</div>
+
+
+
+{% endblock %}

@@ -465,6 +465,26 @@ router.get("/*/patient/patient-reinstated*", function (req, res) {
 })
 //patient - reinstated
 
+//cb added route
+// Branching example
+router.post('/v12/prior-notification/prior-notification-12-defer-reason', function (req, res) {
+
+  // Make a variable and give it the value from 'know-nhs-number'
+  var nhsNumber = req.session.data['know-route']
+
+  // Check whether the variable matches a condition
+  if (nhsNumber == "Yes"){
+    // Send user to next page
+    res.redirect('/v12/prior-notification/bypass-pnl/prior-notification-amend')
+  }
+  else {
+    // Send user to ineligible page
+    res.redirect('/v12/prior-notification/prior-notification-12-defer-length')
+  }
+
+})
+//end cb added
+
 module.exports = router;
 
 router.get('/*/prior-notification/delete-email', function (req, res) {

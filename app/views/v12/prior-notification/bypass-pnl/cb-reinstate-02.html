@@ -18,7 +18,7 @@ NHS Cervical screening management system
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-three-quarters">
     <div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
-      <a class="nhsuk-back-link__link" href="../../patient/patient-summary-7">
+      <a class="nhsuk-back-link__link" href="../../patient/patient-summary-8">
         <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
         </svg>
@@ -80,7 +80,7 @@ NHS Cervical screening management system
       <span class="nhsuk-hint nhsuk-u-margin-top-4">Step 2</span>
       
 
-          <form action="cb-reinstate-03" method="post">
+          <form action="/v12/prior-notification/bypass-pnl/cb-reinstate-02" method="post">
                   <div class="nhsuk-grid-row">
                     <div class="nhsuk-grid-column-three-quarters">
 
@@ -254,8 +254,6 @@ NHS Cervical screening management system
 
                          <div class="nhsuk-u-padding-bottom-5"></div>
 
-                      <form>
-
 
 
 
@@ -264,74 +262,53 @@ NHS Cervical screening management system
 
                       <div class="nhsuk-form-group">
 
-  <fieldset class="nhsuk-fieldset">
-    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
-      <h2 class="nhsuk-fieldset__heading">
-        Select a recall status
+  
 
-      </h2>
-    </legend>
+    {% call fieldset({
+          legend: {
+            text: "Select a recall status",
+            classes: "nhsuk-fieldset__legend--m",
+            isPageHeading: false
+          }
+        }) %}
 
-    <div class="nhsuk-radios" name="recallStatus">
+        {{ radios({
+          "idPrefix": "know-reason",
+          "name": "know-reason",
+          "items": [
+            {
+              "value": "not-due",
+              "text": "Not yet due"
+            },
+            {
+              "value": "non-responder",
+              "text": "Non responder"
+            },
+            {
+              "value": "pnl",
+              "text": "Prior notification list (PNL)"
+            },
+            {
+              "value": "invited",
+              "text": "Invited"
+            },
+            {
+              "value": "reminded",
+              "text": "Reminded"
+            },
+            {
+              "value": "nrl",
+              "text": "Non responder list (NRL)"
+            },
+            {
+              "value": "Yes",
+              "text": "Deferral"
+            }
 
-      <div class="nhsuk-radios__item">
-        <input class="nhsuk-radios__input" id="example-3" name="recallStatus" type="radio" value="Not yet due">
-        <label class="nhsuk-label nhsuk-radios__label" for="example-3">
-          Not yet due
-        </label>
-      </div>
+          ]
+        }) }}
 
-      <div class="nhsuk-radios__item">
-        <input class="nhsuk-radios__input" id="example-4" name="recallStatus" type="radio" value="Non responder">
-        <label class="nhsuk-label nhsuk-radios__label" for="example-4">
-          Non-responder
-        </label>
-      </div>
-
-    <div class="nhsuk-radios__item">
-      <input class="nhsuk-radios__input" id="example-5" name="recallStatus" type="radio" value="Prior notification list (PNL)">
-      <label class="nhsuk-label nhsuk-radios__label" for="example-5">
-        Prior notification list (PNL)
-      </label>
-    </div>
-
-    <div class="nhsuk-radios__item">
-      <input class="nhsuk-radios__input" id="example-6" name="recallStatus" type="radio" value="Invited">
-      <label class="nhsuk-label nhsuk-radios__label" for="example-6">
-        Invited
-      </label>
-    </div>
-
-    <div class="nhsuk-radios__item">
-      <input class="nhsuk-radios__input" id="example-7" name="recallStatus" type="radio" value="Reminded">
-      <label class="nhsuk-label nhsuk-radios__label" for="example-7">
-        Reminded
-      </label>
-    </div>
-
-    <div class="nhsuk-radios__item">
-      <input class="nhsuk-radios__input" id="example-8" name="recallStatus" type="radio" value="Non responder list (NRL)">
-      <label class="nhsuk-label nhsuk-radios__label" for="example-8">
-        Non responder list (NRL)
-      </label>
-    </div>
-
-    <div class="nhsuk-radios__item">
-      <input class="nhsuk-radios__input" id="example-9" name="recallStatus" type="radio" value="Deferral">
-      <label class="nhsuk-label nhsuk-radios__label" for="example-9">
-        Deferral
-      </label>
-    </div>
-
-    <!-- <div class="nhsuk-radios__item">
-      <input class="nhsuk-radios__input" id="example-2" name="recallStatus2" type="radio" value="Ceased">
-      <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-        Ceased
-      </label>
-    </div> -->
-
-    </div>
-    </fieldset>
+        {% endcall %}
 
 </div>
 

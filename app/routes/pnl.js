@@ -483,6 +483,23 @@ router.post('/v12/prior-notification/prior-notification-12-defer-reason', functi
   }
 
 })
+
+router.post('/v12/prior-notification/bypass-pnl/cb-reinstate-02', function (req, res) {
+
+  // Make a variable and give it the value from 'know-nhs-number'
+  var nhsNumber = req.session.data['know-reason']
+
+  // Check whether the variable matches a condition
+  if (nhsNumber == "Yes"){
+    // Send user to next page
+    res.redirect('/v12/prior-notification/bypass-pnl/cb-reinstate-recall-reason')
+  }
+  else {
+    // Send user to ineligible page
+    res.redirect('/v12/prior-notification/bypass-pnl/cb-reinstate-03')
+  }
+
+})
 //end cb added
 
 module.exports = router;

@@ -1,0 +1,92 @@
+{% extends "layout-v2.html" %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/js/search.js"></script>
+<script type="text/javascript" src="/js/auto.js"></script>
+<style type="text/css" media="screen">
+  .nhsuk-header__navigation-item:nth-child(4) {
+    border-bottom: 4px solid #d8dde0;
+  }
+</style>
+{% endblock %}
+{% block pageTitle %}
+NHS Cervical screening management system
+{% endblock %}
+
+{% block header %}
+{% include '../../../components/header.html' %}
+{% endblock %}
+
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+      "href": "/v12/reports/lab-file-report/corrupt-files/all-corrupt-resolved",
+      "text": "Go back" 
+    }) }}
+    <h1 class="nhsuk-heading-l">Corrupt file details</h1>
+    <div class="nhsuk-card nhsuk-card--feature">
+    <div class="nhsuk-card__content nhsuk-card__content--feature">
+      <h3 class="nhsuk-card__heading nhsuk-card__heading--feature nhsuk-heading-m">Resolved corrupt file</h3>
+  
+
+
+<!--
+  <tr id="detailsRow4" class="detailsRow">
+           <td colspan="3">-->
+            <div class="nhsuk-grid-row">
+              <div class="nhsuk-grid-column-full">
+
+ <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-4">
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">National code and area</dt>
+    <dd class="nhsuk-summary-list__value">Gateshead (60120), Coventry (COV)</dd>
+  </div>
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">Date and time received</dt>
+    <dd class="nhsuk-summary-list__value">24-Mar-2022 at 08:30am</dd>
+  </div>
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">File name</dt>
+    <dd class="nhsuk-summary-list__value">C44112/33</dd>
+  </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Error</dt>
+          <dd class="nhsuk-summary-list__value">Bad file contents</dd>
+        </div>
+
+      </dl>
+
+    <h2 class="nhsuk-heading-m">Corrupt file investigation details</h2>
+
+    <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-6">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Date lab informed</dt>
+        <dd class="nhsuk-summary-list__value">24-Mar-2022 by CSAS1</dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Lab informed comments</dt>
+        <dd class="nhsuk-summary-list__value">Sent lab an email</dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Update on 24-Mar-2022</dt>
+        <dd class="nhsuk-summary-list__value">Sent a follow up email - CSAS1 </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Date resolved</dt>
+        <dd class="nhsuk-summary-list__value">4th May 2023</dd>
+      </div>
+      
+     
+    </dl>
+    
+   
+    <p><a href="all-corrupt-resolved">Exit</a></p>
+    </div>
+    </div>
+
+
+{% endblock %}

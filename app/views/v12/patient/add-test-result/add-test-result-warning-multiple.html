@@ -24,15 +24,19 @@
     {% include '../../components/pnl-patient-2-no-details.html' %}
 
 
-    <h1 class="nhsuk-heading-l">The patient already has a test result for that test date</h1>
+    <h1 class="nhsuk-heading-l">This test result has multiple errors</h1>
 
-    <p>You can still add this test result if both are valid.</p>
+    <ul>
+      <li>Test result older than 4 months</li>
+      <li>Patient already has test result for that date</li>
+      <li>Participant already ceased (result date is from before cease date)</li>
+      <li>Inactive participant</li>
+      <li>Participant already paused (result date is from before pause date)</li>
+    </ul>
+
+    <p>You can add this test result, but no letter will be sent to the patient.</p>
     <p>You can also <a href="/v12/patient/pause-patient">manually pause all letters and notifications for this patient</a> if you need to resolve this test result.</p>
     <p>If you leave this page without adding the test result, the data you entered will not be saved.</p>
-
-
-
-
     <form action="/v12/add-test-result?nhsNumber={{ data.pnl_patient.nhs_number }}&patversion=7" method="post">
 
 

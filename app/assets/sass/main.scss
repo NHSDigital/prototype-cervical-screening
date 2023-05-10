@@ -23,3 +23,26 @@
 .hpv-select {
     width: 25%;
 }
+
+.nhsuk-character-count {
+    margin-bottom:32px
+}
+
+@media (min-width: 40.0625em) {
+    .nhsuk-character-count {
+        margin-bottom:40px
+    }
+}
+
+.nhsuk-character-count .nhsuk-form-group, .nhsuk-character-count .nhsuk-textarea {
+    margin-bottom:4px
+}
+
+.nhsuk-character-count__message {
+    margin-bottom: 30px;
+    margin-top:0
+}
+
+.nhsuk-character-count__message--disabled {
+    visibility:hidden
+}

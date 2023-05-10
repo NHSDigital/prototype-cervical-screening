@@ -26,6 +26,17 @@ NHS Cervical screening management system
       "href": "corrupt-lab-informed",
       "text": "Go back" 
     }) }}
+
+    {{ errorSummary({
+        "titleText": "There is a problem",
+        "errorList": [
+          {
+            "text": "Comments must be 1000 characters or less",
+            "href": "#comments"
+          }
+        ]
+      }) }}
+      
     <h1 class="nhsuk-heading-l">Add an update</h1>
     <div class="nhsuk-card nhsuk-card--feature">
     <div class="nhsuk-card__content nhsuk-card__content--feature">
@@ -38,7 +49,7 @@ NHS Cervical screening management system
   
     <div class="nhsuk-character-count" data-module="nhsuk-character-count" data-maxlength="1000">
 
-        <div class="nhsuk-form-group">
+        <div class="nhsuk-form-group nhsuk-form-group--error" id="comments">
           <h1 class="nhsuk-label-wrapper">
             <label class="nhsuk-label" for="more-detail">
               Comments
@@ -47,7 +58,10 @@ NHS Cervical screening management system
           <div class="nhsuk-hint" id="more-detail-hint">
             Do not include clinical information at this point.
           </div>
-          <textarea class="nhsuk-textarea nhsuk-js-character-count" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+          <span class="nhsuk-error-message" id="exceeding-error">
+            <span class="nhsuk-u-visually-hidden">Error:</span> Comments must be 1000 characters or less
+          </span>
+          <textarea class="nhsuk-textarea nhsuk-js-character-count" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint">A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content that stretches across digital and offline channels. They make sure appropriate content is shown to a user in the right place and in the best format.A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content that stretches across digital and offline channels. They make sure appropriate content is shown to a user in the right place and in the best format.A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content that stretches across digital and offline channels. </textarea>
         </div>
 
         <div class="nhsuk-hint nhsuk-character-count__message" id="more-detail-info">

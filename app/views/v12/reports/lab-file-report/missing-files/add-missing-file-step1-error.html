@@ -27,6 +27,32 @@ NHS Cervical screening management system
       "text": "Go back"
     }) }}
 
+    {{ errorSummary({
+        "titleText": "There is a problem",
+        "errorList": [
+          {
+            "text": "Enter a valid National Code",
+            "href": "#code"
+          },
+          {
+            "text": "Enter a valid Area Code",
+            "href": "#area"
+          },
+          {
+            "text": "Enter the file name",
+            "href": "#name"
+          },
+          {
+            "text": "Date must be in the past",
+            "href": "#date"
+          },
+          {
+            "text": "Select whether the lab has been informed",
+            "href": "#lab"
+          }
+        ]
+      }) }}
+
     <h1 class="nhsuk-heading-l">Missing files</h1>
     <div class="nhsuk-card nhsuk-card--feature">
       <div class="nhsuk-card__content nhsuk-card__content--feature">
@@ -41,30 +67,38 @@ NHS Cervical screening management system
         Enter missing file details
         </h2>
 
-        <div class="nhsuk-form-group">
+        <div class="nhsuk-form-group nhsuk-form-group--error" id="code">
           <label class="nhsuk-label" for="example">
            National code
           </label>
-          <span class="nhsuk-hint">Also known as lab code. For example T34KH</span>
-          <input class="nhsuk-input nhsuk-input--width-10" id="example" name="example" type="text">
+          <span class="nhsuk-hint">Also known as lab code. For example T34KH</span><span class="nhsuk-error-message" id="dob-day-error-error">
+            <span class="nhsuk-u-visually-hidden">Error:</span> Enter a valid National Code
+          </span>
+          <input class="nhsuk-input nhsuk-input--width-10 nhsuk-input--error" id="example" name="example" type="text">
         </div>
 
-        <div class="nhsuk-form-group">
+        <div class="nhsuk-form-group nhsuk-form-group--error" id="area">
           <label class="nhsuk-label" for="example">
           Area code
           </label>
           <span class="nhsuk-hint">Also known as NHAIS cipher or NHAIS box. For example, BD or LNA</span>
-          <input class="nhsuk-input nhsuk-input--width-10" id="example" name="example" type="text">
+          <span class="nhsuk-error-message" id="dob-day-error-error">
+            <span class="nhsuk-u-visually-hidden">Error:</span> Enter a valid Area Code
+          </span>
+          <input class="nhsuk-input nhsuk-input--width-10 nhsuk-input--error" id="example" name="example" type="text">
         </div>
 
-        <div class="nhsuk-form-group">
+        <div class="nhsuk-form-group nhsuk-form-group--error" id="name">
           <label class="nhsuk-label" for="example">
             Name of missing file
           </label>
-          <input class="nhsuk-input nhsuk-input--width-10" id="example" name="example" type="text">
+            <span class="nhsuk-error-message" id="name-error-error">
+              <span class="nhsuk-u-visually-hidden">Error:</span> Enter the filename
+            </span>
+          <input class="nhsuk-input nhsuk-input--width-10 nhsuk-input--error" id="example" name="example" type="text">
         </div>
 
-        <div class="nhsuk-form-group">
+        <div class="nhsuk-form-group nhsuk-form-group--error" id="date">
           <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
             <legend class="nhsuk-fieldset__legend">
               <p class="nhsuk-fieldset__heading">
@@ -75,13 +109,17 @@ NHS Cervical screening management system
               For example, 15 3 2021
             </div>
 
+            <span class="nhsuk-error-message" id="dob-day-error-error">
+              <span class="nhsuk-u-visually-hidden">Error:</span> Date must be in the past
+            </span>
+
             <div class="nhsuk-date-input" id="example">
               <div class="nhsuk-date-input__item">
                 <div class="nhsuk-form-group">
                   <label class="nhsuk-label nhsuk-date-input__label" for="example-day">
                     Day
                   </label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-day" name="example-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 nhsuk-input--error" id="example-day" name="example-day" type="text" pattern="[0-9]*" inputmode="numeric">
                 </div>
               </div>
               <div class="nhsuk-date-input__item">
@@ -89,7 +127,7 @@ NHS Cervical screening management system
                   <label class="nhsuk-label nhsuk-date-input__label" for="example-month">
                     Month
                   </label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-month" name="example-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 nhsuk-input--error" id="example-month" name="example-month" type="text" pattern="[0-9]*" inputmode="numeric">
                 </div>
               </div>
               <div class="nhsuk-date-input__item">
@@ -97,7 +135,7 @@ NHS Cervical screening management system
                   <label class="nhsuk-label nhsuk-date-input__label" for="example-year">
                     Year
                   </label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="example-year" name="example-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4 nhsuk-input--error" id="example-year" name="example-year" type="text" pattern="[0-9]*" inputmode="numeric">
                 </div>
               </div>
             </div>
@@ -106,7 +144,7 @@ NHS Cervical screening management system
         </div>
 
 
-<div class="nhsuk-form-group">
+<div class="nhsuk-form-group nhsuk-form-group--error" id="lab">
 
   <fieldset class="nhsuk-fieldset">
     <legend class="nhsuk-fieldset__legend">
@@ -114,6 +152,10 @@ NHS Cervical screening management system
         Has the lab been informed?
       </p>
     </legend>
+
+    <span class="nhsuk-error-message" id="dob-day-error-error">
+      <span class="nhsuk-u-visually-hidden">Error:</span> Select whether the lab has been informed
+    </span>
 
     <div class="nhsuk-radios">
 

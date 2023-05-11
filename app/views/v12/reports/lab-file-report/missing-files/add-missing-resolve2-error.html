@@ -27,6 +27,16 @@ NHS Cervical screening management system
               "href": "add-missing-resolve1",
               "text": "Go back"
             }) }}
+
+            {{ errorSummary({
+        "titleText": "There is a problem",
+        "errorList": [
+          {
+            "text": "Confirm that the file has been resolved before continuing",
+            "href": "#confirm-file"
+          }
+        ]
+      }) }}
     <h1 class="nhsuk-heading-l">Resolve missing file </h1>
     <div class="nhsuk-card nhsuk-card--feature">
     <div class="nhsuk-card__content nhsuk-card__content--feature">
@@ -36,29 +46,32 @@ NHS Cervical screening management system
       <span class="nhsuk-hint">Step 2 of 2</span>
 
 
-    <div class="nhsuk-form-group">
+    <div class="nhsuk-form-group nhsuk-form-group--error">
 
-      <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+      <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" id="confirm-file">
         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
           <h2 class="nhsuk-fieldset__heading">
             Confirm file has been resolved
           </h2>
-
+  
         </legend>
-
+        <span class="nhsuk-error-message" id="dob-errors-error">
+                <span class="nhsuk-u-visually-hidden">Error:</span> Confirm file has been resolved
+              </span>
+  
         <div class="nhsuk-checkboxes">
-
+  
           <div class="nhsuk-checkboxes__item">
-            <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
+            <input class="nhsuk-checkboxes__input nhsuk-input--error" id="example-1" name="example" type="checkbox" value="email">
             <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
               I confirm I have resolved any problems relating to this file
             </label>
           </div>
-
-
+  
+  
         </div>
       </fieldset>
-
+  
     </div>
 
     <button class="nhsuk-button nhsuk-button--ers">Continue</button>

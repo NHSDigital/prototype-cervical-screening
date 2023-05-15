@@ -1,0 +1,90 @@
+{% extends "layout-v2.html" %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/js/search.js"></script>
+<script type="text/javascript" src="/js/auto.js"></script>
+<style type="text/css" media="screen">
+  .nhsuk-header__navigation-item:nth-child(4) {
+    border-bottom: 4px solid #d8dde0;
+  }
+</style>
+{% endblock %}
+{% block pageTitle %}
+NHS Cervical screening management system
+{% endblock %}
+
+{% block header %}
+{% include '../../../components/header.html' %}
+{% endblock %}
+
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+      "href": "/v12/reports/lab-file-report/missing-files/add-missing-not-resolved",
+      "text": "Go back"
+    }) }}
+
+     {{ errorSummary({
+        "titleText": "There is a problem",
+        "errorList": [
+          {
+            "text": "Select if the missing file has been received",
+            "href": "#file"
+          }
+        ]
+      }) }}
+    
+    <h1 class="nhsuk-heading-l">Mark missing file as lab informed</h1>
+    <div class="nhsuk-card nhsuk-card--feature">
+    <div class="nhsuk-card__content nhsuk-card__content--feature">
+    {% include '../../../components/report-missing.html' %}
+
+    <form action="add-missing-received" method="post">
+      <div class="nhsuk-form-group nhsuk-form-group--error">
+
+        <fieldset class="nhsuk-fieldset" id="file">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+            <h2 class="nhsuk-fieldset__heading">
+              Has the missing file been received?
+            </h2>
+          </legend>
+
+          <span class="nhsuk-error-message" id="example-error-error">
+      <span class="nhsuk-u-visually-hidden">Error:</span> Select if the missing file has been received
+    </span>
+
+          <div class="nhsuk-radios">
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="yes-received" name="beenReceived" type="radio" value="yes-received">
+              <label class="nhsuk-label nhsuk-radios__label" for="yes-received">
+                Yes
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="not-received" name="beenReceived" type="radio" value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="not-received">
+                No
+              </label>
+            </div>
+
+          </div>
+        </fieldset>
+
+      </div>
+
+
+
+    <button class="nhsuk-button nhsuk-button--ers" type="submit">Continue</button>
+    </form>
+
+    <p><a href="/v12/reports/lab-file-report/missing-files/possible-missing">Exit without saving</a></p>
+    </div>
+    </div>
+
+
+{% endblock %}

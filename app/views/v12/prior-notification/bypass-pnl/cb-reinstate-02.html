@@ -166,48 +166,53 @@ NHS Cervical screening management system
 
                         </fieldset>
 
+
+                         
+
+                         {% call fieldset({
+          legend: {
+            text: "Select a recall status",
+            classes: "nhsuk-fieldset__legend--m",
+            isPageHeading: false
+          }
+        }) %}
+
+        {{ radios({
+          "idPrefix": "know-reason",
+          "name": "know-reason",
+          "items": [
+            {
+              "value": "not-due",
+              "text": "Not yet due"
+            },
+            {
+              "value": "non-responder",
+              "text": "Non responder"
+            },
+            {
+              "value": "pnl",
+              "text": "Prior notification list (PNL)"
+            },
+            {
+              "value": "invited",
+              "text": "Invited"
+            },
+            {
+              "value": "reminded",
+              "text": "Reminded"
+            },
+            {
+              "value": "nrl",
+              "text": "Non responder list (NRL)"
+            }
+
+          ]
+        }) }}
+
+        {% endcall %}
+
                          <div class="nhsuk-u-padding-bottom-5"></div>
 
-
-                         <div class="nhsuk-form-group">
-
-                           <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
-                             <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
-                               <h2 class="nhsuk-fieldset__heading">
-                                 Is this an incident?
-                               </h2>
-                             </legend>
-
-                             <div class="nhsuk-hint" id="example-hint">
-                             For incidents, if the next test due date is within the next 7 days the letter date will be pushed back by 1 week to allow for quality assurance check.
-                             </div>
-
-                             <div class="nhsuk-radios" name="incident-status">
-
-                               <div class="nhsuk-radios__item">
-                                 <input class="nhsuk-radios__input" id="example-1" name="incidentStatus" type="radio" value="Yes">
-                                 <label class="nhsuk-label nhsuk-radios__label"for="example-1">
-                                   Yes, this is an incident and needs 7 days for a quality assurance check
-                                 </label>
-                               </div>
-
-                               <div class="nhsuk-radios__item">
-                                 <input class="nhsuk-radios__input" id="example-2" name="incidentStatus" type="radio" value="No">
-                                 <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-                                   No, this is not an incident and does not need 7 days for a quality assurance check
-                                 </label>
-                               </div>
-
-
-
-                             </div>
-                           </fieldset>
-
-                         </div>
-
-                         <div class="nhsuk-u-padding-bottom-5"></div>
-
-                        <fieldset class="nhsuk-fieldset">
 
                           <div class="nhsuk-form-group">
       <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
@@ -250,9 +255,43 @@ NHS Cervical screening management system
       </fieldset>
 
     </div>
-                      </fieldset>
+                     
 
                          <div class="nhsuk-u-padding-bottom-5"></div>
+
+                         <div class="nhsuk-form-group nhsuk-inset-text">
+
+                           <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+                             <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+                               <h2 class="nhsuk-fieldset__heading">
+                                 Is this an incident?
+                               </h2>
+                             </legend>
+
+                             <div class="nhsuk-hint" id="example-hint">
+                             For incidents, if the next test due date is within the next 7 days the letter date will be pushed back by 1 week to allow for quality assurance check.
+                             </div>
+
+                             <div class="nhsuk-radios" name="incident-status">
+
+                               <div class="nhsuk-radios__item">
+                                 <input class="nhsuk-radios__input" id="example-1" name="incidentStatus" type="radio" value="Yes">
+                                 <label class="nhsuk-label nhsuk-radios__label"for="example-1">
+                                   Yes, this is an incident and needs 7 days for a quality assurance check
+                                 </label>
+                               </div>
+
+                               <div class="nhsuk-radios__item">
+                                 <input class="nhsuk-radios__input" id="example-2" name="incidentStatus" type="radio" value="No">
+                                 <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                                   No, this is not an incident and does not need 7 days for a quality assurance check
+                                 </label>
+                               </div>
+
+
+                           </fieldset>
+
+                         </div>
 
 
 
@@ -264,51 +303,7 @@ NHS Cervical screening management system
 
   
 
-    {% call fieldset({
-          legend: {
-            text: "Select a recall status",
-            classes: "nhsuk-fieldset__legend--m",
-            isPageHeading: false
-          }
-        }) %}
-
-        {{ radios({
-          "idPrefix": "know-reason",
-          "name": "know-reason",
-          "items": [
-            {
-              "value": "not-due",
-              "text": "Not yet due"
-            },
-            {
-              "value": "non-responder",
-              "text": "Non responder"
-            },
-            {
-              "value": "pnl",
-              "text": "Prior notification list (PNL)"
-            },
-            {
-              "value": "invited",
-              "text": "Invited"
-            },
-            {
-              "value": "reminded",
-              "text": "Reminded"
-            },
-            {
-              "value": "nrl",
-              "text": "Non responder list (NRL)"
-            },
-            {
-              "value": "Yes",
-              "text": "Deferral"
-            }
-
-          ]
-        }) }}
-
-        {% endcall %}
+    
 
 </div>
 

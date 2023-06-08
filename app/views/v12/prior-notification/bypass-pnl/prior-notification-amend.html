@@ -274,6 +274,10 @@ NHS Cervical screening management system
                            </label>
                          </div>
 
+
+
+                        </div>
+
                          <!-- <div class="nhsuk-radios__item">
                            <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
                            <label class="nhsuk-label nhsuk-radios__label" for="example-2">
@@ -391,45 +395,144 @@ NHS Cervical screening management system
                     </fieldset>
 
                      <!-- <div class="nhsuk-u-padding-bottom-5"></div> -->
+                      <div class="nhsuk-form-group">
 
-                     <div class="nhsuk-form-group">
+                     <fieldset class="nhsuk-fieldset">
+                     <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+                     <h2 class="nhsuk-fieldset__heading">
+                       Select a recall status for the patient
 
-                       <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
-                         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
-                           <h2 class="nhsuk-fieldset__heading">
-                             Is this an incident?
-                           </h2>
-                         </legend>
+                     </h2>
+                     </legend>
 
-                         <div class="nhsuk-hint" id="example-hint">
-                         For incidents, if the next test due date is within the next 7 days the letter date will be pushed back by 1 week to allow for quality assurance check.
-                         </div>
+                     <div class="nhsuk-radios nhsuk-radios--conditional" name="recall-status" >
 
-                         <div class="nhsuk-radios" name="incident-status">
-
-                           <div class="nhsuk-radios__item">
-                             <input class="nhsuk-radios__input" id="example-1" name="incidentStatus" type="radio" value="Yes">
-                             <label class="nhsuk-label nhsuk-radios__label"for="example-1">
-                               Yes, this is an incident and needs 7 days for a quality assurance check
-                             </label>
-                           </div>
-
-                           <div class="nhsuk-radios__item">
-                             <input class="nhsuk-radios__input" id="example-2" name="incidentStatus" type="radio" value="No">
-                             <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-                               No, this is not an incident and does not need 7 days for a quality assurance check
-                             </label>
-                           </div>
-
-
-
-                         </div>
-                       </fieldset>
-
+                     <div class="nhsuk-radios__item">
+                       <input class="nhsuk-radios__input" id="example-1" name="recallStatus" type="radio" value="not-yet-due">
+                       <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                         Not yet due
+                       </label>
                      </div>
 
+                     <div class="nhsuk-radios__item">
+                       <input class="nhsuk-radios__input" id="example-1b" name="recallStatus" type="radio" value="non-repsonder-overdue">
+                       <label class="nhsuk-label nhsuk-radios__label" for="example-1b">
+                         Non-responder overdue
+                       </label>
+                     </div>
 
-                     <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+                     <div class="nhsuk-radios__item">
+                       <input class="nhsuk-radios__input" id="example-2" name="recallStatus" type="radio" value="Prior notification list(PNL)">
+                       <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                         Prior notification list (PNL)
+                       </label>
+                     </div>
+
+                     <div class="nhsuk-radios__item">
+                       <input class="nhsuk-radios__input" id="example-3" name="recallStatus" type="radio" value="Invited">
+                       <label class="nhsuk-label nhsuk-radios__label" for="example-3">
+                         Invited
+                       </label>
+                     </div>
+
+                     <div class="nhsuk-radios__item">
+                       <input class="nhsuk-radios__input" id="example-4" name="recallStatus" type="radio" value="Reminded">
+                       <label class="nhsuk-label nhsuk-radios__label" for="example-4">
+                         Reminded
+                       </label>
+                     </div>
+
+                     <div class="nhsuk-radios__item">
+                       <input class="nhsuk-radios__input" id="example-5" name="recallStatus" type="radio" value="Non responder list (NRL)">
+                       <label class="nhsuk-label nhsuk-radios__label" for="example-5">
+                         Non responder list (NRL)
+                       </label>
+                     </div>
+
+                        <div class="nhsuk-radios__item">
+                          <input class="nhsuk-radios__input" id="contact-1" name="recallStatus" type="radio" value="email" aria-controls="conditional-contact-1" aria-expanded="false">
+                          <label class="nhsuk-label nhsuk-radios__label" for="contact-1">
+                            Deferral
+                          </label>
+                        </div>
+
+
+                         <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-1">
+                          <div class="nhsuk-form-group">
+
+                            <fieldset class="nhsuk-fieldset">
+                              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+                                <h1 class="nhsuk-fieldset__heading">
+                                  What is the reason for deferring?
+                                </h1>
+                              </legend>
+
+                              <div class="nhsuk-radios">
+
+                                <div class="nhsuk-radios__item">
+                                  <input class="nhsuk-radios__input" id="hide-1" name="example" type="radio" value="yes">
+                                  <label class="nhsuk-label nhsuk-radios__label" for="hide-1">
+                                    Pregnancy
+                                  </label>
+                                </div>
+
+                                <div class="nhsuk-radios__item">
+                                  <input class="nhsuk-radios__input" id="hide-2" name="example" type="radio" value="no">
+                                  <label class="nhsuk-label nhsuk-radios__label" for="hide-2">
+                                    Recent test
+                                  </label>
+                                </div>
+
+                                <div class="nhsuk-radios__item">
+                                  <input class="nhsuk-radios__input" id="hide-3" name="example" type="radio" value="no">
+                                  <label class="nhsuk-label nhsuk-radios__label" for="hide-3">
+                                    Under care of colposcopy
+                                  </label>
+                                </div>
+                                <div class="nhsuk-radios__item">
+                                  <input class="nhsuk-radios__input" id="hide-4" name="example" type="radio" value="no">
+                                  <label class="nhsuk-label nhsuk-radios__label" for="hide-4">
+                                    Undergoing treatment relevant to screening
+                                  </label>
+                                </div>
+                                <div class="nhsuk-radios__item">
+                                  <input class="nhsuk-radios__input" id="hide-5" name="example" type="radio" value="no">
+                                  <label class="nhsuk-label nhsuk-radios__label" for="hide-5">
+                                    Discharge from colposcopy
+                                  </label>
+                                </div>
+                                <div class="nhsuk-radios__item">
+                                  <input class="nhsuk-radios__input" id="hide-6" name="example" type="radio" value="no">
+                                  <label class="nhsuk-label nhsuk-radios__label" for="hide-6">
+                                    Patient wishes to defer
+                                  </label>
+                                </div>
+                                <div class="nhsuk-radios__item">
+                                  <input class="nhsuk-radios__input" id="hide-7" name="example" type="radio" value="no">
+                                  <label class="nhsuk-label nhsuk-radios__label" for="hide-7">
+                                    Administrative
+                                  </label>
+                                </div>
+
+                              </div>
+                            </fieldset>
+
+                          </div>
+
+                     <!-- <div class="nhsuk-radios__item">
+                       <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+                       <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                         Ceased
+                       </label>
+                     </div> -->
+
+                     </div>
+                     </fieldset>
+
+
+                </div>
+                <div class="nhsuk-u-padding-bottom-5"></div>
+                <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
                        <legend class="nhsuk-fieldset__legend nhsuk-label--m">
                          <h2 class="nhsuk-fieldset__heading">
                            Enter next test due date for the patient
@@ -469,84 +572,51 @@ NHS Cervical screening management system
                        <input type="hidden" id="ntdd" name="ntdd" value="19 01 2021">
                      </fieldset>
 
+                     <div class="nhsuk-form-group nhsuk-inset-text">
+
+                       <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+                         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+                           <h2 class="nhsuk-fieldset__heading">
+                             Is this an incident?
+                           </h2>
+                         </legend>
+
+                         <div class="nhsuk-hint" id="example-hint">
+                         For incidents, if the next test due date is within the next 7 days the letter date will be pushed back by 1 week to allow for quality assurance check.
+                         </div>
+
+                         <div class="nhsuk-radios" name="incident-status">
+
+                           <div class="nhsuk-radios__item">
+                             <input class="nhsuk-radios__input" id="example-1" name="incidentStatus" type="radio" value="Yes">
+                             <label class="nhsuk-label nhsuk-radios__label"for="example-1">
+                               Yes, this is an incident and needs 7 days for a quality assurance check
+                             </label>
+                           </div>
+
+                           <div class="nhsuk-radios__item">
+                             <input class="nhsuk-radios__input" id="example-2" name="incidentStatus" type="radio" value="No">
+                             <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                               No, this is not an incident and does not need 7 days for a quality assurance check
+                             </label>
+                           </div>
+
+
+
+                         </div>
+                       </fieldset>
+
+                     </div>
+
+
+                     
+
 
 
 
                                       <div class="nhsuk-u-padding-bottom-5"></div>
 
-                                     <div class="nhsuk-form-group">
-
-                     <fieldset class="nhsuk-fieldset">
-                     <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
-                     <h2 class="nhsuk-fieldset__heading">
-                       Select a recall status for the patient
-
-                     </h2>
-                     </legend>
-
-                     <div class="nhsuk-radios" name="recall-status" >
-
-                     <div class="nhsuk-radios__item">
-                       <input class="nhsuk-radios__input" id="example-1" name="recallStatus" type="radio" value="not-yet-due">
-                       <label class="nhsuk-label nhsuk-radios__label" for="example-1">
-                         Not yet due
-                       </label>
-                     </div>
-
-                     <div class="nhsuk-radios__item">
-                       <input class="nhsuk-radios__input" id="example-1b" name="recallStatus" type="radio" value="non-repsonder-overdue">
-                       <label class="nhsuk-label nhsuk-radios__label" for="example-1b">
-                         Non-responder overdue
-                       </label>
-                     </div>
-
-                     <div class="nhsuk-radios__item">
-                       <input class="nhsuk-radios__input" id="example-2" name="recallStatus" type="radio" value="Prior notification list(PNL)">
-                       <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-                         Prior notification list (PNL)
-                       </label>
-                     </div>
-
-                     <div class="nhsuk-radios__item">
-                       <input class="nhsuk-radios__input" id="example-2" name="recallStatus" type="radio" value="Invited">
-                       <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-                         Invited
-                       </label>
-                     </div>
-
-                     <div class="nhsuk-radios__item">
-                       <input class="nhsuk-radios__input" id="example-2" name="recallStatus" type="radio" value="Reminded">
-                       <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-                         Reminded
-                       </label>
-                     </div>
-
-                     <div class="nhsuk-radios__item">
-                       <input class="nhsuk-radios__input" id="example-2" name="recallStatus" type="radio" value="Non responder list (NRL)">
-                       <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-                         Non responder list (NRL)
-                       </label>
-                     </div>
-
-                     <div class="nhsuk-radios__item">
-                       <input class="nhsuk-radios__input" id="example-2" name="recallStatus" type="radio" value="Deferral">
-                       <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-                         Deferral
-                       </label>
-                     </div>
-
-                     <!-- <div class="nhsuk-radios__item">
-                       <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
-                       <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-                         Ceased
-                       </label>
-                     </div> -->
-
-                     </div>
-                     </fieldset>
-
-
-                </div>
+                                    
               </div>
             </div>
 

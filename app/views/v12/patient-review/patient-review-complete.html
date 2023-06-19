@@ -1,0 +1,105 @@
+{% extends "layout-v2.html" %}
+
+{% block pageScripts %}
+
+<script src="/js/results-filter.js">
+</script>
+
+<style type="text/css" media="screen">
+  .nhsuk-header__navigation-item:nth-child(6) {
+    border-bottom: 4px solid #d8dde0;
+  }
+</style>
+
+{% endblock %}
+{% block pageTitle %}
+NHS Cervical screening management system
+{% endblock %}
+
+{% block header %}
+{% include '../components/header.html' %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    <h1 class="nhsuk-heading-l nhsuk-u-margin-top-2">Patient review</h1>
+  </div>
+</div>
+
+
+
+  <!-- <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      <nav class="nhsuk-sub-navigation">
+        <ul class="nhsuk-sub-navigation__list">
+          <li class="nhsuk-sub-navigation__item"><a href="manc-process" class="nhsuk-sub-navigation__link" aria-current="page">To process <span class="nhsuk-tag nhsuk-tag--grey nhsuk-u-margin-left-2">10</span></a></li>
+          <li class="nhsuk-sub-navigation__item"><a href="manc-query" class="nhsuk-sub-navigation__link">To query<span class="nhsuk-tag nhsuk-tag--grey nhsuk-u-margin-left-2">4</span></a></li>
+          <li class="nhsuk-sub-navigation__item"><a href="manc-check" class="nhsuk-sub-navigation__link">To check <span class="nhsuk-tag nhsuk-tag--grey nhsuk-u-margin-left-2">11</span></a></li>
+          <li class="nhsuk-sub-navigation__item"><a href="manc-rejected" class="nhsuk-sub-navigation__link">Rejected<span class="nhsuk-tag nhsuk-tag--grey nhsuk-u-margin-left-2">5</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </div> -->
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    <table class="order-table">
+      <thead>
+        <tr>
+          <th class="ten">Patient name
+          </th>
+          <th class="ten">NHS number
+          </th>
+          <th class="ten">Status
+          </th>
+          <th class="ten">Review type
+          </th>
+          <th class="ten">Processor
+          </th>
+          <th class="ten">Time changed
+          </th>
+          <th class="ten">
+          </th>
+          <th class="ten"></th>
+        <tr>
+      </thead>
+
+      <tbody>
+        <!-- TO PROCESS -->
+
+<!--         <tr>
+          <td>Tanya Parr</td>
+          <td>910 000 2798</td>
+          <td><span class="nhsuk-tag nhsuk-tag--blue nhsuk-u-margin-bottom-2">To check</span></td>
+          <td><span class="nhsuk-tag nhsuk-tag--blue nhsuk-u-margin-bottom-2">Bypass paused</span></td>
+          <td></td>
+          <td>10:00 am
+            <span class="nhsuk-table__cell--hint">19-Jun-2023</span></td>
+          <td><a class="nhsuk-button nhsuk-button--ers nhsuk-button--secondary nhsuk-u-margin-bottom-3" href="patient-review-start">Review</a></td>
+        </tr> -->
+        <tr>
+          <td>Jane Smith</td>
+          <td>234 567 8901</td>
+          <td><span class="nhsuk-tag nhsuk-tag--blue nhsuk-u-margin-bottom-2">To check</span></td>
+          <td></td>
+          <td></td>
+          <td>10:00 am
+            <span class="nhsuk-table__cell--hint">17-May-2023</span></td>
+          <td><a class="nhsuk-button nhsuk-button--ers nhsuk-button--secondary nhsuk-u-margin-bottom-3" href="patient-review-start">Review</a></td>
+        </tr>
+        
+
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+{% endblock %}

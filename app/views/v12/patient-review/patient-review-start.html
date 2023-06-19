@@ -1,0 +1,195 @@
+{% extends "layout-v2.html" %}
+
+{% block pageScripts %}
+
+<script src="/js/results-filter.js">
+</script>
+
+<style type="text/css" media="screen">
+  .nhsuk-header__navigation-item:nth-child(6) {
+    border-bottom: 4px solid #d8dde0;
+  }
+</style>
+
+{% endblock %}
+{% block pageTitle %}
+NHS Cervical screening management system
+{% endblock %}
+
+{% block header %}
+{% include '../components/header.html' %}
+{% endblock %}
+
+{% block content %}
+
+{{ backLink({
+  "href": "patient-review",
+  "text": "Back to patient review"
+}) }}
+
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    <h1 class="nhsuk-heading-l nhsuk-u-margin-top-2">Review changes made during bypass process</h1>
+  </div>
+</div>
+
+
+{{ insetText({
+  "HTML": "<h2 class=\"nhsuk-heading-m\">Participant has had an episode change</h2><p>Please review and approve or reject the changes made.</p>"
+}) }}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-one-half">
+    <div class="nhsuk-card nhsuk-card--feature">
+    <div class="nhsuk-card__content nhsuk-card__content--feature">
+        <h3 class="nhsuk-card__heading nhsuk-card__heading--feature nhsuk-heading-m">Original participant details</h3>
+
+      <dl class="nhsuk-summary-list nhsuk-u-padding-top-3 nhsuk-summary-list--no-border">
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Action
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Delay
+            </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Defer reason
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Pregnancy
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Next test due date
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            13th August 2023
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            CRM case number
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Comments
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            
+          </dd>
+        </div>
+
+      </dl>
+    </div>
+  </div>
+</div>
+
+
+  <div class="nhsuk-grid-column-one-half">
+    <div class="nhsuk-card nhsuk-card--feature">
+    <div class="nhsuk-card__content nhsuk-card__content--feature">
+        <h3 class="nhsuk-card__heading nhsuk-card__heading--feature nhsuk-heading-m">Proposed changes</h3>
+
+      <dl class="nhsuk-summary-list nhsuk-u-padding-top-3 nhsuk-summary-list--no-border">
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Action
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Delay
+            </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Defer reason
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <span class="highlight">Recent test</span>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Next test due date
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <span class="highlight">25th March 2024</span>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            CRM case number
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Comments
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            
+          </dd>
+        </div>
+
+
+      </dl>
+    </div>
+  </div>
+  </div>
+  <form action="/v12/patient-review/patient-review-complete" method="post">
+
+
+        {% call fieldset({
+          legend: {
+            text: "Do you want to confirm the changes?",
+            classes: "nhsuk-fieldset__legend--m",
+            isPageHeading: true
+          }
+        }) %}
+
+        {{ radios({
+          "idPrefix": "know-route",
+          "name": "know-route",
+          "items": [
+            
+            {
+              "value": "Yes",
+              "text": "Yes, accept changes"
+            },
+            {
+              "value": "No",
+              "text": "No, reject changes"
+            }
+          ]
+        }) }}
+
+        {% endcall %}
+
+        <button class="nhsuk-button nhsuk-button--ers">Continue</button>
+
+
+      </form>
+
+</div>
+
+{% endblock %}

@@ -500,6 +500,23 @@ router.post('/v12/prior-notification/bypass-pnl/cb-reinstate-02', function (req,
   }
 
 })
+
+router.post('/v12/patient/add-test-result/add-test-result', function (req, res) {
+
+  // Make a variable and give it the value from 'know-nhs-number'
+  var nhsNumber = req.session.data['self-sample']
+
+  // Check whether the variable matches a condition
+  if (nhsNumber == "Self"){
+    // Send user to next page
+    res.redirect('/v12/patient/add-test-result/add-test-result-ntdd-self')
+  }
+  else {
+    // Send user to ineligible page
+    res.redirect('/v12/patient/add-test-result/add-test-result-ntdd')
+  }
+
+})
 //end cb added
 
 module.exports = router;

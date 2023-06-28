@@ -27,6 +27,13 @@ NHS Cervical screening management system
       "text": "Go back to reports"
     }) }}
 
+    {% from 'error-summary/macro.njk' import errorSummary %}
+
+    {{ errorSummary({
+      "titleText": "There is a problem",
+      "descriptionText": "You must enter a valid date."
+    }) }}
+
 
       <h1 class="nhsuk-heading-l">
         <span class="nhsuk-caption-m">
@@ -123,7 +130,7 @@ NHS Cervical screening management system
                       Which date range would you like to see?
                     </label>
         <div class="nhsuk-grid-row">
-        <div class="nhsuk-grid-column-one-third">
+        <div class="nhsuk-grid-column-one-half">
 
 
           {{ dateInput({
@@ -139,23 +146,26 @@ NHS Cervical screening management system
             "hint": {
               "text": "For example, 31 3 1980"
             },
+            "errorMessage": {
+                "text": "You must enter a valid date"
+            },
             "items": [
               {
                 "name": "day",
-                "classes": "nhsuk-input--width-2"
+                "classes": "nhsuk-input--width-2 nhsuk-input--error"
               },
               {
                 "name": "month",
-                "classes": "nhsuk-input--width-2"
+                "classes": "nhsuk-input--width-2 nhsuk-input--error"
               },
               {
                 "name": "year",
-                "classes": "nhsuk-input--width-4"
+                "classes": "nhsuk-input--width-4 nhsuk-input--error"
               }
             ]
           }) }}
         </div>
-        <div class="nhsuk-grid-column-one-third">
+        <div class="nhsuk-grid-column-one-half">
           {{ dateInput({
             "id": "example",
             "namePrefix": "example",
@@ -169,18 +179,21 @@ NHS Cervical screening management system
             "hint": {
               "text": "Leave blank if 1 month"
             },
+            "errorMessage": {
+                "text": "You must enter a valid date"
+            },
             "items": [
               {
                 "name": "day",
-                "classes": "nhsuk-input--width-2"
+                "classes": "nhsuk-input--width-2 nhsuk-input--error"
               },
               {
                 "name": "month",
-                "classes": "nhsuk-input--width-2"
+                "classes": "nhsuk-input--width-2 nhsuk-input--error"
               },
               {
                 "name": "year",
-                "classes": "nhsuk-input--width-4"
+                "classes": "nhsuk-input--width-4 nhsuk-input--error"
               }
             ]
           }) }}

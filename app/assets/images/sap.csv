@@ -1,0 +1,6 @@
+Name,DOB,NHS No,Address,NTDD,Invited Date,,
+Jerry Klein,21-8-70,999 999 9999,1 Townsville Road QQ-1AA,17-1-21,18-10-14,,
+,,,,,,,
+Test Date,Cytology Results,HPV Infection,Action ,Repeat,Slide Number,Cipher,Letter status
+30/10/2017 NHS Hospital,Low-grade dyskariosis M,Trichomonas 1,Record result only H,3 Months,19035247 Lab: 60670,ABC,PROCESSING
+30/10/2017 Other,Negative + HPV Triage (HPV tested) N,HPV negative 0 ,Record result only H,6 Months,19035247 Lab: 60670,ABC,CANCELLED

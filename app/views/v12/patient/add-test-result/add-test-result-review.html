@@ -34,9 +34,12 @@
     </legend>
 
 
-     <a href="add-test-result" class="nhsuk-button nhsuk-button--ers">
-            Edit result
-         </a>
+     {% if data.patientSummary['pnl_action'] == 'Ceased' %}
+  <!-- <div class="nhsuk-inset-text">
+       <span class="nhsuk-u-visually-hidden">Information: </span>
+       <p>Adding this test will reinstate the patient and set their next test due date.</p>
+    </div> -->
+{% endif %}
     
     <form action="/v12/add-test-result?nhsNumber={{ data.pnl_patient.nhs_number }}&patversion=7" method="post">
 
@@ -123,13 +126,10 @@
  <input type="hidden" id="infectionText" name="infection-text" value="{{ data['result-infection'] | returnInfectionText }}">
  <input type="hidden" id="resultText" name="result-text" value="{{ data['result-result'] | returnResultText }}">
 
-{% if data.patientSummary['pnl_action'] == 'Ceased' %}
-  <div class="nhsuk-inset-text">
-       <span class="nhsuk-u-visually-hidden">Information: </span>
-       <p>Adding this test will reinstate the patient and set their next test due date.</p>
-    </div>
-{% endif %}
-
+ <p><a href="add-test-result" class="nhsuk-button nhsuk-button--ers">
+            Edit result
+         </a></p>
+        
 
 
          <button class="nhsuk-button nhsuk-button--ers" type="submit">

@@ -130,7 +130,7 @@ NHS Cervical screening management system
                         <fieldset class="nhsuk-fieldset">
 
                           <div class="nhsuk-form-group">
-      <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+      <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group" style="margin-bottom: 50px;">
         <legend class="nhsuk-fieldset__legend nhsuk-label--m">
           <h2 class="nhsuk-fieldset__heading">
             Enter next test due date
@@ -172,7 +172,7 @@ NHS Cervical screening management system
     </div>
     <!-- <div class="nhsuk-u-padding-bottom-5"></div> -->
 
-    <div class="nhsuk-form-group nhsuk-inset-text">
+    <!-- <div class="nhsuk-form-group nhsuk-inset-text">
 
                            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
                              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
@@ -206,12 +206,29 @@ NHS Cervical screening management system
                              </div>
                            </fieldset>
 
-                         </div>
-                      </fieldset>
+                         </div> -->
+                      
 
                          
+                         {{ checkboxes({
+                        "idPrefix": "inc",
+                        "name": "inc",
+                        "fieldset": {
+                          "legend": {
+                            "text": "Incident check",
+                            "classes": "nhsuk-fieldset__legend--m",
+                            isPageHeading: true
+                          }
+                        },
+                        "items": [
+                          
+                          {
+                            "value": "inc",
+                            "text": "I confirm that this is an incident"
+                          }
+                        ]
+                      }) }}
 
-                      <form>
 
 
 

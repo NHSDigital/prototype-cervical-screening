@@ -16,9 +16,9 @@
     <nav class="nhsuk-sub-navigation nhsuk-u-padding-bottom-6">
       <h1 class="nhsuk-heading-l">Notifications</h1>
       <ul class="nhsuk-sub-navigation__list">
-        <li class="nhsuk-sub-navigation__item"><a href="/v12/get-prior-notifications-12" class="nhsuk-sub-navigation__link">Patients due to be invited<span class="nhsuk-tag nhsuk-tag--grey nhsuk-u-margin-left-2">{{ data['patients'].length }}</span></a></li>
-        <li class="nhsuk-sub-navigation__item"><a href="/v12/get-non-responder-notifications-4" class="nhsuk-sub-navigation__link">Patients who have not responded<span class="nhsuk-tag nhsuk-tag--grey nhsuk-u-margin-left-2">{{ data['nrl_patients'].length }}</span> </a></li>
-         <li class="nhsuk-sub-navigation__item"><a href="" class="nhsuk-sub-navigation__link" aria-current="page">Patients to review<span class="nhsuk-tag nhsuk-tag--grey nhsuk-u-margin-left-2">{{ data['ceased_patients'].length or "0" }}</span> </a></li>
+        <li class="nhsuk-sub-navigation__item"><a href="/v12/get-prior-notifications-12" class="nhsuk-sub-navigation__link">Patients due to be invited<span class="nhsuk-tag nhsuk-tag--grey nhsuk-u-margin-left-2">63</span></a></li>
+        <li class="nhsuk-sub-navigation__item"><a href="/v12/get-non-responder-notifications-4" class="nhsuk-sub-navigation__link">Patients who have not responded<span class="nhsuk-tag nhsuk-tag--grey nhsuk-u-margin-left-2">63</span> </a></li>
+         <li class="nhsuk-sub-navigation__item"><a href="" class="nhsuk-sub-navigation__link" aria-current="page">Patients to review<span class="nhsuk-tag nhsuk-tag--grey nhsuk-u-margin-left-2">63</span> </a></li>
         <li class="nhsuk-sub-navigation__item"><a href="../prior-notification/prior-notification-12-manage" class="nhsuk-sub-navigation__link">Manage emails</a></li>
       </ul>
     </nav>
@@ -143,6 +143,31 @@
         {% endfor %}
       </tbody>   
     </table>
+    <nav role="navigation" aria-label="Pagination">
+      <ul class="screening-pagination">
+        <li class="screening-pagination-item" aria-current="page">
+          <span class="screeing-pagination-current">
+            1</span>
+          </a>
+        </li>
+        <li class="screening-pagination-item">
+          <a href="">
+            <span>2</span>
+          </a>
+        </li>
+        <li class="screening-pagination-item">
+          <a href="">
+            <span>3</span>
+          </a>
+        </li>
+        <li class="screening-pagination-item">
+          <a href="">
+            <span>Next >></span>
+          </a>
+        </li>
+        <p class="screening-pagination-showing">Showing 12 of 63 results</p>
+      </ul>
+    </nav>
   </div>
 </div>
 {% else %}

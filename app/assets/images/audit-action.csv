@@ -1,0 +1,20 @@
+First name(s),Surname,NHS number,,,
+Brenda,Brazier,123 456 7890,,,
+,,,,,
+Title,By,Date,Detail 1,Detail 2,Detail 3
+Result letter cancelled,Jane Smith,22 October 2020 at 9.00am,CRM Case Number: 1234567789,Comments: Lab sent test with an error in the action code,
+Result sent,System,22 October 2020 at 9.00am,"Test Result: (39S) Low-grade dyskaryosis, HPV positive, Repeat Advised",Test Date: 19 October 2020 at 9.00am,
+PDS demographics changed,System (PDS),21 October 2020 at 12.00am,"New address: Flat 9, St. Andrews Court, St Andrews Street, Northampton,NN1 2HH","Old address: 2 Brickyard Cottages, Moor Lane, Shipton By Beningbrough,YO30 1AU",
+Next test due date changed,System,21 October 2020 at 12.00am,Next test due date changed to 10 October 2021,,
+Test result added,System (Edifax),21 October 2020 at 9.00am,"(39S) Low-grade dyskaryosis, HPV positive, Repeat Advised",,
+Patient ceased,Alison Johnson (CSAS),09 September 2020 at 3.54pm,Patient ceased due to patient informed choice,CRM Case Number: CAS-12345-ABCDE,Comments: Requested via the GP form
+Next test due date changed,System ,05 January 2020 at 12.00am,Next test due date changed to 10 October 2021,,
+Patient deferred,James Smith (CSAS),04 January 2020 at 9.23am,Defer Reason: Pregnancy,CRM Case Number: CAS-12345-ABCDE,Comments: Requested via the GP form
+Added to prior notification list of patients due to be invited,System,12 December 2019 at 12.00am,,,
+Result sent,System,04 January 2017 at 9.00am,"Test Result: (39S) Low-grade dyskaryosis, HPV positive, Repeat Advised",29 December 2016 at 10.15am,
+Next test due date changed,System,03 January 2017 at 12.00am,Next test due date changed to 10 October 2021,,
+Test result added,System (Edifax),02 January 2017 at 9.00am,"Test Result: (39S) Low-grade dyskaryosis, HPV positive, Repeat Advised",,
+HMR101 Printed,Alicia Johnson (Sample Taker),20 December 2016 at 10.15am,,,
+1st screening reminder sent to patient,System,10 November 2016 at 9.00am,,,
+Screening invitation sent to patient,System,01 October 2016 at 9.00am,,,
+Added to prior notification list of patients due to be invited,System,20 August 2016 at 10.15am,,,

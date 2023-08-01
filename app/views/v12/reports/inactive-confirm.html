@@ -1,0 +1,112 @@
+{% extends "layout-v2.html" %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/js/search.js"></script>
+<script type="text/javascript" src="/js/auto.js"></script>
+<style type="text/css" media="screen">
+  .nhsuk-header__navigation-item:nth-child(4) {
+    border-bottom: 4px solid #d8dde0;
+  }
+</style>
+{% endblock %}
+{% block pageTitle %}
+NHS Cervical screening management system
+{% endblock %}
+
+{% block header %}
+{% include '../../v12/components/header.html' %}
+{% endblock %}
+
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+      "href": "/v12/patient-summary-inactive",
+      "text": "Go back"
+    }) }}
+    
+    <h1 class="nhsuk-heading-l">Restore patient to CSMS</h1>
+    <div class="nhsuk-card nhsuk-card--feature">
+    <div class="nhsuk-card__content nhsuk-card__content--feature">
+    <h3 class="nhsuk-card__heading nhsuk-card__heading--feature nhsuk-heading-s">Inactive patient</h3>
+
+
+<!--
+  <tr id="detailsRow4" class="detailsRow">
+           <td colspan="3">-->
+            <div class="nhsuk-grid-row">
+              <div class="nhsuk-grid-column-full">
+
+ <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-4">
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">Name</dt>
+    <dd class="nhsuk-summary-list__value">Sally Johnson</dd>
+  </div>
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">Date of birth</dt>
+    <dd class="nhsuk-summary-list__value">24-Mar-1988</dd>
+  </div>
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">NHS number</dt>
+    <dd class="nhsuk-summary-list__value">555 666 7890</dd>
+  </div>
+</dl>
+
+
+
+              </div>
+            </div>
+
+
+
+    <form action="/v12/reports/inactive-confirm" method="post">
+      <div class="nhsuk-form-group">
+        {% call fieldset({
+          legend: {
+            text: "Are you sure you want to restore this patient to CSMS?",
+            classes: "nhsuk-fieldset__legend--m",
+            isPageHeading: false
+          }
+        }) %}
+
+        <div class="nhsuk-inset-text" style="margin-top: 10px;">
+          <span class="nhsuk-u-visually-hidden">Information: </span>
+          <p>Once this patient has been restored they will continue to be invited for screening.</p>
+        </div>
+
+        {{ radios({
+          "idPrefix": "active-patient",
+          "name": "active-patient",
+          "items": [
+          
+            {
+              "value": "yes",
+              "text": "Yes"
+            },
+            {
+              "value": "no",
+              "text": "No"
+            }
+
+          ]
+        }) }}
+
+        {% endcall %}
+
+        </div></fieldset>
+
+      
+
+
+
+    <button class="nhsuk-button nhsuk-button--ers" type="submit">Continue</button>
+    </form>
+
+    <p><a href="/v12/reports/lab-file-report/missing-files/possible-missing">Exit without saving</a></p>
+    </div>
+    </div>
+
+
+{% endblock %}

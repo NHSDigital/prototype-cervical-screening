@@ -1,0 +1,172 @@
+{% extends "layout-v2.html" %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/js/search.js"></script>
+<script type="text/javascript" src="/js/auto.js"></script>
+<style type="text/css" media="screen">
+  .nhsuk-header__navigation-item:nth-child(4) {
+    border-bottom: 4px solid #d8dde0;
+  }
+</style>
+{% endblock %}
+{% block pageTitle %}
+NHS Cervical screening management system
+{% endblock %}
+
+{% block header %}
+{% include '../components/header.html' %}
+{% endblock %}
+
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    {{ backLink({
+      "href": "/v12/reports/reports",
+      "text": "Go back to reports"
+    }) }}
+
+
+      <h1 class="nhsuk-heading-l">
+        <span class="nhsuk-caption-m">
+         
+                 <span class="nhsuk-u-visually-hidden"> - </span>
+               </span>Inactive participants</h1>
+
+
+
+
+
+    <!-- div class="nhsuk-inset-text">
+      <span class="nhsuk-u-visually-hidden">Information: </span>
+      <p>The data used to identify dummy registrations is updated daily and was last refreshed midnight 24 March 2022. </p>
+    </div -->
+
+ 
+   <!-- <h3 class="nhsuk-heading-s">Latest reports</h3> -->
+
+    <table class="nhsuk-table">
+   
+      <thead role="rowgroup" class="nhsuk-table__head">
+        <tr role="row">
+      
+          <th role="columnheader" class="" scope="col">
+            Name
+          </th>
+          <th role="columnheader" class="" scope="col">
+           Date of birth
+          </th>
+          <th role="columnheader" class="" scope="col">
+            NHS number
+          </th>
+          <th role="columnheader" class="" scope="col">
+            Date inactive
+          </th>
+
+          <th role="columnheader" class="" scope="col">
+            View patient summary
+          </th>
+        </tr>
+      </thead>
+      <tbody class="nhsuk-table__body">
+        
+        <tr role="row" class="nhsuk-table__row">
+  
+          <td class="nhsuk-table__cell ">Etienne King</a></td>
+          <td class="nhsuk-table__cell ">02-Aug-2000</a></td>
+          <td class="nhsuk-table__cell">923 456 7899</td>
+          <td class="nhsuk-table__cell">19-Jul-2023</td>
+          <td class="nhsuk-table__cell"><a href="/v12/patient/patient-summary-inactive" target="_blank">View patient summary</a></td>
+        </td>
+        </tr>
+        <tr role="row" class="nhsuk-table__row">
+  
+          <td class="nhsuk-table__cell ">Penelope Knight</a></td>
+          <td class="nhsuk-table__cell ">06-May-1962</a></td>
+          <td class="nhsuk-table__cell">153 456 7899</td>
+          <td class="nhsuk-table__cell">19-Jul-2023</td>
+          <td class="nhsuk-table__cell"><a href="/v12/patient/patient-summary-inactive" target="_blank">View patient summary</a></td>
+        </td>
+        </tr>
+        <tr role="row" class="nhsuk-table__row">
+  
+          <td class="nhsuk-table__cell ">Rami Patel</a></td>
+          <td class="nhsuk-table__cell ">10-Oct-1977</a></td>
+          <td class="nhsuk-table__cell">123 356 7899</td>
+          <td class="nhsuk-table__cell">18-Jul-2023</td>
+          <td class="nhsuk-table__cell"><a href="/v12/patient/patient-summary-inactive" target="_blank">View patient summary</a></td>
+        </td>
+        </tr>
+        <tr role="row" class="nhsuk-table__row">
+  
+          <td class="nhsuk-table__cell ">Lei Hong</a></td>
+          <td class="nhsuk-table__cell ">29-Apr-1992</a></td>
+          <td class="nhsuk-table__cell">123 478 7899</td>
+          <td class="nhsuk-table__cell">18-Jul-2023</td>
+          <td class="nhsuk-table__cell"><a href="/v12/patient/patient-summary-inactive" target="_blank">View patient summary</a></td>
+        </td>
+        </tr>
+        <tr role="row" class="nhsuk-table__row">
+  
+          <td class="nhsuk-table__cell ">Kirsten Walsh</a></td>
+          <td class="nhsuk-table__cell ">17-Apr-1980</a></td>
+          <td class="nhsuk-table__cell">123 456 8899</td>
+          <td class="nhsuk-table__cell">17-Jul-2023</td>
+          <td class="nhsuk-table__cell"><a href="/v12/patient/patient-summary-inactive" target="_blank">View patient summary</a></td>
+        </td>
+        </tr>
+        <tr role="row" class="nhsuk-table__row">
+  
+          <td class="nhsuk-table__cell ">Shannon Hope</a></td>
+          <td class="nhsuk-table__cell ">09-Jan-1998</a></td>
+          <td class="nhsuk-table__cell">123 456 9999</td>
+          <td class="nhsuk-table__cell">17-Jul-2023</td>
+          <td class="nhsuk-table__cell"><a href="/v12/patient/patient-summary-inactive" target="_blank">View patient summary</a></td>
+        </td>
+        </tr>
+        <tr role="row" class="nhsuk-table__row">
+  
+          <td class="nhsuk-table__cell ">Yasmin Given</a></td>
+          <td class="nhsuk-table__cell ">01-Mar-1966</a></td>
+          <td class="nhsuk-table__cell">123 456 7888</td>
+          <td class="nhsuk-table__cell">17-Jul-2023</td>
+          <td class="nhsuk-table__cell"><a href="/v12/patient/patient-summary-inactive" target="_blank">View patient summary</a></td>
+        </td>
+        </tr>
+
+    
+
+      </tbody>
+    </table>
+    <nav role="navigation" aria-label="Pagination">
+      <ul class="screening-pagination">
+        <li class="screening-pagination-item" aria-current="page">
+          <span class="screeing-pagination-current">
+            1</span>
+          </a>
+        </li>
+        <li class="screening-pagination-item">
+          <a href="">
+            <span>2</span>
+          </a>
+        </li>
+        <li class="screening-pagination-item">
+          <a href="">
+            <span>3</span>
+          </a>
+        </li>
+        <li class="screening-pagination-item">
+          <a href="">
+            <span>Next >></span>
+          </a>
+        </li>
+        <p class="screening-pagination-showing">Showing 12 of 63 results</p>
+      </ul>
+    </nav>
+
+
+   
+  </div>
+</div>
+{% endblock %}

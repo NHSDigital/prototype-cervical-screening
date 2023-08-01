@@ -517,6 +517,23 @@ router.post('/v12/patient/add-test-result/add-test-result', function (req, res) 
   }
 
 })
+
+router.post('/v12/reports/inactive-confirm', function (req, res) {
+
+  // Make a variable and give it the value from 'know-nhs-number'
+  var nhsNumber = req.session.data['active-patient']
+
+  // Check whether the variable matches a condition
+  if (nhsNumber == "yes"){
+    // Send user to next page
+    res.redirect('/v12/patient/patient-summary-active')
+  }
+  else {
+    // Send user to ineligible page
+    res.redirect('/v12/patient/patient-summary-inactive')
+  }
+
+})
 //end cb added
 
 module.exports = router;

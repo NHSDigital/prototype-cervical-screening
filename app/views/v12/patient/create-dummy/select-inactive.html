@@ -24,7 +24,7 @@
   <div class="nhsuk-grid-column-three-quarters">
 
     <div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
-      <a class="nhsuk-back-link__link" href="/v12/patient/create-dummy/add-details">
+      <a class="nhsuk-back-link__link" href="/v12/patient/create-dummy/start4">
         <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
         </svg>
@@ -33,35 +33,61 @@
 
 
 
-
 <div class="nhsuk-card nhsuk-card--feature">
   <div class="nhsuk-card__content nhsuk-card__content--feature">
     {% include '../../components/create-dummy.html' %}
 
-    <form action="/v12/patient/create-dummy/review-dummy" method="post">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-two-thirds">
+
+        <form action="/v12/patient/create-dummy/add-details" method="post">
 
     <div class="nhsuk-form-group">
-                  <h1 class="nhsuk-label-wrapper">
-                    <label class="nhsuk-label nhsuk-label--l nhsuk-u-margin-bottom-2" for="example-heading">
-                      Enter CRM case number
-                    </label>
-                  </h1>
-                  <span class="nhsuk-hint" id="example-hint">
-                    For example, CAS-12345-ABCDE.
-                  </span>
-                  <input class="nhsuk-input nhsuk-input--width-10" type="text" name="dummy-crm" autocomplete="off" value="">
-                </div>
+      {% from 'radios/macro.njk' import radios %}
+      {% from 'input/macro.njk' import input %}
 
-                <div class="nhsuk-form-group">
-              <label class="nhsuk-label" for="example">
-                Comments (optional)
-              </label>
+      {% set emailHtml %}
+        {{ input({
+          id: "email",
+          name: "email",
+          classes: "nhsuk-u-width-two-thirds",
+          label: {
+            text: "NHS number"
+          }
+        }) }}
+      {% endset -%}
+
+      {{ radios({
+        "idPrefix": "contact",
+        "name": "contact",
+        "fieldset": {
+          "legend": {
+            "text": "Do you have an NHS number for this participant?",
+            "classes": "nhsuk-fieldset__legend--l",
+            "isPageHeading": "true"
+          }
+        },
+        
+        "items": [
+          {
+            "value": "email",
+            "text": "Yes, I have an NHS number",
+            "conditional": {
+              "html": emailHtml
+            }
+          },
+          {
+            "value": "phone",
+            "text": "No (continue without one)",
+            "conditional": {
+              "html": phoneHtml
+            }
+          }
+        ]
+      }) }}
 
 
-                  <span class="nhsuk-hint" id="example-hint">Do not include clinical information at this point.</span>
-
-              <textarea class="nhsuk-textarea" id="example" name="dummyComments" rows="5" aria-describedby="example-hint" autocomplete="off"></textarea>
-            </div>
+      </div>
 
         <button class="nhsuk-button nhsuk-button--ers" type="submit">
           Continue

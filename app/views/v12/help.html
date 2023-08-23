@@ -31,31 +31,118 @@
 
         <div class="nhsuk-form-group">
           <h1 class="nhsuk-heading-xl">Tell us what you need help with</h1>
-          {{ input({
-            "label": {
-              "text": "What is your name?"
-            },
-            "id": "name",
-            "name": "name"
-          }) }}
-          {{ input({
-            "label": {
-              "text": "What is your email address?"
-            },
-            "id": "email",
-            "name": "email"
-          }) }}
-          
-          {{ textarea({
-            "name": "detail",
-            "id": "detail",
-            "label": {
-              "text": "Describe the problem in detail"
-            },
-            "hint": {
-              "text": "Give as much information as you can including the page name or area of the service and how the problem happened."
-            }
-          }) }}
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="name">
+              <b>What is your name?</b>
+            </label>
+            <input class="nhsuk-input" id="name" name="name" type="text">
+          </div>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="email">
+              <b>What is your email address?</b>
+            </label>
+            <input class="nhsuk-input" id="email" name="email" type="text">
+          </div>
+
+          <div class="nhsuk-u-margin-bottom-6 nhsuk-form-group">
+              <fieldset class="nhsuk-fieldset">
+                  <legend class="nhsuk-heading-xs nhsuk-u-margin-bottom-4" asp-for="Service" id="service_label">Select the area of CSMS you're having a problem with</legend>
+
+                  <div class="nhsuk-radios--conditional">
+
+                      <div class="nhsuk-radios__item">
+                          <input class="nhsuk-radios__input" type="radio" id="nhs_covid_pass" value="NHS COVID Pass" aria-labelledby="nhs_covid_pass_title" aria-describedby="nhs_covid_pass_title" name="Service"/>
+                          <label class="nhsuk-label nhsuk-radios__label" for="nhs_covid_pass" id="nhs_covid_pass_title">
+                                        Logging in
+                                      </label>
+                      </div>
+                      <div class="nhsuk-radios__item">
+                          <input class="nhsuk-radios__input" type="radio" id="gp_health_record" value="GP health record" aria-labelledby="gp_health_record_title" aria-describedby="gp_health_record_title" name="Service"/>
+                          <label class="nhsuk-label nhsuk-radios__label" for="gp_health_record" id="gp_health_record_title">
+                                        Finding a patient
+                                      </label>
+                      </div>
+                      <div class="nhsuk-radios__item">
+                          <input class="nhsuk-radios__input" type="radio" id="account_and_settings" value="Account and settings" aria-labelledby="account_and_settings_title" aria-describedby="account_and_settings_title" name="Service"/>
+                          <label class="nhsuk-label nhsuk-radios__label" for="account_and_settings" id="account_and_settings_title">
+                                        Reports
+                                      </label>
+                      </div>
+                      <div class="nhsuk-radios__item">
+                          <input class="nhsuk-radios__input" type="radio" id="prescriptions" value="Prescriptions" aria-labelledby="prescriptions_title" aria-describedby="prescriptions_title" name="Service"/>
+                          <label class="nhsuk-label nhsuk-radios__label" for="prescriptions" id="prescriptions_title">
+                                        Matching and results
+                                      </label>
+                      </div>
+                      <div class="nhsuk-radios__item">
+                          <input class="nhsuk-radios__input" type="radio" id="gp_appointments" value="GP appointments" aria-labelledby="gp_appointments_title" aria-describedby="gp_appointments_title" name="Service"/>
+                          <label class="nhsuk-label nhsuk-radios__label" for="gp_appointments" id="gp_appointments_title">
+                                        Admin and printing
+                                      </label>
+                      </div> 
+
+                      <div class="nhsuk-radios__item">
+                          <input class="nhsuk-radios__input" id="something_else" type="radio" value="Something Else" aria-describedby="something_else_title" aria-controls="something_else_entry" aria-expanded="false" name="Service">
+                          <label class="nhsuk-label nhsuk-radios__label" for="something_else" id="something_else_title">
+                                      Something else
+                                    </label>
+                      </div>
+
+                      <div id="something_else_entry" class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden">
+                          <div class="nhsuk-form-group">
+                              <label class="nhsuk-hint" id="something_else_hint" for="OtherService">
+                                            Tell us the area of the service you are having a problem with
+                                          </label>
+
+                              <input type="text" aria-describedby="something_else_hint" maxlength="50" class="nhsuk-input" id="OtherService" name="OtherService" value=""/>
+                          </div>
+                      </div>
+                  </div>
+
+              </fieldset>
+          </div>
+
+          <div class="nhsuk-u-margin-bottom-6 nhsuk-form-group">
+              <fieldset class="nhsuk-fieldset" role="group">
+                  <legend class="nhsuk-heading-xs nhsuk-u-margin-bottom-2" asp-for="Service">What date did this happen? (optional)</legend>
+                  <span class="nhsuk-hint" id="date-hint">
+                          For example, 15 3 1984
+                        </span>
+
+                  <div class="nhsuk-date-input">
+                      <div class="nhsuk-date-input__item">
+                          <div class="nhsuk-form-group">
+                              <label class="nhsuk-label nhsuk-date-input__label" for="Day">Day</label>
+                              <input class="nhsuk-date-input__input nhsuk-input--width-2 nhsuk-input" type="text" inputmode="numeric" maxlength="2" id="Day" name="Day" value=""/>
+                          </div>
+                      </div>
+                      <div class="nhsuk-date-input__item">
+                          <div class="nhsuk-form-group">
+                              <label class="nhsuk-label nhsuk-date-input__label" for="Month">Month</label>
+                              <input class="nhsuk-date-input__input nhsuk-input--width-2 nhsuk-input" type="text" inputmode="numeric" maxlength="2" id="Month" name="Month" value=""/>
+                          </div>
+                      </div>
+                      <div class="nhsuk-date-input__item">
+                          <div class="nhsuk-form-group">
+                              <label class="nhsuk-label nhsuk-date-input__label" for="Year">Year</label>
+                              <input class="nhsuk-date-input__input nhsuk-input--width-4 nhsuk-input" type="text" inputmode="numeric" maxlength="4" id="Year" name="Year" value=""/>
+                          </div>
+                      </div>
+                  </div>
+              </fieldset>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label nhsuk-label__strong" for="example">
+              <b>Describe the problem in detail</b>
+            </label>
+            <div class="nhsuk-hint" id="example-hint">
+              Give as much information as you can including the page name or area of the service and how the problem happened.
+            </div>
+            <textarea class="nhsuk-textarea" id="example" name="example" rows="5" aria-describedby="example-hint"></textarea>
+          </div>
         </div>
 
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">

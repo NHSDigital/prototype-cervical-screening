@@ -42,15 +42,15 @@
 
 
   <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">Cipher</dt>
+    <dd class="nhsuk-summary-list__value">{{ data['inputArea'] or "BAA" }}</dd>
+    <dd class="nhsuk-summary-list__actions"><a href="add-sender">Change<span class="nhsuk-u-visually-hidden"> Cipher</span></a></dd>
+  </div>
+
+  <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">Sender code</dt>
     <dd class="nhsuk-summary-list__value">{{ data['senderCode'] or "ABCD" }}</dd>
     <dd class="nhsuk-summary-list__actions"><a href="add-sender">Change<span class="nhsuk-u-visually-hidden"> Sender code</span></a></dd>
-  </div>
-
-   <div class="nhsuk-summary-list__row">
-    <dt class="nhsuk-summary-list__key">Area</dt>
-    <dd class="nhsuk-summary-list__value">{{ data['inputArea'] or "BAA" }}</dd>
-    <dd class="nhsuk-summary-list__actions"><a href="add-sender">Change<span class="nhsuk-u-visually-hidden"> Cipher</span></a></dd>
   </div>
 
   <div class="nhsuk-summary-list__row">
@@ -60,9 +60,14 @@
   </div>
 
   <div class="nhsuk-summary-list__row">
-    <dt class="nhsuk-summary-list__key">Name and address</dt>
-    <dd class="nhsuk-summary-list__value">{{ data['senderName'] or "Kent & Canterbury Hospital" }}
-    <br>{{ data['buildingName'] or "Hospital" }}<br>{{ data['streetName'] or "Ethelbert Rd" }}<br>{{ data['townName'] or "Canterbury" }}<br>{{ data['countyName'] or "Kent" }}<br>{{ data['postcodeName'] or "CT1 3NG" }}</dd>
+    <dt class="nhsuk-summary-list__key">Name</dt>
+    <dd class="nhsuk-summary-list__value">{{ data['senderName'] or "Kent & Canterbury Hospital" }}</dd>
+    <dd class="nhsuk-summary-list__actions"><a href="add-sender">Change<span class="nhsuk-u-visually-hidden"> Name</span></a></dd>
+  </div>
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">Address</dt>
+    <dd class="nhsuk-summary-list__value">{{ data['buildingName'] or "Hospital" }}<br>{{ data['streetName'] or "Ethelbert Rd" }}<br>{{ data['townName'] or "Canterbury" }}<br>{{ data['countyName'] or "Kent" }}<br>{{ data['postcodeName'] or "CT1 3NG" }}</dd>
     <dd class="nhsuk-summary-list__actions"><a href="add-sender">Change<span class="nhsuk-u-visually-hidden"> Address</span></a></dd>
   </div>
 

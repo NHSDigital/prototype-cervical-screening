@@ -45,13 +45,13 @@
 
 
 <div class="nhsuk-summary-list__row">
-<dt class="nhsuk-summary-list__key">Sender code</dt>
-<dd class="nhsuk-summary-list__value">{{ data['senderCode'] or "GYNE" }}</dd>
+<dt class="nhsuk-summary-list__key">Cipher</dt>
+<dd class="nhsuk-summary-list__value">{{ data['national-code'] or "NF" }}</dd>
 </div>
 
 <div class="nhsuk-summary-list__row">
-<dt class="nhsuk-summary-list__key">Area</dt>
-<dd class="nhsuk-summary-list__value">{{ data['national-code'] or "NF" }}</dd>
+<dt class="nhsuk-summary-list__key">Sender code</dt>
+<dd class="nhsuk-summary-list__value">{{ data['senderCode'] or "GYNE" }}</dd>
 </div>
 
 <div class="nhsuk-summary-list__row">
@@ -60,9 +60,13 @@
 </div>
 
 <div class="nhsuk-summary-list__row">
+<dt class="nhsuk-summary-list__key">Name</dt>
+<dd class="nhsuk-summary-list__value">Crarc Colposcopy clinic,</dd>
+</div>
+
+<div class="nhsuk-summary-list__row">
 <dt class="nhsuk-summary-list__key">Address</dt>
-<dd class="nhsuk-summary-list__value">	Crarc Colposcopy clinic, <br>
-Ipswich hospital,<br>
+<dd class="nhsuk-summary-list__value">Ipswich hospital,<br>
 Heath road,<br>
 Ipswich,<br>
 IP4 5PD</dd>

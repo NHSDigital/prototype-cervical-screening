@@ -534,6 +534,23 @@ router.post('/v12/reports/inactive-confirm', function (req, res) {
   }
 
 })
+
+router.post('/v12/admin/manage-sender-codes-v3/manage-sender-codes', function (req, res) {
+
+  // Make a variable and give it the value from 'know-nhs-number'
+  var nhsNumber = req.session.data['sender-codes']
+
+  // Check whether the variable matches a condition
+  if (nhsNumber == "email"){
+    // Send user to next page
+    res.redirect('/v12/admin/manage-sender-codes-v3/sender-code-non-gp-search')
+  }
+  else {
+    // Send user to ineligible page
+    res.redirect('/v12/admin/manage-sender-codes-v3/sender-code-gp-search')
+  }
+
+})
 //end cb added
 
 module.exports = router;

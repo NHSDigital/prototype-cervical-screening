@@ -26,11 +26,11 @@
 
      <div class="nhsuk-card nhsuk-card--feature">
     <div class="nhsuk-card__content nhsuk-card__content--feature">
-        <h3 class="nhsuk-card__heading nhsuk-card__heading--feature nhsuk-heading-m">Add new sender
+        <h3 class="nhsuk-card__heading nhsuk-card__heading--feature nhsuk-heading-m">Add non-GP sender details
   <span style="color:white;" class="nhsuk-table__cell--hint"></span></h3>
     <span class="nhsuk-hint">Step 1 of 3</span>
 
-  <h1 class="nhsuk-heading-l">Add sender details</h1>
+  <h1 class="nhsuk-heading-l">Add non-GP sender details</h1>
 
 
     <form action="add-sender-crm" method="post">
@@ -42,46 +42,44 @@
 
           <form action="add-crm-comments" method="post">
 
-
-
              <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-label__strong" for="example-with-hint-text">
+                Cipher
+              </label>
+              <div class="nhsuk-hint" id="example-with-hint-text-hint">
+                 1 to 3 letters.
+                 <br>
+                 For example, A, DN or LNA.
+              </div>
+              <input class="nhsuk-input nhsuk-input--width-10"  id="inputArea" name="inputArea" type="text" aria-describedby="example-with-hint-text-hint" inputmode="numeric">
+            </div>
+
+            <div class="nhsuk-form-group">
                 <label class="nhsuk-label nhsuk-label__strong" for="sender-code">
                   Sender code
                 </label>
                 <div class="nhsuk-hint" id="example-with-hint-text-hint">
-                  Also known as non GP sender code.
+                  Also known as Practice Code, non GP sender code or GNC number.
                   <br>
                   For example, A86020
                 </div>
                 <input class="nhsuk-input nhsuk-input--width-4"  id="senderCode" name="senderCode" type="text" aria-describedby="Sender code" inputmode="text" autocomplete="off">
             </div>
 
-
-            <div class="nhsuk-form-group">
-              <label class="nhsuk-label nhsuk-label__strong" for="example-with-hint-text">
-                Area
+             <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-label__strong" for="select-1">
+                Source type
               </label>
-              <div class="nhsuk-hint" id="example-with-hint-text-hint">
-                 Enter 2 to 3 letters for example, BD or LNA.
-                <br>Also known as NHAIS cipher or NHAIS box.
-              </div>
-              <input class="nhsuk-input nhsuk-input--width-10"  id="inputArea" name="inputArea" type="text" aria-describedby="example-with-hint-text-hint" inputmode="numeric">
+              <select class="nhsuk-select" id="select-1" name="select-1">
+                
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+              </select>
             </div>
-
-              {{ input({
-               "label": {
-                 "text": "Source type",
-                "classes": "nhsuk-label nhsuk-label__strong"
-               },
-               hint: {
-                  html: "A number between 2 and 7"
-               },
-               "id": "sourceType",
-               "name": "sourceType",
-               "classes": "nhsuk-input--width-2",
-               "autocomplete": "off"
-
-             }) }}
 
 
                    <div class="nhsuk-form-group">

@@ -24,7 +24,7 @@ NHS Cervical screening management system
 
 {% block content %}
 <div class="nhsuk-grid-row">
-  <div class="nhsuk-grid-column-full">
+  <div class="nhsuk-grid-column-three-quarters">
     {{ backLink({
       "href": "../../admin",
       "text": "Back to Admin"
@@ -32,7 +32,7 @@ NHS Cervical screening management system
 
     <h1 class="nhsuk-heading-l">Manage sender codes</h1>
 
-    <p>
+    <!-- <p>
       You can use this to:
       </p>
 
@@ -48,65 +48,106 @@ NHS Cervical screening management system
               </li>
       </ul>
 
-<p>For more information on GP senders, go to the <a href="https://odsportal.digital.nhs.uk/Organisation/Search">ODS Portal</a>.</p>
-
-   <a class="nhsuk-button nhsuk-button--ers nhsuk-button--ers_secondary nhsuk-u-margin-bottom-4 no-print" href="add-sender"
->Add new non-GP sender</a>
-
-<br>
-<br>
-
-
-   <h2 id="testresults" class="nhsuk-heading-l">Find existing senders</h2>
+ -->
 
    <p>If you do not know the sender code or area for a non-GP sender, use the <a href="../../reports/non-gp-sender-report">non-GP sender details report</a> to find sender details.</p>
 
         <form action="sender-code-search" method="post">
-     <div class="nhsuk-form-group">
-                <label class="nhsuk-label nhsuk-label__strong" for="sender-code">
-                  Sender code
-                </label>
-                <div class="nhsuk-hint" id="example-with-hint-text-hint">
-                  Also known as Practice code, non-GP sender code or GNC number.
-                  <br>
-                  For example, A86020
+          <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+                <h1 class="nhsuk-fieldset__heading">
+                  What type of sender are you looking for?
+                </h1>
+              </legend>
+
+              <div class="nhsuk-hint" id="contact-hint">
+                Select one option
+              </div>
+
+              <div class="nhsuk-radios nhsuk-radios--conditional">
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="contact-1" name="contact" type="radio" value="email" aria-controls="conditional-contact-1" aria-expanded="false">
+                  <label class="nhsuk-label nhsuk-radios__label" for="contact-1">
+                    Non-GP Sender
+                  </label>
+                </div>
+
+                <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-1">
+
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-label__strong" for="cipher">
+                      Cipher
+                    </label>
+                    <div class="nhsuk-hint" id="example-with-hint-text-hint">
+                       1 to 3 letters.
+                       <br>
+                       For example, A, DN or LNA.
+                    </div>
+                    <input class="nhsuk-input nhsuk-input--width-10"  id="cipher" name="inputArea" type="text" aria-describedby="example-with-hint-text-hint" inputmode="numeric">
+                  </div>
+
+                  <div class="nhsuk-form-group">
+                      <label class="nhsuk-label nhsuk-label__strong" for="sender-code">
+                        Sender code
+                      </label>
+                      <div class="nhsuk-hint" id="example-with-hint-text-hint">
+                        Also known as Practice Code, non GP sender code or GNC number.
+                        <br>
+                        For example, A86020
+                      </div>
+                      <input class="nhsuk-input nhsuk-input--width-4"  id="sender-code" name="sender-code" type="text" aria-describedby="Sender code" inputmode="text" autocomplete="off">
+                  </div>
 
                 </div>
-                <input class="nhsuk-input nhsuk-input--width-5" value='{{ senderValue }}' id="sender-code" name="sender-code" type="text" aria-describedby="Sender code" inputmode="text" autocomplete="off">
-            </div>
 
-            <div class="nhsuk-form-group">
-                <label class="nhsuk-label nhsuk-label__strong" for="sender-code">
-                   Area
-                </label>
-                <div class="nhsuk-hint" id="example-with-hint-text-hint">
-                  Also known as NHAIS cipher or NHAIS box.
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" aria-controls="conditional-contact-2" aria-expanded="false">
+                  <label class="nhsuk-label nhsuk-radios__label" for="contact-2">
+                    GP Sender
+                  </label>
+                </div>
 
-                <br>Enter 2 to 3 letters for example, BD or LNA.
-                <br>You need to enter a valid area to find a sender.
+                <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-2">
 
+                  <div class="nhsuk-form-group">
+                      <label class="nhsuk-label nhsuk-label__strong" for="sender-code2">
+                        Sender code
+                      </label>
+                      <div class="nhsuk-hint" id="example-with-hint-text-hint">
+                        Also known as Practice Code, non GP sender code or GNC number.
+                        <br>
+                        For example, A86020
+                      </div>
+                      <input class="nhsuk-input nhsuk-input--width-4"  id="sender-code2" name="sender-code2" type="text" aria-describedby="Sender code" inputmode="text" autocomplete="off">
+                  </div>
 
                 </div>
-                <input class="nhsuk-input nhsuk-input--width-4" value='{{ senderValue }}' id="sender-code" name="sender-code" type="text" aria-describedby="Sender code" inputmode="text" autocomplete="off">
+
+              </div>
+            </fieldset>
+
+          </div>
+
+
+
+          <br>
+          <div class="nhsuk-form-group">
+            <div class="nhsuk-grid-row">
+              <div class="nhsuk-grid-column-full">
+                <button class="nhsuk-button nhsuk-button--ers" type="submit">Find sender</button>
+              </div>
             </div>
+          </div>
 
+        </form>
 
+          <p>For more information on GP senders, go to the <a href="https://odsportal.digital.nhs.uk/Organisation/Search">ODS Portal</a>.</p>
 
-<br>
-    <div class="nhsuk-form-group">
-      <div class="nhsuk-grid-row">
-        <div class="nhsuk-grid-column-full">
-          <button class="nhsuk-button nhsuk-button--ers" type="submit">Find sender</button>
-        </div>
-      </div>
-    </div>
-
-  </form>
-
-
-
-<div class="nhsuk-grid-row nhsuk-u-margin-top-4">
-  <div class="nhsuk-grid-column-full">
+          <a class="nhsuk-button nhsuk-button--ers nhsuk-button--ers_secondary nhsuk-u-margin-bottom-4 no-print" href="add-sender"
+>Add new non-GP sender</a>
 
 
 {% endblock %}

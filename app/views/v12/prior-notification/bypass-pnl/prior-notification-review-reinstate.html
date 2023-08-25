@@ -56,7 +56,7 @@
 
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">Amended recall status</dt>
-          <dd class="nhsuk-summary-list__value">{{  data['recallStatus2'] or '' }}</dd>
+          <dd class="nhsuk-summary-list__value">Invited</dd>
           <dd class="nhsuk-summary-list__actions"><a href="prior-notification-{{ data.pnlversion }}-defer-length">Change<span class="nhsuk-u-visually-hidden"> Next test due date</span></a></dd>
         </div>
 
@@ -71,7 +71,7 @@
             {% set nextTestDueDate = data['ntdd-year'] + "-" + data['ntdd-month'] + "-" + data['ntdd-day'] %}
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">Next test due date</dt>
-              <dd class="nhsuk-summary-list__value">{{ nextTestDueDate | returnDateFormat + ' ' + nextTestDueDate | returnTimeDiff }}</dd>
+              <dd class="nhsuk-summary-list__value">16 September 2023</dd>
               <dd class="nhsuk-summary-list__actions"><a href="prior-notification-{{ data.pnlversion }}-defer-length">Change<span class="nhsuk-u-visually-hidden"> Next test due date</span></a></dd>
             </div>
 

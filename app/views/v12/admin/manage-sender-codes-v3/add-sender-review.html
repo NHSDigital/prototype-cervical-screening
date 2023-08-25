@@ -17,13 +17,13 @@
         <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
         </svg>
-        Back to step 2 - Add CRM case number</a>
+        Back to step 1</a>
     </div>
    <div class="nhsuk-card nhsuk-card--feature">
     <div class="nhsuk-card__content nhsuk-card__content--feature">
         <h3 class="nhsuk-card__heading nhsuk-card__heading--feature nhsuk-heading-m">Add new sender
   <span style= color:white; class="nhsuk-table__cell--hint"></span></h3>
-    <span class="nhsuk-hint">Step 3 of 3</span>
+    <span class="nhsuk-hint">Step 2 of 2</span>
 
 
     <div class="nhsuk-form-group">
@@ -35,7 +35,7 @@
 
 
 
-    <form action="manage-sender-codes" method="post">
+    <form action="manage-sender-codes">
 
 <dl class="nhsuk-summary-list">
 
@@ -77,16 +77,16 @@
     <dd class="nhsuk-summary-list__actions"><a href="add-sender">Change<span class="nhsuk-u-visually-hidden"> Cipher</span></a></dd>
   </div>
 
-  <div class="nhsuk-summary-list__row">
+ <!--  <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">CRM</dt>
     <dd class="nhsuk-summary-list__value">{{ data['addCrm'] or "CAS-12345-ABCDE" }}</dd>
     <dd class="nhsuk-summary-list__actions"><a href="add-sender-crm">Change<span class="nhsuk-u-visually-hidden"> CRM</span></a></dd>
-  </div>
+  </div> -->
 
  <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">Comments</dt>
     <dd class="nhsuk-summary-list__value">{{ data['addSenderComments'] or "" }}</dd>
-    <dd class="nhsuk-summary-list__actions"><a href="add-sender-crm">Change<span class="nhsuk-u-visually-hidden"> Comments</span></a></dd>
+    <dd class="nhsuk-summary-list__actions"><a href="add-sender">Change<span class="nhsuk-u-visually-hidden"> Comments</span></a></dd>
   </div>
 </div>
 
@@ -95,7 +95,7 @@
             Submit
          </button>
 
-         <p><a href="/v12/patient/patient-summary-7">Exit without saving</a></p>
+         <p><a href="manage-sender-codes">Exit without saving</a></p>
 
      </form>
   </div>

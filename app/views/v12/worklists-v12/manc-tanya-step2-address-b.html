@@ -46,60 +46,6 @@
   .nhsuk-header__navigation-item:nth-child(3) {
     border-bottom: 4px solid #d8dde0;
   }
-  #hideMe {
-    -moz-animation: cssAnimation 0s ease-in 5s forwards;
-    /* Firefox */
-    -webkit-animation: cssAnimation 0s ease-in 5s forwards;
-    /* Safari and Chrome */
-    -o-animation: cssAnimation 0s ease-in 5s forwards;
-    /* Opera */
-    animation: cssAnimation 0s ease-in 5s forwards;
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-}
-
-@keyframes cssAnimation {
-    to {
-        width:0;
-        height:0;
-        overflow:hidden;
-    }
-}
-@-webkit-keyframes cssAnimation {
-    to {
-        width:0;
-        height:0;
-        visibility:hidden;
-    }
-}
-
-#showMe {
-    visibility: hidden;
-    -moz-animation: cssContent 0.25s ease-in 5s forwards;
-    /* Firefox */
-    -webkit-animation: cssContent 0.25s ease-in 5s forwards;
-    /* Safari and Chrome */
-    -o-animation: cssContent 0.25s ease-in 5s forwards;
-    /* Opera */
-    animation: cssContent 0.25s ease-in 5s forwards;
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-}
-
-@keyframes cssContent {
-    to {
-        width:100%;
-        height:100%;
-        overflow:visible;
-    }
-}
-@-webkit-keyframes cssContent {
-    to {
-        width:100%;
-        height:100%;
-        visibility:visible;
-    }
-}
 </style>
 
 {% endblock %}
@@ -291,50 +237,9 @@ NHS Cervical screening management system
           "
         }) }}
 
-        {{ details({
-          "text": "Previous addresses in NHAIS",
-          "HTML": "
-          <div id=\"hideMe\">Loading addresses from NHAIS...</div>
-          <div id=\"showMe\">
-          <div class=\"nhsuk-summary-list__row\">
-            <dt class=\"nhsuk-summary-list__key\">
-              Previous address
-            </dt>
-            <dd class=\"nhsuk-summary-list__value\">
-              <span>78 Leamington Road
-              <br>
-              Kenilworth
-              <br>
-              CV8 2AA</span>
-            </dd>
-          </div>
-          <div class=\"nhsuk-summary-list__row\">
-            <dt class=\"nhsuk-summary-list__key\">
-              Previous address
-            </dt>
-            <dd class=\"nhsuk-summary-list__value\">
-              <span>39 Hough Lane
-              <br>
-              Leeds
-              <br>
-              LS6 8UE</span>
-            </dd>
-          </div>
-          <div class=\"nhsuk-summary-list__row\">
-            <dt class=\"nhsuk-summary-list__key\">
-              Previous address
-            </dt>
-            <dd class=\"nhsuk-summary-list__value\">
-              <span>1 Bridge Street
-              <br>
-              Hull
-              <br>
-              HU2 8LE</span>
-            </dd>
-          </div>
-        </div>
-          "
-        }) }}
+        <p><a href="manc-tanya-addresses" target="_blank">Previous addresses in NHAIS [opens in a new tab]</a></p>
+
+        
     </div>
   </div>
 </div>

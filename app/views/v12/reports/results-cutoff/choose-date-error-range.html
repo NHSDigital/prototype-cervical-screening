@@ -31,7 +31,7 @@ NHS Cervical screening management system
         "titleText": "There is a problem",
         "errorList": [
           {
-            "text": "Enter a valid date",
+            "text": "The maxiumum length of time you can search for is 7 days.",
             "href": "#confirm-date"
           }
         ]
@@ -69,18 +69,21 @@ NHS Cervical screening management system
             "hint": {
               "text": "For example, 15 3 1984"
             },
+            "errorMessage": {
+                "text": "Enter a period 7 days or shorter"
+            },
             "items": [
               {
                 "name": "day",
-                "classes": "nhsuk-input--width-2"
+                "classes": "nhsuk-input--width-2 nhsuk-input--error"
               },
               {
                 "name": "month",
-                "classes": "nhsuk-input--width-2"
+                "classes": "nhsuk-input--width-2 nhsuk-input--error"
               },
               {
                 "name": "year",
-                "classes": "nhsuk-input--width-4"
+                "classes": "nhsuk-input--width-4 nhsuk-input--error"
               }
             ]
           }) }}
@@ -98,9 +101,6 @@ NHS Cervical screening management system
             },
             "hint": {
               "text": "Leave blank if viewing 1 day"
-            },
-            "errorMessage": {
-                "text": "Enter a valid date"
             },
             "items": [
               {

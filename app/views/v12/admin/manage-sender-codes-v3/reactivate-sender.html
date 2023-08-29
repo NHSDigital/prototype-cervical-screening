@@ -41,8 +41,8 @@ NHS Cervical screening management system
   <div class="nhsuk-grid-column-full">
 
     {{ backLink({
-      "href": "sender-code-search-reactive",
-      "text": "Go back to Mange sender codes"
+      "href": "sender-code-non-gp-search",
+      "text": "Go back to search results"
     }) }}
 
   </div>
@@ -53,8 +53,8 @@ NHS Cervical screening management system
 
 
     <div class="nhsuk-grid-row">
-  <div class="nhsuk-grid-column-three-quarters">
-     <h1 class="nhsuk-heading-l"> Check sender detials before reactivating</h1>
+  <div class="nhsuk-grid-column-full">
+     <h1 class="nhsuk-heading-l"> Check sender details before reactivating</h1>
      
     <div class="nhsuk-inset-text">
       <span class="nhsuk-u-visually-hidden" >Information: </span>
@@ -80,12 +80,13 @@ NHS Cervical screening management system
           </legend>
     
   <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">Cipher</dt>
+    <dd class="nhsuk-summary-list__value">{{ data['national-code'] or "NF" }}</dd>
+  </div>
+
+  <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">Sender code</dt>
     <dd class="nhsuk-summary-list__value">{{ data['health-authority'] or "GYNE" }}</dd>
-  </div>
-  <div class="nhsuk-summary-list__row">
-    <dt class="nhsuk-summary-list__key">Area</dt>
-    <dd class="nhsuk-summary-list__value">{{ data['national-code'] or "NF" }}</dd>
   </div>
   
   <div class="nhsuk-summary-list__row">
@@ -94,12 +95,17 @@ NHS Cervical screening management system
   </div>
   
   <div class="nhsuk-summary-list__row">
-    <dt class="nhsuk-summary-list__key">Name and address</dt>
+    <dt class="nhsuk-summary-list__key">Name</dt>
     <dd class="nhsuk-summary-list__value">Crarc Colposcopy clinic
-            <br> Ipswich hospital,
-            <br> Heath road,
-            <br> Ipswich,
-            <br> IP4 5PD"</dd>
+</dd>
+  </div>
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">Address</dt>
+    <dd class="nhsuk-summary-list__value">Ipswich hospital,<br>
+Heath road,<br>
+Ipswich,<br>
+IP4 5PD</dd>
   </div>
   
   <div class="nhsuk-summary-list__row">
@@ -114,23 +120,20 @@ NHS Cervical screening management system
   </div>
 
   
-  <div class="nhsuk-summary-list__row">
+  <!-- <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">CRM</dt>
     <dd class="nhsuk-summary-list__value">CAS-12345-ABCDE</dd>
-  </div>
+  </div> -->
 
- <div class="nhsuk-summary-list__row">
+ <!-- <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">Comments</dt>
     <dd class="nhsuk-summary-list__value"></dd>
-  </div>
+  </div> -->
 
  </dl>
       {% include '../../components/comments-timeline-sender-audit.html' %} 
     </div>
 
-
-
-    </div>
   
 
           
@@ -138,7 +141,7 @@ NHS Cervical screening management system
 
 
 
-  <form action="confirm-reactivate" method="post"> <input type="hidden" name="hideDetails" value="true">
+  <form action="sender-code-non-gp-search" method="post"> <input type="hidden" name="hideDetails" value="true">
     <div class="nhsuk-form-group">
       <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
         <legend class="nhsuk-fieldset__legend--m nhsuk-label__strong">
@@ -157,7 +160,7 @@ NHS Cervical screening management system
           </div>
         
             
-            <div class="nhsuk-form-group">
+            <!-- <div class="nhsuk-form-group">
               <h1 class="nhsuk-label-wrapper">
                 <label class="nhsuk-fieldset__legend--s nhsuk-label__strong" for="example-heading">
                   Enter CRM case number
@@ -167,7 +170,7 @@ NHS Cervical screening management system
                 For example, CAS-12345-ABCDE.
               </span>
               <input class="nhsuk-input nhsuk-input--width-10" type="text" name="crm" autocomplete="off" value="{{ data.crm }}">
-            </div>
+            </div> -->
             <div class="nhsuk-form-group">
              
             <div class="nhsuk-grid-row">
@@ -186,7 +189,7 @@ NHS Cervical screening management system
     <button class="nhsuk-button nhsuk-button--ers" type="submit">Confirm</button>   
   </form>
 
- <p><a href="manc-rejected">Exit without saving</a></p> 
+ <p><a href="sender-code-non-gp-search">Exit without saving</a></p> 
   </div>
 
 {% endblock %}

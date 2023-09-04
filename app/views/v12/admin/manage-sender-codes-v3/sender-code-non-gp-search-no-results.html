@@ -34,65 +34,18 @@ NHS Cervical screening management system
 
 <div class="nhsuk-grid-row nhsuk-u-margin-top-4">
   <div class="nhsuk-grid-column-full">
-    <h2 id="testresults" class="nhsuk-heading-l">GP Sender results</h2>
+    <h2 id="testresults" class="nhsuk-heading-l">Non-GP Sender results</h2>
 
     <p>
       <span class="number-of-results">
-        <h3 class="nhsuk-heading-xs">A result was found for sender matching sender code GYNE.</h3>
+        <h3 class="nhsuk-heading-xs">We found no results for senders with cipher BD..</h3>
         <p>If the sender you're looking for isn't shown you can <a href="manage-sender-codes">search again.</a></p>
       </span>
     </p>
 
-    <!-- <a class="nhsuk-button nhsuk-button--ers nhsuk-button--ers_secondary nhsuk-u-margin-bottom-4 no-print" href="add-sender"
->Add new non-GP sender</a> -->
+    <a class="nhsuk-button nhsuk-button--ers nhsuk-button--ers_secondary nhsuk-u-margin-bottom-4 no-print" href="add-sender"
+>Add new non-GP sender</a>
 
-<br>
-
-
-    {{ table({
-      panel: false,
-      caption: "",
-      firstCellIsHeader: false,
-      head: [
-        {
-          text: "Sender code"
-        },
-        {
-          text: "Name and address"
-        },
-         {
-          text: "Active"
-        },
-         {
-          text: "Inactive date"
-        }
-
-
-      ],
-      rows: [
-        [
-
-          {
-            text: "GYNE"
-          },
-          {
-            html: "Crarc Colposcopy clinic
-            <br> Ipswich hospital,
-            <br> Heath road,
-            <br> Ipswich,
-            <br> IP4 5PD"
-          },
-          {
-            text: "Yes"
-          },
-          {
-            text: "-"
-          }
-        ]
-
-
-      ]
-}) }}
 
   </div>
 </div>

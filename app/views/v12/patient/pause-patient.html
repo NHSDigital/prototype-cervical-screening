@@ -25,10 +25,66 @@
      <span class="nhsuk-hint">Step 1 of 2</span>
 
 <form action="pause-patient-review" method="post"> <input type="hidden" name="hideDetails" value="true">
+
+  {% set emailHtml %}
+  {{ input({
+    id: "srr",
+    name: "email",
+    classes: "nhsuk-u-width-two-thirds",
+    label: {
+      text: "Give reason for pausing"
+    }
+  }) }}
+{% endset -%}
+
+{{ radios({
+  "idPrefix": "example",
+  "name": "example",
+  "fieldset": {
+    "legend": {
+      "text": "Why is the patient being paused?",
+      "classes": "nhsuk-fieldset__legend--m",
+      "isPageHeading": true
+    }
+  },
+  "items": [
+    {
+      "value": "code",
+      "text": "National code / Lab code"
+    },
+    {
+      "value": "ha",
+      "text": "Health authority"
+    },
+    {
+      "value": "sn",
+      "text": "Slide number"
+    },
+    {
+      "value": "sc",
+      "text": "Sender code"
+    },
+    {
+      "value": "td",
+      "text": "Test date"
+    },
+    {
+      "value": "result",
+      "text": "Result / Action code / Infection code"
+    },
+    {
+      "value": "srr",
+      "text": "Specific rejection reason",
+      "conditional": {
+        "html": emailHtml
+      }
+    }
+  ]
+}) }}
     <div class="nhsuk-form-group">
       <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
         <legend class="nhsuk-fieldset__legend--m nhsuk-label__strong">
-          <h1 class="nhsuk-fieldset__heading">Are you sure you want to pause this patient?</h1>
+          <h2 class="nhsuk-fieldset__heading">Are you sure you want to pause this patient?</h2>
         </legend>
 
     <div class="nhsuk-checkboxes">

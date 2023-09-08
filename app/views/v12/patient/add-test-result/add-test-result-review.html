@@ -188,6 +188,10 @@
  <input type="hidden" id="infectionText" name="infection-text" value="{{ data['result-infection'] | returnInfectionText }}">
  <input type="hidden" id="resultText" name="result-text" value="{{ data['result-result'] | returnResultText }}">
 
+ {{ insetText({
+  "HTML": "<p>Adding this test will reinstate the patient and set their next test due date.</p>"
+}) }}
+
  <!-- <p><a href="add-test-result" class="nhsuk-button nhsuk-button--ers">
             Edit result
          </a></p> -->

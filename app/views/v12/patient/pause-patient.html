@@ -26,64 +26,160 @@
 
 <form action="pause-patient-review" method="post"> <input type="hidden" name="hideDetails" value="true">
 
-  {% set emailHtml %}
-  {{ input({
-    id: "srr",
-    name: "email",
-    classes: "nhsuk-u-width-two-thirds",
-    label: {
-      text: "Give reason for pausing"
-    },
-    hint: {
-    text: "Provide more details in the comments box below."
-  }
-  }) }}
-{% endset -%}
+  <div class="nhsuk-form-group">
 
-{{ checkboxes({
-  "idPrefix": "example",
-  "name": "example",
-  "fieldset": {
-    "legend": {
-      "text": "Why is the patient being paused?",
-      "classes": "nhsuk-fieldset__legend--m",
-      "isPageHeading": true
-    }
-  },
-  "items": [
-    {
-      "value": "code",
-      "text": "National code / Lab code"
-    },
-    {
-      "value": "ha",
-      "text": "Health authority"
-    },
-    {
-      "value": "sn",
-      "text": "Slide number"
-    },
-    {
-      "value": "sc",
-      "text": "Sender code"
-    },
-    {
-      "value": "td",
-      "text": "Test date"
-    },
-    {
-      "value": "result",
-      "text": "Result / Action code / Infection code"
-    },
-    {
-      "value": "srr",
-      "text": "Specific rejection reason",
-      "conditional": {
-        "html": emailHtml
-      }
-    }
-  ]
-}) }}
+  <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+      <h1 class="nhsuk-fieldset__heading">
+        Why is the patient being paused?
+      </h1>
+    </legend>
+
+    <div class="nhsuk-hint" id="contact-hint">
+      Select one option
+    </div>
+
+    <div class="nhsuk-radios nhsuk-radios--conditional">
+
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="contact-1" name="contact" type="radio" value="email" aria-controls="conditional-contact-1" aria-expanded="false">
+        <label class="nhsuk-label nhsuk-radios__label" for="contact-1">
+          Due to a test result
+        </label>
+      </div>
+
+      <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-1">
+
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="email">
+            National code / lab code
+          </label>
+          <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text">
+        </div>
+
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="email2">
+            Slide number
+          </label>
+          <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email2" name="email" type="text">
+        </div>
+
+        {{ dateInput({
+        "id": "dateGiven",
+        "namePrefix": "dateGiven",
+        "fieldset": {
+          "legend": {
+            "text": "Test date",
+            "classes": "nhsuk-label",
+            "isPageHeading": false
+          }
+        },
+        "hint": {
+          "text": "For example, 13 6 2011"
+        },
+        "items": [
+          {
+            "name": "day",
+            "classes": "nhsuk-input--width-2"
+          },
+          {
+            "name": "month",
+            "classes": "nhsuk-input--width-2"
+          },
+          {
+            "name": "year",
+            "classes": "nhsuk-input--width-4"
+          }
+        ]
+      }) }}
+
+      <legend class="nhsuk-fieldset__legend nhsuk-label">
+    Test result
+  </legend>
+
+        <div class="nhsuk-form-group nhsuk-date-input" id="example">
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="example-result">
+                Result
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 nhsuk-u-margin-right-3" id="example-result" name="result-result" type="text" autocomplete="off" value="{{ data['result-result'] }}">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="example-infection">
+                HPV
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-infection" name="result-infection" type="text" autocomplete="off" value="{{ data['result-infection'] }}">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="example-action">
+                Action
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-action" name="result-action" type="text" autocomplete="off" value="{{ data['result-action'] }}">
+            </div>
+          </div>
+        </div>
+
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="email3">
+            Sender code
+          </label>
+          <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email3" name="email" type="text">
+        </div>
+
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="email4">
+            Cipher
+          </label>
+          <input class="nhsuk-input nhsuk-u-width-one-third" id="email4" name="email" type="text">
+        </div>
+
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="email5">
+            Specific rejection reason
+          </label>
+          <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email5" name="email" type="text">
+        </div>
+
+      </div>
+
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" aria-controls="conditional-contact-2" aria-expanded="false">
+        <label class="nhsuk-label nhsuk-radios__label" for="contact-2">
+          Another reason
+        </label>
+      </div>
+
+      <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-2">
+
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="phone">
+            Give reason for pausing
+          </label>
+          <span class="nhsuk-hint">Provide more details why</span>
+          <input class="nhsuk-input nhsuk-u-width-two-thirds" id="phone" name="phone" type="text">
+        </div>
+
+      </div>
+
+    </div>
+  </fieldset>
+
+</div>
+
+
+
+
+
+
+
+
+
+
     <div class="nhsuk-form-group">
       <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
         <legend class="nhsuk-fieldset__legend--m nhsuk-label__strong">

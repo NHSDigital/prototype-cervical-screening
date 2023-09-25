@@ -31,24 +31,26 @@
   <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
     <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
       <h1 class="nhsuk-fieldset__heading">
-        Why is the patient being paused?
+        Is the patient being paused because of a test result?
       </h1>
     </legend>
 
-   <!--  <div class="nhsuk-hint" id="contact-hint">
-      Select one option
-    </div> -->
+   
 
     <div class="nhsuk-checkboxes nhsuk-checkboxes--conditional">
 
       <div class="nhsuk-checkboxes__item">
         <input class="nhsuk-checkboxes__input" id="contact-1" name="contact" type="checkbox" value="email" aria-controls="conditional-contact-1" aria-expanded="false">
         <label class="nhsuk-label nhsuk-checkboxes__label" for="contact-1">
-          Due to a test result
+          Yes, the patient is being paused because of a test result
         </label>
       </div>
 
       <div class="nhsuk-checkboxes__conditional nhsuk-checkboxes__conditional--hidden" id="conditional-contact-1">
+
+        <div class="nhsuk-hint" id="contact-hint">
+      Give more details
+    </div> 
 
         <div class="nhsuk-form-group">
           <label class="nhsuk-label" for="email">

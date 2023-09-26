@@ -49,7 +49,7 @@
       <div class="nhsuk-checkboxes__conditional nhsuk-checkboxes__conditional--hidden" id="conditional-contact-1">
 
         <div class="nhsuk-hint" id="contact-hint">
-      Give more details
+      Give as much detail as possible
     </div> 
 
         <div class="nhsuk-form-group">
@@ -94,6 +94,32 @@
           }
         ]
       }) }}
+
+      {% from 'select/macro.njk' import select %}
+
+      {{ select({
+        "id": "select-1",
+        "name": "select-1",
+        "label": {
+          "text": "Screening pathway?"
+        },
+        "items": [
+          {
+            "value": 1,
+            "text": "HPV primary screening"
+          },
+          {
+            "value": 2,
+            "text": "Non-HPV primary screening"
+          },
+          {
+            "value": 3,
+            "text": "Self sample"
+          }
+        ]
+      }) }}
+
+
 
       <legend class="nhsuk-fieldset__legend nhsuk-label">
     Test result
@@ -142,7 +168,7 @@
 
         <div class="nhsuk-form-group">
           <label class="nhsuk-label" for="email5">
-            Specific rejection reason
+            Validation failure reason
           </label>
           <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email5" name="email" type="text">
         </div>

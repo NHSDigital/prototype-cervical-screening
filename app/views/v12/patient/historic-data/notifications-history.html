@@ -93,7 +93,7 @@ NHS Cervical screening management system
               Leeds (LDS)
               {% endif %}
                  <span class="nhsuk-u-visually-hidden"> - </span>
-               </span>Notifications history
+               </span>Audit of invitation and result notifications
              </h1>
 
              {% if data['chooseCipher'] === 'wak3' %}
@@ -111,7 +111,6 @@ NHS Cervical screening management system
                {% endif %}
 
 
-<h2 class="nhsuk-heading-m">Audit of invitation and result notifications</h2>
 
 <table class="nhsuk-table">
   <caption class="nhsuk-table__caption"></caption>
@@ -167,205 +166,32 @@ NHS Cervical screening management system
 
   </tbody>
 </table>
+<nav role="navigation" aria-label="Pagination">
+      <ul class="screening-pagination">
+        <li class="screening-pagination-item" aria-current="page">
+          <span class="screeing-pagination-current">
+            1</span>
+          </a>
+        </li>
+        <li class="screening-pagination-item">
+          <a href="">
+            <span>2</span>
+          </a>
+        </li>
+        <li class="screening-pagination-item">
+          <a href="">
+            <span>3</span>
+          </a>
+        </li>
+        <li class="screening-pagination-item">
+          <a href="">
+            <span>Next >></span>
+          </a>
+        </li>
+        <p class="screening-pagination-showing">Showing 12 of 63 results</p>
+      </ul>
+    </nav>
 
-<!-- <dl class="nhsuk-summary-list">
-
-  <div class="nhsuk-summary-list__row">
-    <dt class="nhsuk-summary-list__key">
-      Audit of notifications start date
-    </dt>
-    <dd class="nhsuk-summary-list__value">
-      2-Jan-2016
-    </dd>
-
-
-
-  </div>
-
-  <div class="nhsuk-summary-list__row">
-    <dt class="nhsuk-summary-list__key">
-      Date notification was sent to patient or GP  
-    </dt>
-    <dd class="nhsuk-summary-list__value">
-      2-Jan-2016
-    </dd>
-
-
-  </div>
-
-  <div class="nhsuk-summary-list__row">
-    <dt class="nhsuk-summary-list__key">
-      Type of notification (APL)
-    </dt>
-    <dd class="nhsuk-summary-list__value">
-      RP
-    </dd>
-
-
-
-  </div>
-
-  <div class="nhsuk-summary-list__row">
-    <dt class="nhsuk-summary-list__key">
-      Notification description
-    </dt>
-    <dd class="nhsuk-summary-list__value">
-      <p>Letter</p>
-
-    </dd>
-
-  </div>
-
-  <div class="nhsuk-summary-list__row">
-    <dt class="nhsuk-summary-list__key">
-      Type/Reason
-    </dt>
-    <dd class="nhsuk-summary-list__value">
-      <p>RS</p>
-
-    </dd>
-
-  </div>
-  <div class="nhsuk-summary-list__row">
-    <dt class="nhsuk-summary-list__key">
-    Code Cor Marker Description
-    </dt>
-    <dd class="nhsuk-summary-list__value">
-      <p>PA1</p>
-
-    </dd>
-
-  </div>
-
-
-</dl> -->
-
-<h2 class="nhsuk-heading-m">Audit of prior notification list (PNL) notifications</h2>
-
-<table class="nhsuk-table">
-  <caption class="nhsuk-table__caption"></caption>
-  <thead role="rowgroup" class="nhsuk-table__head">
-    <tr role="row">
-      <th role="columnheader" class="" scope="col">
-        Date PNL produced
-      </th>
-      <th role="columnheader" class="" scope="col">
-        Recall type
-      </th>
-      <th role="columnheader" class="" scope="col">
-        Recall status
-      </th>
-      <th role="columnheader" class="" scope="col">
-        PNL delivery method
-      </th>
-
-
-    </tr>
-  </thead>
-  <tbody class="nhsuk-table__body">
-    <tr role="row" class="nhsuk-table__row">
-      <td class="nhsuk-table__cell">01-Feb-2022</td>
-      <td class="nhsuk-table__cell">Called (L)</td>
-      <td class="nhsuk-table__cell">PNL sent to GP (G)</td>
-      <td class="nhsuk-table__cell">Open Exeter</td>
-    </tr>
-
-    <tr role="row" class="nhsuk-table__row">
-      <td class="nhsuk-table__cell">01-Feb-2021</td>
-      <td class="nhsuk-table__cell">Routine recall (N)</td>
-      <td class="nhsuk-table__cell">PNL sent to GP (G)</td>
-      <td class="nhsuk-table__cell">Open Exeter</td>
-    </tr>
-
-        <tr role="row" class="nhsuk-table__row">
-          <td class="nhsuk-table__cell">01-Feb-2020</td>
-          <td class="nhsuk-table__cell">Inadequate (I)</td>
-          <td class="nhsuk-table__cell">PNL sent to GP (G)</td>
-          <td class="nhsuk-table__cell">Paper</td>
-        </tr>
-
-        <tr role="row" class="nhsuk-table__row">
-          <td class="nhsuk-table__cell">01-Feb-2019</td>
-          <td class="nhsuk-table__cell">Repeat advised (R)</td>
-          <td class="nhsuk-table__cell">PNL sent to GP (G)</td>
-          <td class="nhsuk-table__cell">Open Exeter and Paper</td>
-        </tr>
-
-        <tr role="row" class="nhsuk-table__row">
-          <td class="nhsuk-table__cell">01-Feb-2018</td>
-          <td class="nhsuk-table__cell">Ceased (C)</td>
-          <td class="nhsuk-table__cell">PNL not sent to GP (N)</td>
-          <td class="nhsuk-table__cell">-</td>
-        </tr>
-
-
-  </tbody>
-</table>
-
-<!-- <dl class="nhsuk-summary-list">
-
-  <div class="nhsuk-summary-list__row">
-    <dt class="nhsuk-summary-list__key">
-    Date PNL was sent to GP  
-    </dt>
-    <dd class="nhsuk-summary-list__value">
-      2-Jan-2016
-    </dd>
-
-
-
-  </div>
-
-  <div class="nhsuk-summary-list__row">
-    <dt class="nhsuk-summary-list__key">
-      Type of notification (APL)
-    </dt>
-    <dd class="nhsuk-summary-list__value">
-      RG
-    </dd>
-
-
-  </div>
-
-  <div class="nhsuk-summary-list__row">
-    <dt class="nhsuk-summary-list__key">
-      Recall type
-    </dt>
-    <dd class="nhsuk-summary-list__value">
-      L
-    </dd>
-
-
-
-  </div>
-
-  <div class="nhsuk-summary-list__row">
-    <dt class="nhsuk-summary-list__key">
-      Recall status
-    </dt>
-    <dd class="nhsuk-summary-list__value">
-      <p>G</p>
-
-    </dd>
-
-  </div>
-
-  <div class="nhsuk-summary-list__row">
-    <dt class="nhsuk-summary-list__key">
-      PNL type
-    </dt>
-    <dd class="nhsuk-summary-list__value">
-      <p>Open Exeter</p>
-
-    </dd>
-
-  </div>
-
-
-  </div>
-
-
-</dl> -->
 
 
 

@@ -73,13 +73,12 @@ NHS Cervical screening management system
         <div class="nhsuk-grid-row">
 
           <div class="nhsuk-back-link">
-      <a class="nhsuk-back-link__link" href="choose-cipher">
-      <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+  <a class="nhsuk-back-link__link" href="historic-data">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
       <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
-      </svg>
-      Back to Choose an NHAIS area to view</a>
-      </div>
-
+    </svg>
+    Back to data from historic system (NHAIS)</a>
+</div>
           <h1 class="nhsuk-heading-l">
             <span class="nhsuk-caption-m">
               {% if data['chooseCipher'] === 'wak2' %}
@@ -94,7 +93,7 @@ NHS Cervical screening management system
               Leeds (LDS)
               {% endif %}
                  <span class="nhsuk-u-visually-hidden"> - </span>
-               </span>Data from historic system (NHAIS)
+               </span>Audit of prior notification list (PNL) notifications
              </h1>
 
              {% if data['chooseCipher'] === 'wak3' %}
@@ -111,68 +110,159 @@ NHS Cervical screening management system
                {% else %}
                {% endif %}
 
-          <div class="nhsuk-grid-column-one-half" style="padding-left: 0;">
-            <ul class="panel-link">
+
+<table class="nhsuk-table">
+  <caption class="nhsuk-table__caption"></caption>
+  <thead role="rowgroup" class="nhsuk-table__head">
+    <tr role="row">
+      <th role="columnheader" class="" scope="col">
+        Date PNL produced
+      </th>
+      <th role="columnheader" class="" scope="col">
+        Recall type
+      </th>
+      <th role="columnheader" class="" scope="col">
+        Recall status
+      </th>
+      <th role="columnheader" class="" scope="col">
+        PNL delivery method
+      </th>
 
 
-              <li class="panel-link__item">
-                <a class="panel-link__link" href="cytology-history">
-                  <h2 class="panel-link__heading nhsuk-heading-s">Cervical screening test history</h2>
-                </a>
-              </li>
-                <li class="panel-link__item">
-                  {% if data['chooseCipher'] === 'wak2' %}
-                  <a class="panel-link__link" href="demographics-history-wak2">
-                  {% elif data['chooseCipher'] === 'lds' %}
-                  <a class="panel-link__link" href="demographics-history-lds">
-                  {% elif data['chooseCipher'] === 'lds2' %}
-                  <a class="panel-link__link" href="demographics-history-lds2">
-                  {% elif data['chooseCipher'] === 'wak' %}
-                  <a class="panel-link__link" href="demographics-history-wak">
-                  {% else %}
-                  <a class="panel-link__link" href="demographics-history-wak3">
-                  {% endif %}
-                    <h2 class="panel-link__heading nhsuk-heading-s">Demographic history</h2>
-                  </a>
-                </li>
+    </tr>
+  </thead>
+  <tbody class="nhsuk-table__body">
+    <tr role="row" class="nhsuk-table__row">
+      <td class="nhsuk-table__cell">01-Feb-2022</td>
+      <td class="nhsuk-table__cell">Called (L)</td>
+      <td class="nhsuk-table__cell">PNL sent to GP (G)</td>
+      <td class="nhsuk-table__cell">Open Exeter</td>
+    </tr>
 
-                <li class="panel-link__item">
-                  <a class="panel-link__link" href="reg-audit">
-                    <h2 class="panel-link__heading nhsuk-heading-s">Registration audit history</h2>
-                  </a>
-                </li>
-              </ul>
-                        </div>
-          <div class="nhsuk-grid-column-one-half">
-            <ul class="panel-link">
-              <li class="panel-link__item">
-                <a class="panel-link__link" href="notifications-history">
-                  <h2 class="panel-link__heading nhsuk-heading-s">Invitation and result notifications history</h2>
-                </a>
-              </li>
+    <tr role="row" class="nhsuk-table__row">
+      <td class="nhsuk-table__cell">01-Feb-2021</td>
+      <td class="nhsuk-table__cell">Routine recall (N)</td>
+      <td class="nhsuk-table__cell">PNL sent to GP (G)</td>
+      <td class="nhsuk-table__cell">Open Exeter</td>
+    </tr>
 
-              <li class="panel-link__item">
-                <a class="panel-link__link" href="pnl-notifications-history">
-                  <h2 class="panel-link__heading nhsuk-heading-s">Prior notification list (PNL) notifications history</h2>
-                </a>
-              </li>
+        <tr role="row" class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">01-Feb-2020</td>
+          <td class="nhsuk-table__cell">Inadequate (I)</td>
+          <td class="nhsuk-table__cell">PNL sent to GP (G)</td>
+          <td class="nhsuk-table__cell">Paper</td>
+        </tr>
 
-              {% if data['chooseCipher'] === 'wak3' %}
-              <li class="panel-link__item">
-                <a class="panel-link__link" href="cyau-wak">
-                  <h2 class="panel-link__heading nhsuk-heading-s">Full screening history (CYAU report)</h2>
-                </a>
-              </li>
-              {% else %}
-              <li class="panel-link__item">
-                <a class="panel-link__link" href="cyau-lds">
-                  <h2 class="panel-link__heading nhsuk-heading-s">Full screening history (CYAU report)</h2>
-                </a>
-              </li>
-              {% endif %}
+        <tr role="row" class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">01-Feb-2019</td>
+          <td class="nhsuk-table__cell">Repeat advised (R)</td>
+          <td class="nhsuk-table__cell">PNL sent to GP (G)</td>
+          <td class="nhsuk-table__cell">Open Exeter and Paper</td>
+        </tr>
+
+        <tr role="row" class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">01-Feb-2018</td>
+          <td class="nhsuk-table__cell">Ceased (C)</td>
+          <td class="nhsuk-table__cell">PNL not sent to GP (N)</td>
+          <td class="nhsuk-table__cell">-</td>
+        </tr>
 
 
-            </ul>
+  </tbody>
+</table>
+<nav role="navigation" aria-label="Pagination">
+      <ul class="screening-pagination">
+        <li class="screening-pagination-item" aria-current="page">
+          <span class="screeing-pagination-current">
+            1</span>
+          </a>
+        </li>
+        <li class="screening-pagination-item">
+          <a href="">
+            <span>2</span>
+          </a>
+        </li>
+        <li class="screening-pagination-item">
+          <a href="">
+            <span>3</span>
+          </a>
+        </li>
+        <li class="screening-pagination-item">
+          <a href="">
+            <span>Next >></span>
+          </a>
+        </li>
+        <p class="screening-pagination-showing">Showing 12 of 63 results</p>
+      </ul>
+    </nav>
+
+<!-- <dl class="nhsuk-summary-list">
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+    Date PNL was sent to GP  
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      2-Jan-2016
+    </dd>
+
+
+
+  </div>
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Type of notification (APL)
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      RG
+    </dd>
+
+
+  </div>
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Recall type
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      L
+    </dd>
+
+
+
+  </div>
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Recall status
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      <p>G</p>
+
+    </dd>
+
+  </div>
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      PNL type
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      <p>Open Exeter</p>
+
+    </dd>
+
+  </div>
+
+
+  </div>
+
+
+</dl> -->
+
+
+
           </div>
         </div>
 

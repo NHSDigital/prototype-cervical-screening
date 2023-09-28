@@ -27,6 +27,16 @@ NHS Cervical screening management system
     "text": "Go back to reports"
   }) }}
 
+  {{ errorSummary({
+  "titleText": "There is a problem",
+  "errorList": [
+    {
+      "text": "The maxiumum length of time you can search for is 7 days.",
+      "href": "#confirm-date"
+    }
+  ]
+}) }}
+
   <h1 class="nhsuk-heading-l">Outbound transfer report</h1>
 </div>
 
@@ -38,7 +48,7 @@ NHS Cervical screening management system
       </span>
 
     </summary>
-    <div class="nhsuk-details__text">
+    <div class="nhsuk-details__text" aria-expanded="true">
       <form>
 
         <div class="nhsuk-form-group">
@@ -100,7 +110,7 @@ NHS Cervical screening management system
 
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="chooseCCG2" name="chooseCCG" type="radio" value="individualCCG"
-                aria-controls="conditional-contact-1" aria-expanded="false">
+                aria-controls="conditional-contact-1" aria-expanded="true" selected>
               <label class="nhsuk-label nhsuk-radios__label" for="chooseCCG2">
                 Transfer complete
               </label>

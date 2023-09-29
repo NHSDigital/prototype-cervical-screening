@@ -18,6 +18,19 @@
   "classes" : "nhsuk-u-margin-bottom-4"
   }) }}
 
+  {% from 'error-summary/macro.njk' import errorSummary %}
+
+{{ errorSummary({
+  "titleText": "There is a problem",
+  "descriptionText": "You can not complete the review because this patient does not have a Next Test Due Date",
+  "errorList": [
+    {
+      "text": "Contact admin to resolve the issue",
+      "href": "mailto:admin@nhs.net"
+    }
+  ]
+}) }}
+
   <div class="nhsuk-card nhsuk-card--feature">
     <div class="nhsuk-card__content nhsuk-card__content--feature">
     {% include '../components/pnl-patient-2b.html' %}

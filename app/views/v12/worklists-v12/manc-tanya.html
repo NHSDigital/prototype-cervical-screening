@@ -73,6 +73,47 @@ function myFunction() {
   });
 </script>
 
+<script>
+  function toggle(btnID, eIDs) {
+    // Feed the list of ids as a selector
+    var theRows = document.querySelectorAll(eIDs);
+    // Get the button that triggered this
+    var theButton = document.getElementById(btnID);
+    // If the button is not expanded...
+    if (theButton.getAttribute("aria-expanded") == "false") {
+      // Loop through the rows and show them
+      for (var i = 0; i < theRows.length; i++) {
+        theRows[i].classList.add("shown");
+        theRows[i].classList.remove("hidden");
+      }
+      // Now set the button to expanded
+      theButton.setAttribute("aria-expanded", "true");
+      // Otherwise button is not expanded...
+    } else {
+      // Loop through the rows and hide them
+      for (var i = 0; i < theRows.length; i++) {
+        theRows[i].classList.add("hidden");
+        theRows[i].classList.remove("shown");
+      }
+      // Now set the button to collapsed
+      theButton.setAttribute("aria-expanded", "false");
+    }
+    $('.expanderButton[aria-expanded="true"]').closest('tr').addClass('expandedRow');
+    $('.expanderButton[aria-expanded="false"]').closest('tr').removeClass('expandedRow');
+  }
+</script>
+
+<style media="screen">
+  .clickable-table tbody tr:hover {
+    cursor: pointer;
+  }
+</style>
+<style type="text/css" media="screen">
+  .nhsuk-header__navigation-item:nth-child(3) {
+    border-bottom: 4px solid #d8dde0;
+  }
+</style>
+
 
 <style media="screen">
   .clickable-table tbody tr:hover {
@@ -129,7 +170,7 @@ NHS Cervical screening management system
 
     <h3>Lab patient demographics</h3>
 
-    <table class="order-table" id="lab">
+    <table class="nhsuk-table-clickable bna-table clickable-table" id="lab">
       <thead>
         <tr>
           <th style="width: 25%">Name
@@ -137,6 +178,8 @@ NHS Cervical screening management system
           <th style="width: 25%">Date of birth
           </th>
           <th style="width: 25%">NHS number
+          </th>
+          <th style="width: 25%">View address
           </th>
           <th></th>
         <tr>
@@ -148,7 +191,52 @@ NHS Cervical screening management system
           <td>Tanya Parr</td>
           <td>11-06-1992</td>
           <td>910 000 2798</td>
+          <td class="nhsuk-table__cell">
+            <button class="expanderButton" type="button" id="btn1" aria-expanded="false" onclick="toggle(this.id,'#row1');" aria-controls="row1" aria-label="More details for" aria-labelledby="row1"></button>
+          </td>
           <td></td>
+        </tr>
+        <tr id="row1" class="hidden detailsRow">
+          <td colspan="5">
+            <div class="nhsuk-grid-row">
+              <div class="nhsuk-grid-column-three-quarters nhsuk-u-margin-left-3">
+                <div id="reasons-step-0">
+                  <dl class="nhsuk-summary-list nhsuk-summary-list--no-border nhsuk-u-margin-bottom-2">
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        Contact information
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        46 Stirling Way
+                        <br>
+                        Sutton
+                        <br>
+                        CB6 2QZ
+                      </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        Sender
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        Brance Colposcopy Clinic
+                      </dd>
+                    </div>
+
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        Sender address
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        1 Easthampstead Road <br>Bracknell <br>Berkshire <br>RG12 1YQ
+                      </dd>
+                    </div>
+
+                  </dl>
+                </div>
+              </div>
+            </div>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -163,7 +251,7 @@ NHS Cervical screening management system
     <p>Choose which system patient demographics to use. If no appropriate system match found, save to lab query list.</p>
 
     <form action="manc-tanya-step2" method="post">
-      <table class="order-table clickable-table">
+      <table class="nhsuk-table-clickable bna-table clickable-table">
         <thead>
           <tr>
             <th style="width: 15%"></th>
@@ -173,6 +261,8 @@ NHS Cervical screening management system
             </th>
             <th>NHS number
             </th>
+            <th style="width: 25%">View address
+          </th>
           <tr>
         </thead>
 
@@ -193,6 +283,33 @@ NHS Cervical screening management system
                   <td>Tanya <span class="highlight">Lucy</span> Parr</td>
                   <td>11-06-1992</td>
                   <td>910 000 2798</td>
+                  <td class="nhsuk-table__cell">
+                    <button class="expanderButton" type="button" id="btn1" aria-expanded="false" onclick="toggle(this.id,'#row2');" aria-controls="row1" aria-label="More details for" aria-labelledby="row2"></button>
+                  </td>
+                </tr>
+                <tr id="row2" class="hidden detailsRow">
+                  <td colspan="5">
+                    <div class="nhsuk-grid-row">
+                      <div class="nhsuk-grid-column-three-quarters nhsuk-u-margin-left-3">
+                        <div id="reasons-step-0">
+                          <dl class="nhsuk-summary-list nhsuk-summary-list--no-border nhsuk-u-margin-bottom-2">
+                            <div class="nhsuk-summary-list__row">
+                              <dt class="nhsuk-summary-list__key">
+                                Contact information
+                              </dt>
+                              <dd class="nhsuk-summary-list__value">
+                                46 Stirling Way
+                                <br>
+                                Sutton
+                                <br>
+                                CB6 9IZ
+                              </dd>
+                            </div>
+                          </dl>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
                   <td class="nhsuk-table__cell">
@@ -204,6 +321,33 @@ NHS Cervical screening management system
                   <td>Tanya Parr</td>
                   <td>11-06-1992</td>
                   <td>910 000 279<span class="highlight">4</span></td>
+                  <td class="nhsuk-table__cell">
+                    <button class="expanderButton" type="button" id="btn1" aria-expanded="false" onclick="toggle(this.id,'#row3');" aria-controls="row1" aria-label="More details for" aria-labelledby="row3"></button>
+                  </td>
+                </tr>
+                <tr id="row3" class="hidden detailsRow">
+                  <td colspan="5">
+                    <div class="nhsuk-grid-row">
+                      <div class="nhsuk-grid-column-three-quarters nhsuk-u-margin-left-3">
+                        <div id="reasons-step-0">
+                          <dl class="nhsuk-summary-list nhsuk-summary-list--no-border nhsuk-u-margin-bottom-2">
+                            <div class="nhsuk-summary-list__row">
+                              <dt class="nhsuk-summary-list__key">
+                                Contact information
+                              </dt>
+                              <dd class="nhsuk-summary-list__value">
+                                46 Stirling Way
+                                <br>
+                                Sutton
+                                <br>
+                                CB6 9IZ
+                              </dd>
+                            </div>
+                          </dl>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
                 </tr>
           <!--      <tr role="row" class="nhsuk-table__row">
                   <td class="nhsuk-table__cell">

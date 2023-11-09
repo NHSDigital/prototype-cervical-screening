@@ -427,8 +427,8 @@ NHS Cervical screening management system
               </div>
 
               <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="system" name="how-to-resolve" type="radio" value="system" aria-controls="system" aria-expanded="false">
-                <label class="nhsuk-label nhsuk-radios__label" for="system">
+                <input class="nhsuk-radios__input" id="goo" name="how-to-resolve" type="radio" value="system" aria-controls="system" aria-expanded="false">
+                <label class="nhsuk-label nhsuk-radios__label" for="goo">
                   Send to sender address
                 </label>
                 <div class="nhsuk-hint nhsuk-radios__hint">
@@ -496,10 +496,70 @@ NHS Cervical screening management system
         </div>
       </div>
 
+      <!-- /* new content starts */ -->
 
-      <a href="non-match-p2" class="nhsuk-button nhsuk-button--ers nhsuk-u-margin-top-4 nhsuk-u-margin-right-6">Save and next</a>
-      <a href="non-match-p2" class="nhsuk-button nhsuk-button--ers nhsuk-button--ers_secondary nhsuk-u-margin-top-4 nhsuk-u-margin-right-6">Keep on the lab query list</a>
-      <a href="non-match-p2" class="nhsuk-button nhsuk-button--ers nhsuk-button--ers_secondary nhsuk-u-margin-top-4">Reject</a>
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-one-half">
+
+          <!-- OPTIONS -->
+          <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset" aria-describedby="query">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h2 class="nhsuk-fieldset__heading nhsuk-label nhsuk-label__strong nhsuk-u-margin-top-4">
+                  What do you want to do with this query?
+                </h2>
+              </legend>
+
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="check" name="reject" type="radio" value="system" aria-controls="system" aria-expanded="false">
+                <label class="nhsuk-label nhsuk-radios__label" for="check">
+                  Save and move to be checked
+                </label>
+              </div>
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="gps" name="reject" type="radio" value="gp" aria-controls="gp" aria-expanded="false">
+                <label class="nhsuk-label nhsuk-radios__label" for="gps">
+                  Keep on query list
+                </label>
+              </div>
+
+              <div class="nhsuk-radios nhsuk-radios--conditional">
+                <div class="nhsuk-radios nhsuk-radios--conditional">
+
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="contact-18" name="reject" type="radio" value="address" aria-controls="conditional-contact-18" aria-expanded="false">
+                    <label class="nhsuk-label nhsuk-radios__label" for="contact-18">
+                      Reject
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-18">
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="boo" name="boo" type="checkbox" value="blar">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="boo">
+                          Yes, reject this record
+                        </label>
+                      </div>
+
+
+                </div>
+              </div>
+            </fieldset>
+
+          </div>
+        </div>
+      </div>
+
+
+      <!-- /* new content ends */ -->
+
+
+      <a href="non-match-p2" class="nhsuk-button nhsuk-button--ers nhsuk-u-margin-top-4 nhsuk-u-margin-right-6">Continue</a>
+      <!-- <a href="non-match-p2" class="nhsuk-button nhsuk-button--ers nhsuk-button--ers_secondary nhsuk-u-margin-top-4 nhsuk-u-margin-right-6">Keep on the lab query list</a>
+      <a href="non-match-p2" class="nhsuk-button nhsuk-button--ers nhsuk-button--ers_secondary nhsuk-u-margin-top-4">Reject</a> -->
       <p><a href="manc-query">Exit without saving</a></p>
 
     </form>

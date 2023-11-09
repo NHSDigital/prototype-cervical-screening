@@ -1,31 +1,142 @@
 {% extends "layout-v2.html" %}
 
 {% block pageScripts %}
-<script>
-  $(".char-textarea").on("keyup",function(event){
-  checkTextAreaMaxLength(this,event);
-});
+<script type="text/javascript" src="/js/reveal.js"></script>
+<script type="text/javascript" src="/js/comments.js"></script>
 
-function checkTextAreaMaxLength(textBox, e) {
+<script>
+  function closeRightMenu() {
+    document.getElementByClass("nhsuk-sidebar-hidden").style.display = "none";
+  }
+  $(document).ready(function() {
+    $(".sidebarbttn").click(function() {
+      $(".nhsuk-sidebar-hidden").toggle();
+    });
+
+  });
+</script>
+
+<script>
+  $(".char-textarea").on("keyup", function(event) {
+    checkTextAreaMaxLength(this, event);
+  });
+
+  function checkTextAreaMaxLength(textBox, e) {
 
     var maxLength = parseInt($(textBox).data("length"));
 
 
     if (!checkSpecialKeys(e)) {
-        if (textBox.value.length > maxLength - 1) textBox.value = textBox.value.substring(0, maxLength);
-   }
-  $(".char-count").html(maxLength - textBox.value.length);
+      if (textBox.value.length > maxLength - 1) textBox.value = textBox.value.substring(0, maxLength);
+    }
+    $(".char-count").html(maxLength - textBox.value.length);
 
     return true;
-}
+  }
 
-function checkSpecialKeys(e) {
+  function checkSpecialKeys(e) {
     if (e.keyCode != 8 && e.keyCode != 46 && e.keyCode != 37 && e.keyCode != 38 && e.keyCode != 39 && e.keyCode != 40)
-        return false;
+      return false;
     else
-        return true;
+      return true;
+  }
+
+
+  window.onscroll = function() {myFunction()};
+var navbar = document.getElementById("lab");
+var sticky = navbar.offsetTop;
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    lab.classList.add("sticky")
+  } else {
+    lab.classList.remove("sticky");
+  }
 }
 </script>
+
+<!-- clickable rows with hover colour -->
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('.clickable-table tr').click(function(event) {
+      if (event.target.type !== 'radio') {
+        $(':radio', this).trigger('click');
+      }
+    });
+
+    $("input[type='radio']").change(function(e) {
+      e.stopPropagation();
+      $('.clickable-table tr').removeClass("highlight_row");
+      if ($(this).is(":checked")) {
+        $(this).closest('tr').addClass("highlight_row");
+      }
+    });
+  });
+</script>
+
+<script>
+  function toggle(btnID, eIDs) {
+    // Feed the list of ids as a selector
+    var theRows = document.querySelectorAll(eIDs);
+    // Get the button that triggered this
+    var theButton = document.getElementById(btnID);
+    // If the button is not expanded...
+    if (theButton.getAttribute("aria-expanded") == "false") {
+      // Loop through the rows and show them
+      for (var i = 0; i < theRows.length; i++) {
+        theRows[i].classList.add("shown");
+        theRows[i].classList.remove("hidden");
+      }
+      // Now set the button to expanded
+      theButton.setAttribute("aria-expanded", "true");
+      // Otherwise button is not expanded...
+    } else {
+      // Loop through the rows and hide them
+      for (var i = 0; i < theRows.length; i++) {
+        theRows[i].classList.add("hidden");
+        theRows[i].classList.remove("shown");
+      }
+      // Now set the button to collapsed
+      theButton.setAttribute("aria-expanded", "false");
+    }
+    $('.expanderButton[aria-expanded="true"]').closest('tr').addClass('expandedRow');
+    $('.expanderButton[aria-expanded="false"]').closest('tr').removeClass('expandedRow');
+  }
+</script>
+
+<style media="screen">
+  .clickable-table tbody tr:hover {
+    cursor: pointer;
+  }
+</style>
+<style type="text/css" media="screen">
+  .nhsuk-header__navigation-item:nth-child(3) {
+    border-bottom: 4px solid #d8dde0;
+  }
+</style>
+
+
+<style media="screen">
+  .clickable-table tbody tr:hover {
+    background-color: #d8dde0;
+    cursor: pointer;
+  }
+
+  .highlight_row {
+    background: #d8dde0;
+  }
+
+  #lab {
+    background-color: #f0f4f5;
+  }
+
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    box-shadow: 0px 6px 10px #768692;
+  }
+</style>
 <style type="text/css" media="screen">
   .nhsuk-header__navigation-item:nth-child(3) {
     border-bottom: 4px solid #d8dde0;
@@ -66,7 +177,66 @@ NHS Cervical screening management system
 </div>
 </div>
 
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
 
+    <h3>Lab patient demographics</h3>
+
+    <table class="nhsuk-table-clickable bna-table clickable-table" id="lab">
+      <thead>
+        <tr>
+          <th style="width: 25%">Name
+          </th>
+          <th style="width: 25%">Date of birth
+          </th>
+          <th style="width: 25%">NHS number
+          </th>
+          <th style="width: 25%">View address
+          </th>
+          <th></th>
+        <tr>
+      </thead>
+
+      <tbody>
+        <!-- LAB DEMOGRAPHICS -->
+        <tr>
+          <td>Tanya Parr</td>
+          <td>11-06-1992</td>
+          <td>910 000 2798</td>
+          <td class="nhsuk-table__cell">
+            <button class="expanderButton" type="button" id="btn1" aria-expanded="false" onclick="toggle(this.id,'#row1');" aria-controls="row1" aria-label="More details for" aria-labelledby="row1"></button>
+          </td>
+          <td></td>
+        </tr>
+        <tr id="row1" class="hidden detailsRow">
+          <td colspan="5">
+            <div class="nhsuk-grid-row">
+              <div class="nhsuk-grid-column-three-quarters nhsuk-u-margin-left-3">
+                <div id="reasons-step-0">
+                  <dl class="nhsuk-summary-list nhsuk-summary-list--no-border nhsuk-u-margin-bottom-2">
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        Contact information
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        46 Stirling Way
+                        <br>
+                        Sutton
+                        <br>
+                        CB6 2QZ
+                      </dd>
+                    </div>
+
+                  </dl>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 
 
 <div class="nhsuk-grid-row">

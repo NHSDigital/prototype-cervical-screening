@@ -498,10 +498,9 @@ NHS Cervical screening management system
 
       <!-- /* new content starts */ -->
 
-      <div class="nhsuk-grid-row">
+      <!-- <div class="nhsuk-grid-row">
         <div class="nhsuk-grid-column-one-half">
 
-          <!-- OPTIONS -->
           <div class="nhsuk-form-group">
 
             <fieldset class="nhsuk-fieldset" aria-describedby="query">
@@ -551,15 +550,39 @@ NHS Cervical screening management system
 
           </div>
         </div>
-      </div>
+      </div> -->
+
+      <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            How to reject this record
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>To reject the result for this patient, check the tick box and Reject</p>
+          <div class="nhsuk-checkboxes">
+
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="contact" name="contact" type="checkbox" value="email">
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="contact">
+                I confirm to reject the result for this patient
+              </label>
+            </div>
+
+          </div>
+
+          <a href="non-match-p2" class="nhsuk-button nhsuk-button--ers nhsuk-button--ers_secondary nhsuk-u-margin-top-4">Reject</a>
+
+        </div>
+      </details>
 
 
       <!-- /* new content ends */ -->
 
 
       <a href="non-match-p2" class="nhsuk-button nhsuk-button--ers nhsuk-u-margin-top-4 nhsuk-u-margin-right-6">Continue</a>
-      <!-- <a href="non-match-p2" class="nhsuk-button nhsuk-button--ers nhsuk-button--ers_secondary nhsuk-u-margin-top-4 nhsuk-u-margin-right-6">Keep on the lab query list</a>
-      <a href="non-match-p2" class="nhsuk-button nhsuk-button--ers nhsuk-button--ers_secondary nhsuk-u-margin-top-4">Reject</a> -->
+      <a href="non-match-p2" class="nhsuk-button nhsuk-button--ers nhsuk-button--ers_secondary nhsuk-u-margin-top-4 nhsuk-u-margin-right-6">Keep on the lab query list</a>
+      
       <p><a href="manc-query">Exit without saving</a></p>
 
     </form>

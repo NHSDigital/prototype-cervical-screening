@@ -366,7 +366,39 @@ NHS Cervical screening management system
             </div>
           </fieldset>
 
+
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-full">
+
+               <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            How to reject this record
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>To reject the result for this patient, check the tick box and Reject</p>
+          <div class="nhsuk-checkboxes">
+
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="contact" name="contact" type="checkbox" value="email">
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="contact">
+                I confirm to reject the result for this patient
+              </label>
+            </div>
+
+          </div>
+
+          <a href="non-match-p2" class="nhsuk-button nhsuk-button--ers nhsuk-button--ers_secondary nhsuk-u-margin-top-4">Reject</a>
+
+        </div>
+      </details>
+            </div>
+          </div>
+
            <button class="nhsuk-button nhsuk-u-margin-top-5 nhsuk-button--ers" type="submit">Continue</button>
+
+           <a href="non-match-dummy" class="nhsuk-button nhsuk-button--ers nhsuk-button--ers_secondary nhsuk-u-margin-top-4 nhsuk-u-margin-right-6">Save to lab query list</a>
           </form>
 
         </div>

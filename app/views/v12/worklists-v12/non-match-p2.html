@@ -410,9 +410,36 @@ NHS Cervical screening management system
         </div>
       </div>
 
+       <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            How to reject this record
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>To reject the result for this patient, check the tick box and Reject</p>
+          <div class="nhsuk-checkboxes">
+
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="contact" name="contact" type="checkbox" value="email">
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="contact">
+                I confirm to reject the result for this patient
+              </label>
+            </div>
+
+          </div>
+
+          <a href="non-match-p2" class="nhsuk-button nhsuk-button--ers nhsuk-button--ers_secondary nhsuk-u-margin-top-4">Reject</a>
+
+        </div>
+      </details>
+
+
+      <!-- /* new content ends */ -->
+
       <a href="non-match-dummy" class="nhsuk-button nhsuk-button--ers nhsuk-u-margin-top-4 nhsuk-u-margin-right-6">Save and next</a>
       <a href="non-match-dummy" class="nhsuk-button nhsuk-button--ers nhsuk-button--ers_secondary nhsuk-u-margin-top-4 nhsuk-u-margin-right-6">Save to lab query list</a>
-      <a href="non-dummy" class="nhsuk-button nhsuk-button--ers nhsuk-button--ers_secondary nhsuk-u-margin-top-4">Reject</a>
+      <!-- <a href="non-dummy" class="nhsuk-button nhsuk-button--ers nhsuk-button--ers_secondary nhsuk-u-margin-top-4">Reject</a> -->
       <p><a href="manc-query">Exit without saving</a></p>
 
     </form>

@@ -58,14 +58,30 @@ NHS Cervical screening management system
  <h1 class="nhsuk-heading-l nhsuk-u-padding-top-2 nhsuk-u-margin-bottom-0">Review duplicate test results and choose how to action</h1>
 
 
-<div class="nhsuk-grid-row">
+<!-- <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-three-quarters">
       <div class="nhsuk-inset-text nhsuk-inset-text__screening nhsuk-inset-text__screening--failure nhsuk-inset-text__screening--background-width">
         <span class="nhsuk-u-visually-hidden">Important: </span>
         <h2 class="nhsuk-heading-s">Test results have duplicate slide numbers</h2>
         <p>Duplicate slide numbers must be resolved first. If needed, any manual matching or resolution of test result data will be done after.</p>
       </div>
-</div>
+  </div>
+</div> -->
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-three-quarters">
+      <div class="nhsuk-inset-text nhsuk-inset-text__screening nhsuk-inset-text__screening--failure nhsuk-inset-text__screening--background-width">
+        <span class="nhsuk-u-visually-hidden">Important: </span>
+        <h2 class="nhsuk-heading-s">This test result has multiple errors</h2>
+        <ul>
+          <li>Rejected due to insufficient information provided</li>
+          <li>Missing address</li>
+          <li>Missing postcode</li>
+        </ul>
+        <p>All letters and notifications will be paused until the result is resolved.
+          <br>Time received: 24 November 2023 at 11.39am</p>
+      </div>
+  </div>
 </div>
 
 
@@ -351,10 +367,10 @@ NHS Cervical screening management system
              <div class="nhsuk-radios__item">
                <input class="nhsuk-radios__input" id="example-2" name="rejectAction" type="radio" value="remove">
                <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-                 Keep original test result
+                 Keep rejected test result
                </label>
                <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                 The original test result will be kept and the duplicate test result will be removed and archived. 
+                 The rejected test result will be kept and the duplicate test result will be removed and archived. 
                </div>
              </div>
 

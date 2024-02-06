@@ -408,12 +408,28 @@ comments=">Add result</a>
           <div class="nhsuk-table-responsive nhsuk-u-margin-top-0 table-wrap">
             <table id="sortable" class="nhsuk-table nhsuk-table-u-margin-0 nhsuk-table-clickable main-table">
 
-              <!-- TABLE START -->
               <thead class="nhsuk-table__head">
+                <tr class="nhsuk-table__row">
+                  <th class="nhsuk-table__header" scope="col">Test date</th>
+                  <th class="nhsuk-table__header" scope="col">Screening<br>pathway</th>
+                  <th class="nhsuk-table__header" scope="col">Cytology<br>results</th>
+                  <th class="nhsuk-table__header" scope="col">HPV<br>Infection</th>
+                  <th class="nhsuk-table__header" scope="col">Action</th>
+                  <th class="nhsuk-table__header" scope="col">Repeat</th>
+                  <th class="nhsuk-table__header" scope="col">Slide<br>number</th>
+                  <th class="nhsuk-table__header" scope="col">Lab<br>details</th>
+                  <th class="nhsuk-table__header" scope="col">Sender<br>details</th>
+                  <th class="nhsuk-table__header" scope="col">Letter<br>status</th>
+                  <th class="nhsuk-table__header no-print" scope="col">Amend</th>
+                </tr>
+              </thead>
+
+              <!-- TABLE START -->
+         <!--      <thead class="nhsuk-table__head">
                 <tr class="nhsuk-table__row">
                   <th class="nhsuk-table__header" scope="col">Test date <br>and health authority</th>
                   <th class="nhsuk-table__header" scope="col">Test result</th>
-                  <!--<th class="nhsuk-table__header" scope="col">Repeat</th>-->
+                  <th class="nhsuk-table__header" scope="col">Repeat</th>
                   <th class="nhsuk-table__header" scope="col">Sender <br>and source</th>
                   <th class="nhsuk-table__header" scope="col">Slide number</th>
                   <th class="nhsuk-table__header" scope="col">Lab name <br>and national code</th>
@@ -422,36 +438,62 @@ comments=">Add result</a>
                   <th class="nhsuk-table__header no-print" scope="col">Amend</th>
                   
                 </tr>
-              </thead>
+              </thead> -->
               <tbody class="nhsuk-table__body nhsuk-body-">
                 <tr class="nhsuk-table__row">
                   <td class="nhsuk-table__cell fixed-side">
-                    11-Sep-2021
-                    <span class="nhsuk-table__cell--hint">Health authority: -</span>
+                    11 January 2023
+                    <span class="nhsuk-table__cell--hint">Other</span>
+                  </td>
+                  <td class="nhsuk-table__cell fixed-side">
+                    HPV primary
                   </td>
                   <td class="nhsuk-table__cell">
-                    3R -  Months
+                    No Cytology test undertaken
                     
-                    <span class="nhsuk-table__cell--hint">Low-grade dyskaryosis  Repeat advised</span>
+                    <span class="nhsuk-table__cell--hint">X</span>
                   </td>
 
                   <td class="nhsuk-table__cell">
-                    87117
-                    <span class="nhsuk-table__cell--hint">Source: X</span>
+                    HPV negative
+                    <span class="nhsuk-table__cell--hint">0</span>
                   </td>
 
                   <td class="nhsuk-table__cell">
-                    88034800
+                    Early Repeat - Routine
+                    <span class="nhsuk-table__cell--hint">R</span>
                   </td>
 
                   <td class="nhsuk-table__cell">
-                    Bristol
-                    <span class="nhsuk-table__cell--hint"> Nat code: 60450</span>
+                    36
+                    <span class="nhsuk-table__cell--hint">Months</span>
                   </td>
 
                   <td class="nhsuk-table__cell">
-                    <span class="nhsuk-tag nhsuk-tag--green">Sent</span>
+                    234892849
                   </td>
+
+                  <td class="nhsuk-table__cell">
+                    Lab: Health Services Labatories
+                    <span class="nhsuk-table__cell--hint">Nat Code: 61025</span><br/>
+                    <span class="nhsuk-table__cell--hint">Cipher: LNW</span>
+                  </td>
+
+                  <td class="nhsuk-table__cell">
+                    RIVERSIDE SURGERY
+                    <span class="nhsuk-table__cell--hint">Code: G83630</span><br/>
+                    <span class="nhsuk-table__cell--hint">Source: G</span>
+                  </td>
+
+                  <td class="nhsuk-table__cell">
+                    
+                    <span class="nhsuk-tag nhsuk-tag--green">SENT</span>
+                  </td>
+
+
+
+
+
 
                   <td class="nhsuk-table__cell">
                     <a href="/v12/patient/add-test-result/add-test-result-edit-3?

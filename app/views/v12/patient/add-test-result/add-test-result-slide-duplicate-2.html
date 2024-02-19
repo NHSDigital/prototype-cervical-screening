@@ -1,0 +1,360 @@
+{% extends "layout-v2.html" %}
+
+{% block pageTitle %}
+  NHS Cervical screening management system
+{% endblock %}
+
+{% block header %}
+  {% include '../../components/header-3.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-three-quarters">
+
+  {% if data['edit-test'] != 'true' %}
+    <div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
+      <a class="nhsuk-back-link__link" href="../patient-summary-7">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+        </svg>
+        Back to patient summary</a>
+    </div>
+  {% endif %}
+
+  <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+      <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+        This patient already has a test result for that slide number
+      </h2>
+      <div class="nhsuk-error-summary__body">
+        <ul class="nhsuk-list nhsuk-error-summary__list" role="list">
+        <li>
+          <a href="#slide-number">Slide number should be unique</a>
+        </li>
+      </ul>
+      </div>
+    </div>
+
+  <div class="nhsuk-card nhsuk-card--feature">
+    <div class="nhsuk-card__content nhsuk-card__content--feature">
+    {% include '../../components/pnl-patient-2.html' %}
+    <!-- <span class="nhsuk-hint">Step 1 of 6</span> -->
+
+  <h1 class="nhsuk-heading-l">Add test type details</h1>
+
+     <div class="nhsuk-inset-text">
+       <span class="nhsuk-u-visually-hidden">Information: </span>
+       <p>If adding more than 1 test result, start with the most recent test. 
+       
+     </div>
+        
+
+         <div class="nhsuk-form-group">
+             
+
+          <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+          
+
+          <form action="/v12/patient/add-test-result/add-test-result" method="post">
+            
+            <div class="nhsuk-form-group">
+              <div class="nhsuk-grid-row">
+               <div class="nhsuk-grid-column-three-quarters">
+              <label class="nhsuk-label nhsuk-label__strong" for="example-with-hint-text">
+                National code
+              </label>
+              <div class="nhsuk-hint" id="example-with-hint-text-hint">
+                Also known as lab code. 5 Digits for example, 61234.
+                <br> Enter XXXXX if no national code provided (for example for historic, Scottish, abroad or unknown tests).
+              </div>
+              <input class="nhsuk-input nhsuk-input--width-10" value="{{ data['national-code'] }}" id="national-code" name="national-code" type="text" aria-describedby="example-with-hint-text-hint" inputmode="numeric">
+            </div>
+
+          </div>
+          </div>
+
+          {{ input({
+               "label": {
+                "text": "Slide number",
+                "classes": "nhsuk-label nhsuk-label__strong"
+               },
+               hint: {
+                  html: "For example, 18010000"
+               },
+               "id": "slide-number",
+               "name": "slide-number",
+               "classes": "nhsuk-input--width-10",
+               "autocomplete": "off",
+               "value": data['slide-number'],
+               "errorMessage": {
+    "text": "This patient already has a test result for that slide number"
+  }
+              }) }}
+
+            {{ dateInput({
+              "id": "example",
+              "namePrefix": "example",
+              "fieldset": {
+                "legend": {
+                  "text": "Test date",
+                  "classes": "nhsuk-label nhsuk-label__strong",
+                  "isPageHeading": true
+                }
+              },
+              "hint": {
+                "text": "For example, 15 3 1984"
+              },
+              "items": [
+                {
+                  "name": "day",
+                  "classes": "nhsuk-input--width-2",
+                  "autocomplete": "off",
+                  "value": data['example-day']
+                },
+                {
+                  "name": "month",
+                  "classes": "nhsuk-input--width-2",
+                  "autocomplete": "off",
+                  "value": data['example-month']
+                },
+                {
+                  "name": "year",
+                  "classes": "nhsuk-input--width-4",
+                  "autocomplete": "off",
+                  "value": data['example-year']
+                }
+              ]
+            }) }}
+  
+          
+             <!-- {{ input({
+               "label": {
+                 "text": "Health authority",
+                "classes": "nhsuk-label nhsuk-label__strong"
+               },
+               hint: {
+                  html: "1 to 3 letters for example, A, DN or LNA. <br> 
+                  Enter health authority code if provided. Leave blank if not provided"
+               },
+                "id": "input-width-2",
+               "name": "health-authority",
+               "classes": "nhsuk-input--width-2",
+               "autocomplete": "off",
+               "value": data['health-authority']
+             }) }} -->
+            
+            <div class="nhsuk-form-group">
+               <label class="nhsuk-label nhsuk-label__strong" for="email">
+                 Screening pathway?
+               </label>
+
+              <div class="nhsuk-radios nhsuk-radios--conditional">
+                 <div class="nhsuk-radios__item">
+                   <input class="nhsuk-radios__input" id="hpv" name="self-sample" value="Yes" type="radio"  aria-controls="conditional-hpv" aria-expanded="false">
+                      <label class="nhsuk-label nhsuk-radios__label" for="hpv">
+                        HPV primary screening
+                      </label>
+                  </div>
+                   
+                   <!-- <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-hpv">
+                   <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+                    <legend class="nhsuk-fieldset__legend nhsuk-input--width-4 nhsuk-label nhsuk-label__strong">
+                      <h1 class="nhsuk-fieldset__heading">Result</h1>
+                    </legend>
+                    <span class="nhsuk-hint" id="example-hint">For example, X 0 A. 
+                    <br> Results need to be in English result format. 
+                    This can include Scottish, abroad and private tests.</span>
+
+                    <div class="nhsuk-date-input" id="example">
+                      <div class="nhsuk-date-input__item">
+                        <div class="nhsuk-form-group">
+                          <label class="nhsuk-label nhsuk-date-input__label" for="example-result">
+                            Result
+                          </label>
+                          <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 nhsuk-u-margin-right-3" id="example-result" name="result-result" type="text" autocomplete="off" value="{{ data['result-result'] }}">
+                        </div>
+                      </div>
+                      <div class="nhsuk-date-input__item">
+                        <div class="nhsuk-form-group">
+                          <label class="nhsuk-label nhsuk-date-input__label" for="example-infection">
+                            HPV
+                          </label>
+                          <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-infection" name="result-infection" type="text" autocomplete="off" value="{{ data['result-infection'] }}">
+                        </div>
+                      </div>
+                      <div class="nhsuk-date-input__item">
+                        <div class="nhsuk-form-group">
+                          <label class="nhsuk-label nhsuk-date-input__label" for="example-action">
+                            Action
+                          </label>
+                          <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-action" name="result-action" type="text" autocomplete="off" value="{{ data['result-action'] }}">
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                                               
+                    </div> -->
+      
+                  <div class="nhsuk-radios__item">
+                   <input class="nhsuk-radios__input" id="non-hpv" name="self-sample" value="No" type="radio" aria-controls="conditional-npn-hpv" aria-expanded="false">
+                       <label class="nhsuk-label nhsuk-radios__label" for="non-hpv">
+                          Non-HPV primary screening
+                       </label>
+                  </div>
+
+                  <!-- <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-npn-hpv">
+                   <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+                    <legend class="nhsuk-fieldset__legend nhsuk-input--width-4 nhsuk-label nhsuk-label__strong">
+                      <h1 class="nhsuk-fieldset__heading">Result</h1>
+                    </legend>
+                    <span class="nhsuk-hint" id="example-hint">For example, 0 A. 
+                    <br> Results need to be in English result format. 
+                    This can include Scottish, abroad and private tests.</span>
+
+                    <div class="nhsuk-date-input" id="example">
+                      <div class="nhsuk-date-input__item">
+                        <div class="nhsuk-form-group">
+                          <label class="nhsuk-label nhsuk-date-input__label" for="example-result">
+                            Result
+                          </label>
+                          <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 nhsuk-u-margin-right-3" id="example-result" name="result-result" type="text" autocomplete="off" value="{{ data['result-result'] }}">
+                        </div>
+                      </div>
+                      <div class="nhsuk-date-input__item">
+                        <div class="nhsuk-form-group">
+                          <label class="nhsuk-label nhsuk-date-input__label" for="example-infection">
+                            HPV
+                          </label>
+                          <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-infection" name="result-infection" type="text" autocomplete="off" value="{{ data['result-infection'] }}">
+                        </div>
+                      </div>
+                      <div class="nhsuk-date-input__item">
+                        <div class="nhsuk-form-group">
+                          <label class="nhsuk-label nhsuk-date-input__label" for="example-action">
+                            Action
+                          </label>
+                          <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-action" name="result-action" type="text" autocomplete="off" value="{{ data['result-action'] }}">
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>                         
+                    </div> -->
+
+                  <div class="nhsuk-radios__item">
+                   <input class="nhsuk-radios__input" id="selfsample" name="self-sample" value="Self" type="radio" aria-controls="conditional-selfsample" aria-expanded="false">
+                       <label class="nhsuk-label nhsuk-radios__label" for="selfsample">
+                          Self sample
+                       </label>
+                  </div>
+
+                  <!-- <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-selfsample">
+                   <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+                    <legend class="nhsuk-fieldset__legend nhsuk-input--width-4 nhsuk-label nhsuk-label__strong">
+                      <h1 class="nhsuk-fieldset__heading">Result</h1>
+                    </legend>
+                    <span class="nhsuk-hint" id="example-hint">For example, X 0 A. 
+                    <br> Results need to be in English result format. 
+                    This can include Scottish, abroad and private tests.</span>
+
+                    <div class="nhsuk-date-input" id="example">
+                      <div class="nhsuk-date-input__item">
+                        <div class="nhsuk-form-group">
+                          <label class="nhsuk-label nhsuk-date-input__label" for="example-result">
+                            Result
+                          </label>
+                          <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 nhsuk-u-margin-right-3" id="example-result" name="result-result" type="text" autocomplete="off" value="{{ data['result-result'] }}">
+                        </div>
+                      </div>
+                      <div class="nhsuk-date-input__item">
+                        <div class="nhsuk-form-group">
+                          <label class="nhsuk-label nhsuk-date-input__label" for="example-infection">
+                            HPV
+                          </label>
+                          <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-infection" name="result-infection" type="text" autocomplete="off" value="{{ data['result-infection'] }}">
+                        </div>
+                      </div>
+                      <div class="nhsuk-date-input__item">
+                        <div class="nhsuk-form-group">
+                          <label class="nhsuk-label nhsuk-date-input__label" for="example-action">
+                            Action
+                          </label>
+                          <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-action" name="result-action" type="text" autocomplete="off" value="{{ data['result-action'] }}">
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                                               
+                    </div> -->
+                    <br>
+                    <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+                    <legend class="nhsuk-fieldset__legend nhsuk-input--width-4 nhsuk-label nhsuk-label__strong">
+                      <h1 class="nhsuk-fieldset__heading">Result</h1>
+                    </legend>
+                    <span class="nhsuk-hint" id="example-hint">For example, X 0 A. 
+                    <br> Results need to be in English result format. 
+                    This can include Scottish, abroad and private tests. 
+                    <br>Leave HPV blank if no code given.</span>
+
+                    <div class="nhsuk-date-input" id="example">
+                      <div class="nhsuk-date-input__item">
+                        <div class="nhsuk-form-group">
+                          <label class="nhsuk-label nhsuk-date-input__label" for="example-result">
+                            Result
+                          </label>
+                          <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 nhsuk-u-margin-right-3" id="example-result" name="result-result" type="text" autocomplete="off" value="{{ data['result-result'] }}">
+                        </div>
+                      </div>
+                      <div class="nhsuk-date-input__item">
+                        <div class="nhsuk-form-group">
+                          <label class="nhsuk-label nhsuk-date-input__label" for="example-infection">
+                            HPV
+                          </label>
+                          <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-infection" name="result-infection" type="text" autocomplete="off" value="{{ data['result-infection'] }}">
+                        </div>
+                      </div>
+                      <div class="nhsuk-date-input__item">
+                        <div class="nhsuk-form-group">
+                          <label class="nhsuk-label nhsuk-date-input__label" for="example-action">
+                            Action
+                          </label>
+                          <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-action" name="result-action" type="text" autocomplete="off" value="{{ data['result-action'] }}">
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+              
+
+                
+             </fieldset>
+              <br>
+                </div>
+                  <button type="submit" class="nhsuk-button nhsuk-button--ers">
+                  Continue
+                </button>
+              </form>
+    
+    {% if data['edit-test'] != 'true' %}
+      <p><a href="../patient-summary-7">Exit without saving</a></p>
+    {% else %}
+      <p><a href="add-test-result-edit-3">Exit without saving</a></p>
+    {% endif %}
+
+  </div>
+
+  </div>
+</div>
+</div>
+
+
+{% endblock %}
+
+{% block footer %}
+<footer role="contentinfo">
+  <div class="nhsuk-footer" id="nhsuk-footer">
+    <div class="nhsuk-width-container nhsuk-width-container-fluid">
+      <p class="nhsuk-footer__copyright">&copy; Crown copyright</p>
+      <p><a href="/v12/reset-patient-data-12">Reset patient data</a></p>
+    </div>
+  </div>
+</footer>
+{% endblock %}

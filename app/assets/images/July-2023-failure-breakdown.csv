@@ -1,2 +1,2 @@
-Area,Lab Code,Lab File,Slide Number,Date Results Received,Time Results Received,Date Manual Processed,Time Manual Processed,NHS number,First Name,Surname,DoB
-BAA,60080,371,12345,2021-10-01,07:31:00,2021-10-01,13:41:00,000 111 2222,Lucy,Harper,1980-01-01
+Area,Lab Code,Lab File,Slide Number,Date Results Received,Time Results Received,Date Manual Processed,Time Manual Processed,NHS number,First Name,Surname,DoB,Status
+BAA,60080,371,12345,2021-10-01,07:31:00,2021-10-01,13:41:00,000 111 2222,Lucy,Harper,1980-01-01,Source type 7
